@@ -37,11 +37,10 @@ public class Hero : MonoBehaviour
 
         if (isJumping)
         {
-            if (IsOnFloor())
+            if (IsOnFloor() && _rigidbody2D.velocity.y <= 0)
             {
                 _rigidbody2D.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
             }
-
         }
         else if (_rigidbody2D.velocity.y > 0)
         {
