@@ -18,13 +18,13 @@ namespace Assets.CommonComponents
         private float _secondsPerFrame;
         private int _currentSprite;
         private float _nextFrameTime;
+        private bool _isPlaying = true;
 
         private void Start()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
 
             _secondsPerFrame = 1f / _frameRate;
-            _nextFrameTime = Time.time + _secondsPerFrame;
         }
 
         private void Update()
@@ -43,7 +43,7 @@ namespace Assets.CommonComponents
                 else
                 {
                     _onAnimationEnd?.Invoke();
-                    Destroy(this);
+                    _isPlaying = false;
                     return;
                 }
             }
@@ -51,6 +51,23 @@ namespace Assets.CommonComponents
             _spriteRenderer.sprite = _sprites[_currentSprite];
             _nextFrameTime += _secondsPerFrame;
             _currentSprite++;
+        }
+
+        private void OnBecameInvisible()
+        {
+            enabled = false;
+        }
+
+        private void OnBecameVisible()
+        {
+            enabled = _isPlaying;
+        }
+
+        private void OnEnable()
+        {
+            _nextFrameTime = Time.time + _secondsPerFrame;
+            _isPlaying = true;
+            _currentSprite = 0;
         }
     }
 }
