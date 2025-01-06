@@ -2,6 +2,10 @@
 
 public class Hero : MonoBehaviour
 {
+    private static readonly int _isOnFloorHashString = Animator.StringToHash("IsOnFloor");
+    private static readonly int _verticalVelocityHashString = Animator.StringToHash("VerticalVelocity");
+    private static readonly int _isRunningHashString = Animator.StringToHash("IsRunning");
+
     [SerializeField]
     private float _speed = 0f;
 
@@ -51,9 +55,9 @@ public class Hero : MonoBehaviour
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y * 0.5f);
         }
 
-        _animator.SetBool("IsOnFloor", isOnFloor);
-        _animator.SetFloat("VerticalVelocity", _rigidbody2D.velocity.y);
-        _animator.SetBool("IsRunning", _direction.x != 0);
+        _animator.SetBool(_isOnFloorHashString, isOnFloor);
+        _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
+        _animator.SetBool(_isRunningHashString, _direction.x != 0);
     }
 
     private bool IsOnFloor() => _groundCollisionCheck.IsTouchingLayer;
