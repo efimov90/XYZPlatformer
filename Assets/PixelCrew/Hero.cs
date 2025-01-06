@@ -6,12 +6,16 @@ public class Hero : MonoBehaviour
     private static readonly int _isOnFloorHashString = Animator.StringToHash("IsOnFloor");
     private static readonly int _verticalVelocityHashString = Animator.StringToHash("VerticalVelocity");
     private static readonly int _isRunningHashString = Animator.StringToHash("IsRunning");
+    private static readonly int _hitHashString = Animator.StringToHash("Hit Trigger");
 
     [SerializeField]
     private float _speed = 0f;
 
     [SerializeField]
     private float _jumpSpeed;
+
+    [SerializeField]
+    private float _damageJumpSpeed;
 
     [SerializeField]
     private LayerCollisionCheck _groundCollisionCheck;
@@ -45,6 +49,12 @@ public class Hero : MonoBehaviour
     internal void SaySomething()
     {
         Debug.Log("Something!");
+    }
+
+    public void TakeDamage()
+    {
+        _animator.SetTrigger(_hitHashString);
+        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _damageJumpSpeed);
     }
 
     private void FixedUpdate()
