@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Assets.PixelCrew
@@ -26,10 +25,7 @@ namespace Assets.PixelCrew
 
         private void OnInteractPerformed(InputAction.CallbackContext context)
         {
-            if(context.canceled)
-            {
-                _hero.Interact();
-            }
+            _hero.Interact();
         }
 
         private void OnSaySomethingCanceled(InputAction.CallbackContext context)

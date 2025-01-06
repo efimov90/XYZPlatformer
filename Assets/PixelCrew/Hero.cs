@@ -1,5 +1,4 @@
 ﻿using Assets.CommonComponents;
-using System;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -144,6 +143,8 @@ public class Hero : MonoBehaviour
             _interactionRadius,
             _interationResult,
             _interactionLayer);
+
+        Debug.Log(intersectionsCount);
 
         for (int i = 0; i < intersectionsCount; i++)
         {
