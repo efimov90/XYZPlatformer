@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 13640434}
   - component: {fileID: 13640435}
   - component: {fileID: 13640436}
+  - component: {fileID: 13640437}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -273,6 +274,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 13640431}
+--- !u!114 &13640437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13640431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &17701146
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +309,7 @@ GameObject:
   - component: {fileID: 17701150}
   - component: {fileID: 17701149}
   - component: {fileID: 17701148}
+  - component: {fileID: 17701152}
   m_Layer: 0
   m_Name: GoldCoin (4)
   m_TagString: Untagged
@@ -425,6 +449,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &17701152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17701146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &38950347
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +484,7 @@ GameObject:
   - component: {fileID: 38950351}
   - component: {fileID: 38950350}
   - component: {fileID: 38950349}
+  - component: {fileID: 38950353}
   m_Layer: 0
   m_Name: SilverCoin (5)
   m_TagString: Untagged
@@ -577,6 +624,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &38950353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38950347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &123414191
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +659,7 @@ GameObject:
   - component: {fileID: 123414195}
   - component: {fileID: 123414194}
   - component: {fileID: 123414193}
+  - component: {fileID: 123414197}
   m_Layer: 0
   m_Name: SilverCoin (1)
   m_TagString: Untagged
@@ -729,6 +799,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &123414197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123414191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &244046835
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +1042,7 @@ GameObject:
   - component: {fileID: 431486813}
   - component: {fileID: 431486812}
   - component: {fileID: 431486811}
+  - component: {fileID: 431486815}
   m_Layer: 0
   m_Name: SilverCoin (4)
   m_TagString: Untagged
@@ -1089,6 +1182,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &431486815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431486809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &461715707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1261,7 @@ GameObject:
   - component: {fileID: 478181314}
   - component: {fileID: 478181313}
   - component: {fileID: 478181312}
+  - component: {fileID: 478181316}
   m_Layer: 0
   m_Name: GoldCoin (1)
   m_TagString: Untagged
@@ -1285,6 +1401,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &478181316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478181310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1575,7 @@ GameObject:
   - component: {fileID: 590541551}
   - component: {fileID: 590541550}
   - component: {fileID: 590541549}
+  - component: {fileID: 590541553}
   m_Layer: 0
   m_Name: GoldCoin (2)
   m_TagString: Untagged
@@ -1576,6 +1715,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &590541553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590541547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &634849806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,6 +1944,7 @@ GameObject:
   - component: {fileID: 672421993}
   - component: {fileID: 672421994}
   - component: {fileID: 672421995}
+  - component: {fileID: 672421996}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -1922,6 +2084,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 672421990}
+--- !u!114 &672421996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672421990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &719776225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +2119,7 @@ GameObject:
   - component: {fileID: 719776229}
   - component: {fileID: 719776228}
   - component: {fileID: 719776227}
+  - component: {fileID: 719776231}
   m_Layer: 0
   m_Name: GoldCoin (5)
   m_TagString: Untagged
@@ -2074,6 +2259,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &719776231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719776225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1188247569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2294,7 @@ GameObject:
   - component: {fileID: 1188247573}
   - component: {fileID: 1188247572}
   - component: {fileID: 1188247571}
+  - component: {fileID: 1188247575}
   m_Layer: 0
   m_Name: SilverCoin (3)
   m_TagString: Untagged
@@ -2226,6 +2434,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1188247575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188247569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1387989031
 GameObject:
   m_ObjectHideFlags: 3
@@ -2326,6 +2556,7 @@ GameObject:
   - component: {fileID: 1529814481}
   - component: {fileID: 1529814480}
   - component: {fileID: 1529814479}
+  - component: {fileID: 1529814483}
   m_Layer: 0
   m_Name: SilverCoin (6)
   m_TagString: Untagged
@@ -2465,6 +2696,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1529814483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529814477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1685850760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,6 +2731,7 @@ GameObject:
   - component: {fileID: 1685850764}
   - component: {fileID: 1685850763}
   - component: {fileID: 1685850762}
+  - component: {fileID: 1685850766}
   m_Layer: 0
   m_Name: GoldCoin (3)
   m_TagString: Untagged
@@ -2617,6 +2871,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1685850766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685850760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 6582046967323461550, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 1942777921290549423, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 8793606821965667882, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 3444832735345940322, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1765994294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,6 +5547,7 @@ GameObject:
   - component: {fileID: 1889039584}
   - component: {fileID: 1889039583}
   - component: {fileID: 1889039582}
+  - component: {fileID: 1889039586}
   m_Layer: 0
   m_Name: SilverCoin (2)
   m_TagString: Untagged
@@ -5410,3 +5687,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1889039586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889039580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: -2322180950842035098, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -4893972260818282012, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: -6323751108524238166, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  - {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
