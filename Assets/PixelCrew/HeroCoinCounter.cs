@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HerpCoinCounter : MonoBehaviour
+public class HeroCoinCounter : MonoBehaviour
 {
     [SerializeField]
     private int _money;
