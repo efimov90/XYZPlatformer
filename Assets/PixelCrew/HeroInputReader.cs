@@ -2,41 +2,53 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HeroInputReader : MonoBehaviour
+namespace Assets.PixelCrew
 {
-    [SerializeField]
-    private Hero _hero;
-    private HeroInputActions _inputActions;
-
-    private void Awake()
+    public class HeroInputReader : MonoBehaviour
     {
-        _inputActions = new HeroInputActions();
-    }
+        [SerializeField]
+        private Hero _hero;
+        private HeroInputActions _inputActions;
 
-    private void OnEnable()
-    {
-        _inputActions.Hero.AxisMovement.performed += OnAxisMovement;
-        _inputActions.Hero.AxisMovement.canceled += OnAxisMovement;
-        _inputActions.Hero.SaySomething.canceled += OnSaySomethingCanceled;
-        _inputActions.Enable();
-    }
+        private void Awake()
+        {
+            _inputActions = new HeroInputActions();
+        }
 
-    private void OnSaySomethingCanceled(InputAction.CallbackContext context)
-    {
-        _hero.SaySomething();
-    }
+        private void OnEnable()
+        {
+            _inputActions.Hero.AxisMovement.performed += OnAxisMovement;
+            _inputActions.Hero.AxisMovement.canceled += OnAxisMovement;
+            _inputActions.Hero.SaySomething.canceled += OnSaySomethingCanceled;
+            _inputActions.Hero.Interact.performed += OnInteractPerformed;
+            _inputActions.Enable();
+        }
 
-    private void OnAxisMovement(InputAction.CallbackContext callbackContext)
-    {
-        var direction = callbackContext.ReadValue<Vector2>();
-        _hero.SetDirection(direction);
-    }
+        private void OnInteractPerformed(InputAction.CallbackContext context)
+        {
+            if(context.canceled)
+            {
+                _hero.Interact();
+            }
+        }
 
-    private void OnDisable()
-    {
-        _inputActions.Hero.AxisMovement.performed -= OnAxisMovement;
-        _inputActions.Hero.AxisMovement.canceled -= OnAxisMovement;
-        _inputActions.Hero.SaySomething.canceled -= OnSaySomethingCanceled;
-        _inputActions.Disable();
+        private void OnSaySomethingCanceled(InputAction.CallbackContext context)
+        {
+            _hero.SaySomething();
+        }
+
+        private void OnAxisMovement(InputAction.CallbackContext callbackContext)
+        {
+            var direction = callbackContext.ReadValue<Vector2>();
+            _hero.SetDirection(direction);
+        }
+
+        private void OnDisable()
+        {
+            _inputActions.Hero.AxisMovement.performed -= OnAxisMovement;
+            _inputActions.Hero.AxisMovement.canceled -= OnAxisMovement;
+            _inputActions.Hero.SaySomething.canceled -= OnSaySomethingCanceled;
+            _inputActions.Disable();
+        }
     }
 }

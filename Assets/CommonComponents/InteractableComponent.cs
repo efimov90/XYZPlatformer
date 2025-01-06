@@ -7,7 +7,7 @@ namespace Assets.CommonComponents
     {
         [SerializeField] private UnityEvent _action;
 
-        private void Interact()
+        public void Interact()
         {
             _action?.Invoke();
         }

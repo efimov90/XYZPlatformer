@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.CommonComponents;
+using System;
+using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
@@ -19,11 +21,18 @@ public class Hero : MonoBehaviour
     [SerializeField]
     private LayerCollisionCheck _groundCollisionCheck;
 
+    [SerializeField]
+    private float _interactionRadius;
+
+    [SerializeField]
+    private LayerMask _interactionLayer;
+
+    private Collider2D[] _interationResult = new Collider2D[1];
+
     private Rigidbody2D _rigidbody2D;
     private Vector2 _direction = Vector2.zero;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
-
     private bool _allowSecondJump = true;
 
     public bool IsOnFloor { get; private set; }
@@ -125,6 +134,24 @@ public class Hero : MonoBehaviour
         else if (_direction.x < 0)
         {
             _spriteRenderer.flipX = true;
+        }
+    }
+
+    public void Interact()
+    {
+        var intersectionsCount = Physics2D.OverlapCircleNonAlloc(
+            transform.position,
+            _interactionRadius,
+            _interationResult,
+            _interactionLayer);
+
+        for (int i = 0; i < intersectionsCount; i++)
+        {
+            if(_interationResult[i].GetComponent<InteractableComponent>() is InteractableComponent interactableComponent)
+            {
+                interactableComponent.Interact();
+                return;
+            }
         }
     }
 }
