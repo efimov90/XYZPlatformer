@@ -53,7 +53,7 @@ public class Hero : MonoBehaviour
         _direction = direction;
     }
 
-    internal void SaySomething()
+    public void SaySomething()
     {
         Debug.Log("Something!");
     }

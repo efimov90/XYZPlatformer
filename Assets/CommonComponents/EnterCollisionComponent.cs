@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.CommonComponents
 {
@@ -15,8 +11,11 @@ namespace Assets.CommonComponents
 
         private void OnCollisionEnter2D(Collision2D otherCollider)
         {
+            Debug.Log("Collision with " + otherCollider.gameObject.name);
+
             if (otherCollider.collider.CompareTag(_tag))
             {
+                Debug.Log("Collision with " + otherCollider.gameObject.name);
                 _action?.Invoke(otherCollider.gameObject);
             }
         }

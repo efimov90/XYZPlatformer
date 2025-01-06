@@ -19,5 +19,10 @@ namespace Assets.CommonComponents
                 _onDie?.Invoke();
             }
         }
+
+        public void Heal(int amount)
+        {
+            _health += amount;
+        }
     }
 }
