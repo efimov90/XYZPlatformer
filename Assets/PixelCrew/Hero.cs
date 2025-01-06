@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class Hero : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
+    private bool _allowSecondJump = true;
+
+    public bool IsOnFloor { get; private set; }
+
+    private void Update()
+    {
+        IsOnFloor = _groundCollisionCheck.IsTouchingLayer;
+    }
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -39,29 +49,62 @@ public class Hero : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.velocity = new Vector2(_direction.x * _speed, _rigidbody2D.velocity.y);
+        var velocityX = _direction.x * _speed;
+        var velocityY = CalculateVelocityY();
 
-        var isJumping = _direction.y > 0;
+        _rigidbody2D.velocity = new Vector2(velocityX, velocityY);
 
-        var isOnFloor = IsOnFloor();
-
-        if (isJumping)
-        {
-            if (isOnFloor && _rigidbody2D.velocity.y <= 0)
-            {
-                _rigidbody2D.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
-            }
-        }
-        else if (_rigidbody2D.velocity.y > 0)
-        {
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y * 0.5f);
-        }
-
-        _animator.SetBool(_isOnFloorHashString, isOnFloor);
+        _animator.SetBool(_isOnFloorHashString, IsOnFloor);
         _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
         _animator.SetBool(_isRunningHashString, _direction.x != 0);
 
         UpdateSpriteDirection();
+    }
+
+    private float CalculateVelocityY()
+    {
+        var velocityY = _rigidbody2D.velocity.y;
+
+        var isJumping = _direction.y > 0;
+
+        if(IsOnFloor)
+        {
+            _allowSecondJump = true;
+        }
+
+        if (isJumping)
+        {
+            velocityY = CalculateJumpVelocity(velocityY);
+
+        }
+        else if (_rigidbody2D.velocity.y > 0)
+        {
+            velocityY *= 0.5f;
+        }
+
+        return velocityY;
+    }
+
+    private float CalculateJumpVelocity(float velocityY)
+    {
+        var isFalling = _rigidbody2D.velocity.y <= 0;
+
+        if(!isFalling)
+        {
+            return velocityY;
+        }
+
+        if(IsOnFloor)
+        {
+            velocityY += _jumpSpeed;
+        }
+        else if (_allowSecondJump)
+        {
+            velocityY = _jumpSpeed;
+            _allowSecondJump = false;
+        }
+
+        return velocityY;
     }
 
     private void UpdateSpriteDirection()
@@ -75,6 +118,4 @@ public class Hero : MonoBehaviour
             _spriteRenderer.flipX = true;
         }
     }
-
-    private bool IsOnFloor() => _groundCollisionCheck.IsTouchingLayer;
 }
