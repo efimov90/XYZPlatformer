@@ -18,11 +18,13 @@ public class Hero : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Vector2 _direction = Vector2.zero;
     private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void SetDirection(Vector2 direction)
@@ -58,6 +60,20 @@ public class Hero : MonoBehaviour
         _animator.SetBool(_isOnFloorHashString, isOnFloor);
         _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
         _animator.SetBool(_isRunningHashString, _direction.x != 0);
+
+        UpdateSpriteDirection();
+    }
+
+    private void UpdateSpriteDirection()
+    {
+        if (_direction.x > 0)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else if (_direction.x < 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
     }
 
     private bool IsOnFloor() => _groundCollisionCheck.IsTouchingLayer;
