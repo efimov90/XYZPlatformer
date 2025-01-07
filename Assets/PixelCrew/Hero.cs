@@ -31,7 +31,7 @@ public class Hero : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Vector2 _direction = Vector2.zero;
     private Animator _animator;
-    private SpriteRenderer _spriteRenderer;
+    private SpawnComponent _spawnComponent;
     private bool _allowSecondJump = true;
 
     public bool IsOnFloor { get; private set; }
@@ -45,7 +45,7 @@ public class Hero : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spawnComponent = GetComponent<SpawnComponent>();
     }
 
     public void SetDirection(Vector2 direction)
@@ -128,11 +128,11 @@ public class Hero : MonoBehaviour
     {
         if (_direction.x > 0)
         {
-            _spriteRenderer.flipX = false;
+            transform.localScale = Vector3.one;
         }
         else if (_direction.x < 0)
         {
-            _spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
@@ -154,5 +154,10 @@ public class Hero : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void SpawnFootDust()
+    {
+        _spawnComponent?.Spawn();
     }
 }
