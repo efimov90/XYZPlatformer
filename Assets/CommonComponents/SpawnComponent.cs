@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.CommonComponents
 {
     public class SpawnComponent : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
-        [SerializeField] private GameObject _prefab;
+        [SerializeField] private SpawnObject[] _spawnObjects;
 
-        [ContextMenu("Spawn")]
-        public void Spawn()
+        public void Spawn(string name)
         {
-            var newInstance = Instantiate(_prefab, _target.position, Quaternion.identity);
-            newInstance.transform.localScale = _target.lossyScale;
+            var spawnObject = _spawnObjects.FirstOrDefault(x => x.Name == name);
+            var newInstance = Instantiate(spawnObject.Prefab, spawnObject.Target.position, Quaternion.identity);
+            newInstance.transform.localScale = spawnObject.Target.lossyScale;
         }
     }
 }

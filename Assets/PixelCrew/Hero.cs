@@ -117,10 +117,12 @@ public class Hero : MonoBehaviour
 
         if(IsOnFloor)
         {
+            SpawnJumpDust();
             velocityY += _jumpSpeed;
         }
         else if (_allowSecondJump)
         {
+            SpawnJumpDust();
             velocityY = _jumpSpeed;
             _allowSecondJump = false;
         }
@@ -162,7 +164,12 @@ public class Hero : MonoBehaviour
 
     public void SpawnFootDust()
     {
-        _spawnComponent?.Spawn();
+        _spawnComponent?.Spawn("FootDust");
+    }
+
+    public void SpawnJumpDust()
+    {
+        _spawnComponent?.Spawn("JumpDust");
     }
 
     public void SpawnCoins()
