@@ -26,6 +26,9 @@ public class Hero : MonoBehaviour
     [SerializeField]
     private LayerMask _interactionLayer;
 
+    [SerializeField]
+    private ParticleSystem _particleSystem;
+
     private Collider2D[] _interationResult = new Collider2D[1];
 
     private Rigidbody2D _rigidbody2D;
@@ -62,6 +65,7 @@ public class Hero : MonoBehaviour
     {
         _animator.SetTrigger(_hitHashString);
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _damageJumpSpeed);
+        SpawnCoins();
     }
 
     private void FixedUpdate()
@@ -159,5 +163,10 @@ public class Hero : MonoBehaviour
     public void SpawnFootDust()
     {
         _spawnComponent?.Spawn();
+    }
+
+    public void SpawnCoins()
+    {
+        _particleSystem?.Play();
     }
 }
