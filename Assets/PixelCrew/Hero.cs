@@ -200,6 +200,8 @@ public class Hero : MonoBehaviour
             return;
         }
 
+        _spawnComponent.Spawn("SwordParticle");
+
         _animator.SetTrigger(_attackHashString);
     }
 

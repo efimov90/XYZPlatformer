@@ -5274,6 +5274,10 @@ MonoBehaviour:
     _prefab: {fileID: 1749062824642735526, guid: a7674c7ea465dd24e8e7a35c40786068,
       type: 3}
     _target: {fileID: 6340411703624860753}
+  - _name: SwordParticle
+    _prefab: {fileID: 4197167280038883819, guid: 53627a9e6b551fe4090ca503e6bcfb3d,
+      type: 3}
+    _target: {fileID: 2057645368935943034}
 --- !u!114 &5424278314895115681
 MonoBehaviour:
   m_ObjectHideFlags: 0
