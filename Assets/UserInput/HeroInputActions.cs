@@ -27,34 +27,23 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SaySomething"",
-                    ""type"": ""Button"",
-                    ""id"": ""078b1c06-75e8-42cc-9e3a-c5607da45174"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""18fcd924-72f8-4047-83bd-64872c8a2259"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""22c22c3e-ce32-475d-bef5-43fc334dba13"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""eab52909-5873-4c81-9e04-fedfa29bcfaa"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SaySomething"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""edc3de1d-cb1f-4e11-bb70-5d2b9de9d337"",
@@ -175,6 +164,17 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15ad7726-01a1-4b5b-b1a5-e38b5598c250"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,8 +184,8 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         // Hero
         m_Hero = asset.FindActionMap("Hero", throwIfNotFound: true);
         m_Hero_AxisMovement = m_Hero.FindAction("AxisMovement", throwIfNotFound: true);
-        m_Hero_SaySomething = m_Hero.FindAction("SaySomething", throwIfNotFound: true);
         m_Hero_Interact = m_Hero.FindAction("Interact", throwIfNotFound: true);
+        m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -236,15 +236,15 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Hero;
     private IHeroActions m_HeroActionsCallbackInterface;
     private readonly InputAction m_Hero_AxisMovement;
-    private readonly InputAction m_Hero_SaySomething;
     private readonly InputAction m_Hero_Interact;
+    private readonly InputAction m_Hero_Attack;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
         public HeroActions(@HeroInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @AxisMovement => m_Wrapper.m_Hero_AxisMovement;
-        public InputAction @SaySomething => m_Wrapper.m_Hero_SaySomething;
         public InputAction @Interact => m_Wrapper.m_Hero_Interact;
+        public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -257,12 +257,12 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @AxisMovement.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnAxisMovement;
                 @AxisMovement.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnAxisMovement;
                 @AxisMovement.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnAxisMovement;
-                @SaySomething.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
-                @SaySomething.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
-                @SaySomething.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
                 @Interact.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnInteract;
+                @Attack.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -270,12 +270,12 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @AxisMovement.started += instance.OnAxisMovement;
                 @AxisMovement.performed += instance.OnAxisMovement;
                 @AxisMovement.canceled += instance.OnAxisMovement;
-                @SaySomething.started += instance.OnSaySomething;
-                @SaySomething.performed += instance.OnSaySomething;
-                @SaySomething.canceled += instance.OnSaySomething;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -283,7 +283,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     public interface IHeroActions
     {
         void OnAxisMovement(InputAction.CallbackContext context);
-        void OnSaySomething(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

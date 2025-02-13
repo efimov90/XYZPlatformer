@@ -8,6 +8,7 @@ public class Hero : MonoBehaviour
     private static readonly int _verticalVelocityHashString = Animator.StringToHash("VerticalVelocity");
     private static readonly int _isRunningHashString = Animator.StringToHash("IsRunning");
     private static readonly int _hitHashString = Animator.StringToHash("Hit Trigger");
+    private static readonly int _attackHashString = Animator.StringToHash("Attack Trigger");
 
     [SerializeField]
     private float _speed = 0f;
@@ -32,6 +33,12 @@ public class Hero : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem _particleSystem;
+
+    [SerializeField]
+    private CheckCircleOverlap _attackRange;
+
+    [SerializeField]
+    private int _attackValue;
 
     private Collider2D[] _interationResult = new Collider2D[1];
 
@@ -172,6 +179,24 @@ public class Hero : MonoBehaviour
             {
                 interactableComponent.Interact();
                 return;
+            }
+        }
+    }
+
+    public void Attack()
+    {
+        _animator.SetTrigger(_attackHashString);
+
+        var attackedGameObjects = _attackRange.Check();
+
+        Debug.Log($"{attackedGameObjects.Length}");
+
+        for (int i = 0; i < attackedGameObjects.Length; i++)
+        {
+            if(attackedGameObjects[i].GetComponent<HealthComponent>() is HealthComponent healthComponent)
+            {
+                Debug.Log($"Found attackable: {attackedGameObjects[i].name}");
+                healthComponent.ModifyHealth(-_attackValue);
             }
         }
     }

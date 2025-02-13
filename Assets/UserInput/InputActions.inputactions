@@ -14,34 +14,23 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SaySomething",
-                    "type": "Button",
-                    "id": "078b1c06-75e8-42cc-9e3a-c5607da45174",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "18fcd924-72f8-4047-83bd-64872c8a2259",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "22c22c3e-ce32-475d-bef5-43fc334dba13",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "eab52909-5873-4c81-9e04-fedfa29bcfaa",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SaySomething",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "edc3de1d-cb1f-4e11-bb70-5d2b9de9d337",
@@ -160,6 +149,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15ad7726-01a1-4b5b-b1a5-e38b5598c250",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

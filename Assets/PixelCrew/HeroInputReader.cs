@@ -18,8 +18,8 @@ namespace Assets.PixelCrew
         {
             _inputActions.Hero.AxisMovement.performed += OnAxisMovement;
             _inputActions.Hero.AxisMovement.canceled += OnAxisMovement;
-            _inputActions.Hero.SaySomething.canceled += OnSaySomethingCanceled;
             _inputActions.Hero.Interact.performed += OnInteractPerformed;
+            _inputActions.Hero.Attack.performed += OnAttackPerformed;
             _inputActions.Enable();
         }
 
@@ -28,9 +28,12 @@ namespace Assets.PixelCrew
             _hero.Interact();
         }
 
-        private void OnSaySomethingCanceled(InputAction.CallbackContext context)
+        public void OnAttackPerformed(InputAction.CallbackContext context)
         {
-            _hero.SaySomething();
+            if (context.canceled)
+            {
+                _hero.Attack();
+            }
         }
 
         private void OnAxisMovement(InputAction.CallbackContext callbackContext)
@@ -43,7 +46,8 @@ namespace Assets.PixelCrew
         {
             _inputActions.Hero.AxisMovement.performed -= OnAxisMovement;
             _inputActions.Hero.AxisMovement.canceled -= OnAxisMovement;
-            _inputActions.Hero.SaySomething.canceled -= OnSaySomethingCanceled;
+            _inputActions.Hero.Interact.performed -= OnInteractPerformed;
+            _inputActions.Hero.Attack.performed -= OnAttackPerformed;
             _inputActions.Disable();
         }
     }
