@@ -140,6 +140,17 @@ MonoBehaviour:
     OnAnimationEnd:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 8253102985459779797}
+          m_MethodName: Spawn
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: DestroyedBarrel
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 8253102985459779806}
           m_MethodName: DestroyObject
           m_Mode: 1
@@ -149,50 +160,6 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8253102985459779797}
-          m_MethodName: Spawn
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: BarrelPart1
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8253102985459779797}
-          m_MethodName: Spawn
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: BarrelPart2
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8253102985459779797}
-          m_MethodName: Spawn
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: BarrelPart3
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8253102985459779797}
-          m_MethodName: Spawn
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: BarrelPart4
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &8253102985459779806
@@ -312,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnObjects:
-  - _name: BarrelPart1
+  - _name: DestroyedBarrel
     _prefab: {fileID: 6046435418394768174, guid: 8a05b0ff543dc254abf428c5c58c79be,
       type: 3}
     _target: {fileID: 8253102985459779807}

@@ -186,14 +186,17 @@ public class Hero : MonoBehaviour
     public void Attack()
     {
         _animator.SetTrigger(_attackHashString);
+    }
 
+    public void OnAttack()
+    {
         var attackedGameObjects = _attackRange.Check();
 
         Debug.Log($"{attackedGameObjects.Length}");
 
         for (int i = 0; i < attackedGameObjects.Length; i++)
         {
-            if(attackedGameObjects[i].GetComponent<HealthComponent>() is HealthComponent healthComponent)
+            if (attackedGameObjects[i].GetComponent<HealthComponent>() is HealthComponent healthComponent)
             {
                 Debug.Log($"Found attackable: {attackedGameObjects[i].name}");
                 healthComponent.ModifyHealth(-_attackValue);
