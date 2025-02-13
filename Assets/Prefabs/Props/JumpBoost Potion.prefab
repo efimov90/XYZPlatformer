@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 360367372380611992}
   - component: {fileID: 360367372380611993}
   - component: {fileID: 360367372380611998}
+  - component: {fileID: 5069054178835990320}
   m_Layer: 0
   m_Name: JumpBoost Potion
   m_TagString: Untagged
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2722280177590742205, guid: b22a893f9a1a82a4c8850de733cad275,
+  m_Sprite: {fileID: 1185527514606905908, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd,
     type: 3}
-  m_Color: {r: 0, g: 0.7671809, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -166,3 +167,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpBoostAmount: 2
+--- !u!114 &5069054178835990320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360367372380611999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 10
+  _loop: 1
+  _sprites:
+  - {fileID: 1185527514606905908, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: -1061600653231999548, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: -3065595510956808684, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: 6997616985800771554, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: 8618505411793156745, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: -1972361127685065434, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  - {fileID: -5226445311955339714, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+  _onAnimationEnd:
+    m_PersistentCalls:
+      m_Calls: []
