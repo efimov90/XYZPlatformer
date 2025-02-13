@@ -60,7 +60,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701511278655396701}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &607087655971441951
 ParticleSystem:
@@ -4870,7 +4870,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701511278655396701}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8481256396821570484
 GameObject:
@@ -4983,6 +4983,7 @@ GameObject:
   - component: {fileID: 8701511278655396695}
   - component: {fileID: 8701511278655396694}
   - component: {fileID: 2932966600243602135}
+  - component: {fileID: 5424278314895115681}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -5004,8 +5005,8 @@ Transform:
   - {fileID: 8701511277626807700}
   - {fileID: 5660479943093108897}
   - {fileID: 759603967743537265}
-  - {fileID: 7523234708175374603}
   - {fileID: 6340411703624860753}
+  - {fileID: 7523234708175374603}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5088,6 +5089,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpeed: 12
+  _slamDownVelocity: 0
   _groundCollisionCheck: {fileID: 8701511277626807722}
   _interactionRadius: 0
   _interactionLayer:
@@ -5232,3 +5234,15 @@ MonoBehaviour:
     _prefab: {fileID: 1749062824642735526, guid: a7674c7ea465dd24e8e7a35c40786068,
       type: 3}
     _target: {fileID: 6340411703624860753}
+--- !u!114 &5424278314895115681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701511278655396703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0565122205855419fdca2e211d5812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

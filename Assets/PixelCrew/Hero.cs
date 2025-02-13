@@ -1,4 +1,5 @@
 ﻿using Assets.CommonComponents;
+using System;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -39,6 +40,7 @@ public class Hero : MonoBehaviour
     private Animator _animator;
     private SpawnComponent _spawnComponent;
     private BuffComponent _buffComponent;
+    private MoneyBagComponent _moneyBagComponent;
     private bool _allowSecondJump = true;
 
     public bool IsOnFloor { get; private set; }
@@ -54,6 +56,14 @@ public class Hero : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spawnComponent = GetComponent<SpawnComponent>();
         _buffComponent = GetComponent<BuffComponent>();
+        _moneyBagComponent = GetComponent<MoneyBagComponent>();
+
+        _moneyBagComponent.MoneyWithdrawed += OnMoneyWithdrawed;
+    }
+
+    private void OnMoneyWithdrawed(object sender, MoneyWithdrawed e)
+    {
+        SpawnCoins(e.Money);
     }
 
     public void SetDirection(Vector2 direction)
@@ -70,7 +80,6 @@ public class Hero : MonoBehaviour
     {
         _animator.SetTrigger(_hitHashString);
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _damageJumpSpeed);
-        SpawnCoins();
     }
 
     private void FixedUpdate()
@@ -194,8 +203,9 @@ public class Hero : MonoBehaviour
         _spawnComponent?.Spawn("SlamDust");
     }
 
-    public void SpawnCoins()
+    public void SpawnCoins(int count)
     {
+        _particleSystem.Emit(count);
         _particleSystem?.Play();
     }
 }
