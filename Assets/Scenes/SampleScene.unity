@@ -420,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244046835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49999952, y: -3.25, z: -10}
+  m_LocalPosition: {x: -0.49999976, y: -3.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1387989032}
@@ -530,18 +530,7 @@ MonoBehaviour:
   _tag: Player
   _action:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 248664249}
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &248664249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49999952, y: -3.25, z: -10}
+  m_LocalPosition: {x: -0.49999976, y: -3.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5728,11 +5717,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 360367372380611992, guid: 6a4b368d0c436ca4c88a0c9b3a5bdf1b,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 360367372380611998, guid: 6a4b368d0c436ca4c88a0c9b3a5bdf1b,
         type: 3}
       propertyPath: _jumpBoostAmount
@@ -5754,9 +5738,34 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
         type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
+        type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1787070683}
+    - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AddGold
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807521971466035648, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1807521971466035650, guid: f6a2d7d3f8d708041972b2bbd1a5fba5,
         type: 3}
       propertyPath: m_RootOrder
@@ -5826,11 +5835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 585580465712010400, guid: f3d306abc6727fc4e938bd999133e181,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5097756596732939536, guid: f3d306abc6727fc4e938bd999133e181,
         type: 3}
       propertyPath: m_RootOrder
@@ -5893,6 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4594901078262479689, guid: f3d306abc6727fc4e938bd999133e181, type: 3}
+    - {fileID: 5644458689186084118, guid: f3d306abc6727fc4e938bd999133e181, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f3d306abc6727fc4e938bd999133e181, type: 3}
 --- !u!1001 &3960676948432270195
 PrefabInstance:

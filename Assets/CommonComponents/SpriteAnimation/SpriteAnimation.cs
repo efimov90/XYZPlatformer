@@ -1,15 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.SpriteAnimation
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour
     {
-        [SerializeField] private int _frameRate;
-        [SerializeField] private bool _loop;
-        [SerializeField] private Sprite[] _sprites;
-        [SerializeField] private UnityEvent _onAnimationEnd;
+        [SerializeField] private string _initialAnimation = "Idle";
+        [SerializeField] private AnimationSequence[] _clips;
+        private AnimationSequence _currentSequence;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -18,35 +18,53 @@ namespace Assets.CommonComponents
         private float _nextFrameTime;
         private bool _isPlaying = true;
 
-        private void Start()
+        public void SetAnimation(string animationName)
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _currentSprite = 0;
+            _currentSequence = _clips.FirstOrDefault(x => x.Name == animationName);
 
-            _secondsPerFrame = 1f / _frameRate;
-        }
-
-        private void Update()
-        {
-            if(_nextFrameTime > Time.time)
+            if (_currentSequence == null)
             {
                 return;
             }
 
-            if(_sprites.Length <= _currentSprite)
+            _secondsPerFrame = 1f / _currentSequence.FrameRate;
+        }
+
+        private void Start()
+        {
+            SetAnimation(_initialAnimation);
+
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void Update()
+        {
+            if(_currentSequence is null)
             {
-                if (_loop)
+                return;
+            }
+
+            if (_nextFrameTime > Time.time)
+            {
+                return;
+            }
+
+            if (_currentSequence.Sprites.Length <= _currentSprite)
+            {
+                if (_currentSequence.Loop)
                 {
                     _currentSprite = 0;
                 }
                 else
                 {
-                    _onAnimationEnd?.Invoke();
+                    _currentSequence.OnAnimationEnd?.Invoke();
                     _isPlaying = false;
                     return;
                 }
             }
 
-            _spriteRenderer.sprite = _sprites[_currentSprite];
+            _spriteRenderer.sprite = _currentSequence.Sprites[_currentSprite];
             _nextFrameTime += _secondsPerFrame;
             _currentSprite++;
         }

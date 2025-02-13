@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5097756596732939536}
   - component: {fileID: 1540390362333449219}
-  - component: {fileID: 4600926466135886175}
   - component: {fileID: 585580465712010400}
   - component: {fileID: 7645772148119776000}
   - component: {fileID: 2336664301160239710}
   - component: {fileID: 1247577708688555970}
+  - component: {fileID: 497980320331774462}
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Untagged
@@ -87,44 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4600926466135886175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7988263350300785619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8571f6b986a4d34409c0dd09ce2e9330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7645772148119776000}
-        m_MethodName: Modify
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2336664301160239710}
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!58 &585580465712010400
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,16 +141,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: 3714227102187029162, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: -6202940564662568092, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: -8747976068718324687, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: 7142050841817600938, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: -860807820763296739, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: -5249288142952506341, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  - {fileID: 1089735312403315716, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
-  _onAnimationEnd:
+  _initialAnimation: Idle
+  _clips:
+  - Name: Idle
+    FrameRate: 10
+    Loop: 1
+    Sprites:
+    - {fileID: 3714227102187029162, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: -6202940564662568092, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: -8747976068718324687, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: 7142050841817600938, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: -860807820763296739, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: -5249288142952506341, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: 1089735312403315716, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    OnAnimationEnd:
+      m_PersistentCalls:
+        m_Calls: []
+  - Name: Destroy
+    FrameRate: 10
+    Loop: 0
+    Sprites:
+    - {fileID: 6040734443530017722, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: 8167133005111728920, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: 2014349484240403859, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    - {fileID: 6326803469982491369, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd, type: 3}
+    OnAnimationEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2336664301160239710}
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &497980320331774462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988263350300785619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8571f6b986a4d34409c0dd09ce2e9330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1247577708688555970}
+        m_MethodName: SetAnimation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7645772148119776000}
+        m_MethodName: Modify
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
