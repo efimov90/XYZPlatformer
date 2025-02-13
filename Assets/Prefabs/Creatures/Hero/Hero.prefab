@@ -5145,6 +5145,8 @@ MonoBehaviour:
   _particleSystem: {fileID: 607087655971441951}
   _attackRange: {fileID: 5209056384972781758}
   _attackValue: 1
+  _armedController: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
+  _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
 --- !u!50 &8701511278655396689
 Rigidbody2D:
   serializedVersion: 4

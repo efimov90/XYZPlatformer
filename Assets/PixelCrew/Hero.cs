@@ -1,5 +1,6 @@
 ﻿using Assets.CommonComponents;
 using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -40,6 +41,12 @@ public class Hero : MonoBehaviour
     [SerializeField]
     private int _attackValue;
 
+    [SerializeField]
+    private AnimatorController _armedController;
+
+    [SerializeField]
+    private AnimatorController _disarmedController;
+
     private Collider2D[] _interationResult = new Collider2D[1];
 
     private Rigidbody2D _rigidbody2D;
@@ -49,6 +56,7 @@ public class Hero : MonoBehaviour
     private BuffComponent _buffComponent;
     private MoneyBagComponent _moneyBagComponent;
     private bool _allowSecondJump = true;
+    private bool _isArmed;
 
     public bool IsOnFloor { get; private set; }
 
@@ -64,6 +72,8 @@ public class Hero : MonoBehaviour
         _spawnComponent = GetComponent<SpawnComponent>();
         _buffComponent = GetComponent<BuffComponent>();
         _moneyBagComponent = GetComponent<MoneyBagComponent>();
+
+        _animator.runtimeAnimatorController = _disarmedController;
 
         _moneyBagComponent.MoneyWithdrawed += OnMoneyWithdrawed;
     }
@@ -185,6 +195,11 @@ public class Hero : MonoBehaviour
 
     public void Attack()
     {
+        if (!_isArmed)
+        {
+            return;
+        }
+
         _animator.SetTrigger(_attackHashString);
     }
 
@@ -235,5 +250,11 @@ public class Hero : MonoBehaviour
     {
         _particleSystem.Emit(count);
         _particleSystem?.Play();
+    }
+
+    public void ArmHero()
+    {
+        _isArmed = true;
+        _animator.runtimeAnimatorController = _armedController;
     }
 }
