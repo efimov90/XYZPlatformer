@@ -6054,6 +6054,11 @@ PrefabInstance:
       objectReference: {fileID: 248664249}
     - target: {fileID: 8701511278655396700, guid: 312a56d1c7848f847b986ba84b0a5d40,
         type: 3}
+      propertyPath: _slamDownVelocity
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701511278655396700, guid: 312a56d1c7848f847b986ba84b0a5d40,
+        type: 3}
       propertyPath: _interactionRadius
       value: 1
       objectReference: {fileID: 0}

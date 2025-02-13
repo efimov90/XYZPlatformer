@@ -18,6 +18,9 @@ public class Hero : MonoBehaviour
     private float _damageJumpSpeed;
 
     [SerializeField]
+    private float _slamDownVelocity;
+
+    [SerializeField]
     private LayerCollisionCheck _groundCollisionCheck;
 
     [SerializeField]
@@ -164,6 +167,18 @@ public class Hero : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (IsOnFloor)
+        {
+            var contact = collision.contacts[0];
+            if(contact.relativeVelocity.y >= _slamDownVelocity)
+            {
+                SpawnSlamDust();
+            }
+        }
+    }
+
     public void SpawnFootDust()
     {
         _spawnComponent?.Spawn("FootDust");
@@ -172,6 +187,11 @@ public class Hero : MonoBehaviour
     public void SpawnJumpDust()
     {
         _spawnComponent?.Spawn("JumpDust");
+    }
+
+    public void SpawnSlamDust()
+    {
+        _spawnComponent?.Spawn("SlamDust");
     }
 
     public void SpawnCoins()
