@@ -111,6 +111,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_7
       objectReference: {fileID: 0}
+    - target: {fileID: 4117407944134670313, guid: b592d20c661b71a4399935051e31227d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117407944134670313, guid: b592d20c661b71a4399935051e31227d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b592d20c661b71a4399935051e31227d, type: 3}
 --- !u!4 &465315553548787149 stripped
@@ -185,6 +195,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Barrel_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437945160997247229, guid: 2af4cae74b25d004e96f670599bbe80d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437945160997247229, guid: 2af4cae74b25d004e96f670599bbe80d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 2957470647594225193, guid: 2af4cae74b25d004e96f670599bbe80d,
         type: 3}
@@ -276,6 +296,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_8
       objectReference: {fileID: 0}
+    - target: {fileID: 6366487086648253716, guid: 328b881c46162f34ba8f9b9a832fee55,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6366487086648253716, guid: 328b881c46162f34ba8f9b9a832fee55,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 8454791655873022194, guid: 328b881c46162f34ba8f9b9a832fee55,
         type: 3}
       propertyPath: m_Enabled
@@ -305,6 +335,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Barrel_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559161512997290602, guid: 5ccd9e719461b8d43bf4c7a6631fed25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559161512997290602, guid: 5ccd9e719461b8d43bf4c7a6631fed25,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 5383319940375802544, guid: 5ccd9e719461b8d43bf4c7a6631fed25,
         type: 3}
