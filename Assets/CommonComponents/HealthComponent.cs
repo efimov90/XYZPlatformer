@@ -7,22 +7,26 @@ namespace Assets.CommonComponents
     {
         [SerializeField] private int _health;
         [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
 
-        public void ApplyDamage(int damage)
+        public void ModifyHealth(int hpDelta)
         {
-            _health -= damage;
-            _onDamage?.Invoke();
+            _health += hpDelta;
+
+            if (hpDelta < 0)
+            {
+                _onDamage?.Invoke();
+            }
+            else if (hpDelta > 0)
+            {
+                _onHeal?.Invoke();
+            }
 
             if (_health <= 0)
             {
                 _onDie?.Invoke();
             }
-        }
-
-        public void Heal(int amount)
-        {
-            _health += amount;
         }
     }
 }

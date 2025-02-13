@@ -5810,7 +5810,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Potion
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4594901078262479689, guid: f3d306abc6727fc4e938bd999133e181, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f3d306abc6727fc4e938bd999133e181, type: 3}
 --- !u!1001 &3960676948432270195
 PrefabInstance:

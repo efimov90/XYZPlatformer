@@ -2,15 +2,15 @@
 
 namespace Assets.CommonComponents
 {
-    public class HealComponent : MonoBehaviour
+    public class ModifyHealthComponent : MonoBehaviour
     {
-        [SerializeField] private int _healAmount;
+        [SerializeField] private int _hpDelta;
 
         public void Modify(GameObject target)
         {
             if (target.GetComponent<HealthComponent>() is HealthComponent healthComponent)
             {
-                healthComponent.Heal(_healAmount);
+                healthComponent.ModifyHealth(_hpDelta);
             }
         }
     }

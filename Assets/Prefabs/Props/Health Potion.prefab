@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5097756596732939536}
   - component: {fileID: 1540390362333449219}
   - component: {fileID: 4600926466135886175}
-  - component: {fileID: 4594901078262479689}
   - component: {fileID: 585580465712010400}
+  - component: {fileID: 7645772148119776000}
   - component: {fileID: 2336664301160239710}
   m_Layer: 0
   m_Name: Health Potion
@@ -102,7 +102,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4594901078262479689}
+      - m_Target: {fileID: 7645772148119776000}
         m_MethodName: Modify
         m_Mode: 0
         m_Arguments:
@@ -124,19 +124,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4594901078262479689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7988263350300785619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e49b7d8e98fc14d90ff8f79f74c282, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healAmount: 5
 --- !u!58 &585580465712010400
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,6 +140,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &7645772148119776000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988263350300785619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d23fe04463d78f4791a68df0542706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: 10
 --- !u!114 &2336664301160239710
 MonoBehaviour:
   m_ObjectHideFlags: 0
