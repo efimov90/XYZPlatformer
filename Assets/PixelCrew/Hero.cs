@@ -35,6 +35,7 @@ public class Hero : MonoBehaviour
     private Vector2 _direction = Vector2.zero;
     private Animator _animator;
     private SpawnComponent _spawnComponent;
+    private BuffComponent _buffComponent;
     private bool _allowSecondJump = true;
 
     public bool IsOnFloor { get; private set; }
@@ -49,6 +50,7 @@ public class Hero : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spawnComponent = GetComponent<SpawnComponent>();
+        _buffComponent = GetComponent<BuffComponent>();
     }
 
     public void SetDirection(Vector2 direction)
@@ -118,12 +120,12 @@ public class Hero : MonoBehaviour
         if(IsOnFloor)
         {
             SpawnJumpDust();
-            velocityY += _jumpSpeed;
+            velocityY += _jumpSpeed * _buffComponent.JumpBoostAmount;
         }
         else if (_allowSecondJump)
         {
             SpawnJumpDust();
-            velocityY = _jumpSpeed;
+            velocityY = _jumpSpeed * _buffComponent.JumpBoostAmount;
             _allowSecondJump = false;
         }
 
