@@ -1607,24 +1607,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1322117970}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1412355472 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8701511278655396703, guid: 312a56d1c7848f847b986ba84b0a5d40,
-    type: 3}
-  m_PrefabInstance: {fileID: 8701511278294455179}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1412355473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412355472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e5431068b012243ba1a7210e3ef406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1521860338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4999,7 +4981,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8701511278294455179}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412355472}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ee16504d2d4d3e499f9b75b6216884b, type: 3}
@@ -6064,11 +6046,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpParticles
       objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396694, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 248664249}
     - target: {fileID: 8701511278655396695, guid: 312a56d1c7848f847b986ba84b0a5d40,
         type: 3}
       propertyPath: m_Controller

@@ -16,7 +16,7 @@ namespace Assets.CommonComponents
                 }
                 else
                 {
-                    moneyBagComponent.Withdraw(_moneyDelta);
+                    moneyBagComponent.Withdraw(-_moneyDelta);
                 }
             }
         }

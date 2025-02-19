@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7645772148119776000}
   - component: {fileID: 2336664301160239710}
   - component: {fileID: 1247577708688555970}
-  - component: {fileID: 497980320331774462}
+  - component: {fileID: 3210450865897805555}
   m_Layer: 0
   m_Name: Health Potion
   m_TagString: Untagged
@@ -97,7 +97,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -179,7 +179,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &497980320331774462
+--- !u!114 &3210450865897805555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7988263350300785619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8571f6b986a4d34409c0dd09ce2e9330, type: 3}
+  m_Script: {fileID: 11500000, guid: 164346194b65c174d946430b82249b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
