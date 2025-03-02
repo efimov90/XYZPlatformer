@@ -1,4 +1,5 @@
 ﻿using Assets.CommonComponents;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,9 @@ namespace Assets.PixelCrew.Creatures
 
         [SerializeField]
         private float _alarmDelay = 1f;
+
+        [SerializeField]
+        private float _attackCooldown = 1f;
 
         private SpawnComponent _spawnComponent;
 
@@ -59,7 +63,14 @@ namespace Assets.PixelCrew.Creatures
         {
             while (_visionCheck.IsTouchingLayer)
             {
-                SetDirectionToTarget();
+                if(_attackCheck.IsTouchingLayer)
+                {
+                    StartState(Attack());
+                }
+                else
+                {
+                    SetDirectionToTarget();
+                }
                 yield return null;
             }
 
@@ -67,6 +78,28 @@ namespace Assets.PixelCrew.Creatures
             _isAgro = false;
             ResetDirection();
             StartState(Patrolling());
+        }
+
+        private IEnumerator Attack()
+        {
+            ResetDirection();
+
+            while(_attackCheck.IsTouchingLayer)
+            {
+                _creature.Attack();
+                yield return new WaitForSeconds(_attackCooldown);
+            }
+
+            if (_visionCheck.IsTouchingLayer)
+            {
+                StartState(Chasing());
+            }
+            else
+            {
+                _isAgro = false;
+                _spawnComponent.Spawn("Interrogation");
+                StartState(Patrolling());
+            }
         }
 
         private void SetDirectionToTarget()
