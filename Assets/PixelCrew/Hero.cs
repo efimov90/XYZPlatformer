@@ -102,7 +102,10 @@ public class Hero : MonoBehaviour
 
     private void OnMoneyWithdrawed(object sender, MoneyWithdrawed e)
     {
-        SpawnCoins(e.Money);
+        if(_moneyBagComponent.Money > 0)
+        {
+            SpawnCoins(e.Money);
+        }
     }
 
     public void SetDirection(Vector2 direction)
@@ -272,7 +275,11 @@ public class Hero : MonoBehaviour
 
     public void SpawnCoins(int count)
     {
-        _particleSystem.Emit(count);
+        var burst = _particleSystem.emission.GetBurst(0);
+        burst.count = count;
+        _particleSystem.emission.SetBurst(0, burst);
+
+        _particleSystem.gameObject.SetActive(true);
         _particleSystem?.Play();
     }
 

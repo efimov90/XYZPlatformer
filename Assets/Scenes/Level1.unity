@@ -5031,7 +5031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Coint: 0
+    Money: 0
     Health: 0
     IsArmed: 0
 --- !u!1001 &2005911373
