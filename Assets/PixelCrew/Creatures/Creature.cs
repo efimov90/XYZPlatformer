@@ -24,6 +24,9 @@ namespace Assets.PixelCrew.Creatures
 
         [Header("Parameters")]
         [SerializeField]
+        protected bool _invertScale = false;
+
+        [SerializeField]
         protected float _speed = 0f;
 
         [SerializeField]
@@ -137,13 +140,15 @@ namespace Assets.PixelCrew.Creatures
 
         private void UpdateSpriteDirection()
         {
+            var multiply = _invertScale ? -1 : 1;
+
             if (_direction.x > 0)
             {
-                transform.localScale = Vector3.one;
+                transform.localScale = new Vector3(multiply, 1, 1);
             }
             else if (_direction.x < 0)
             {
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-multiply, 1, 1);
             }
         }
 
