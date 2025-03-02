@@ -81,10 +81,10 @@ namespace Assets.PixelCrew.Creatures
                 _allowSecondJump = true;
             }
 
-            if (!isJumping)
-            {
-                return 0f;
-            }
+            //if (!isJumping)
+            //{
+            //    return 0f;
+            //}
 
             return base.CalculateVelocityY();
         }

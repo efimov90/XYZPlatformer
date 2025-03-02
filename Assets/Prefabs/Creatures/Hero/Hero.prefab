@@ -5010,6 +5010,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
+  _isTouchingLayer: 0
 --- !u!1 &8701511278655396703
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,7 +5097,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6146700129834819302, guid: 9a81282418fb07e4c861cd57e3ef51c6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5134,18 +5135,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0212dceddb8884abfc16996e112b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _jumpSpeed: 12
-  _damageJumpSpeed: 12
-  _slamDownVelocity: 0
+  _speed: 4
+  _jumpSpeed: 20
+  _damageJumpSpeed: 15
+  _attackValue: 1
+  _attackRange: {fileID: 5209056384972781758}
   _groundCollisionCheck: {fileID: 8701511277626807722}
-  _interactionRadius: 0
+  _slamDownVelocity: 20
+  _interactionRadius: 1
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 512
   _particleSystem: {fileID: 607087655971441951}
-  _attackRange: {fileID: 5209056384972781758}
-  _attackValue: 1
   _armedController: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
   _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
 --- !u!50 &8701511278655396689

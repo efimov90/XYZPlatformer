@@ -6093,26 +6093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpParticles
       objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396695, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
-    - target: {fileID: 8701511278655396700, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: _slamDownVelocity
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396700, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: _interactionRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396700, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: _interactionLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 8701511278655396701, guid: 312a56d1c7848f847b986ba84b0a5d40,
         type: 3}
       propertyPath: m_RootOrder
@@ -6167,21 +6147,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396702, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396702, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8701511278655396702, guid: 312a56d1c7848f847b986ba84b0a5d40,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1525650027
       objectReference: {fileID: 0}
     - target: {fileID: 8701511278655396703, guid: 312a56d1c7848f847b986ba84b0a5d40,
         type: 3}

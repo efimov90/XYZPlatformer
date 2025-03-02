@@ -7,9 +7,12 @@ namespace Assets.CommonComponents
         [SerializeField]
         private LayerMask _layerMask;
 
+        [SerializeField]
+        private bool _isTouchingLayer;
+
         private Collider2D _collider;
 
-        public bool IsTouchingLayer { get; private set; }
+        public bool IsTouchingLayer => _isTouchingLayer;
 
         private void Awake()
         {
@@ -28,7 +31,7 @@ namespace Assets.CommonComponents
 
         private void UpdateIsTouchingLayer()
         {
-            IsTouchingLayer = _collider.IsTouchingLayers(_layerMask);
+            _isTouchingLayer = _collider.IsTouchingLayers(_layerMask);
         }
     }
 }
