@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.PixelCrew.Creatures;
+using UnityEngine;
 
 namespace Assets.CommonComponents
 {
