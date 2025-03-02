@@ -55,6 +55,7 @@ public class Hero : MonoBehaviour
     private SpawnComponent _spawnComponent;
     private BuffComponent _buffComponent;
     private MoneyBagComponent _moneyBagComponent;
+    private HealthComponent _healthComponent;
     private bool _allowSecondJump = true;
 
     private GameSession _gameSession;
@@ -65,6 +66,7 @@ public class Hero : MonoBehaviour
     {
         _gameSession = FindObjectOfType<GameSession>();
         _moneyBagComponent.SetMoneySilently(_gameSession.PlayerData.Money);
+        _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health);
         UpdateHeroWeapon();
     }
 
@@ -80,6 +82,7 @@ public class Hero : MonoBehaviour
         _spawnComponent = GetComponent<SpawnComponent>();
         _buffComponent = GetComponent<BuffComponent>();
         _moneyBagComponent = GetComponent<MoneyBagComponent>();
+        _healthComponent = GetComponent<HealthComponent>();
 
         _animator.runtimeAnimatorController = _disarmedController;
 

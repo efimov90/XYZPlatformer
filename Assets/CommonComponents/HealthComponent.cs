@@ -31,5 +31,18 @@ namespace Assets.CommonComponents
 
             _onHealthChanged?.Invoke(_health);
         }
+
+#if UNITY_EDITOR
+        [ContextMenu("NotifyHealthChanged")]
+        private void NotifyHealthChanged()
+        {
+            _onHealthChanged?.Invoke(_health);
+        }
+#endif
+
+        public void SetHealthSilently(int health)
+        {
+            _health = health;
+        }
     }
 }
