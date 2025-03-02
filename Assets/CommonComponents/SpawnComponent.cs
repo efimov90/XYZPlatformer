@@ -9,7 +9,15 @@ namespace Assets.CommonComponents
 
         public void Spawn(string name)
         {
-            var spawnObject = _spawnObjects.FirstOrDefault(x => x.Name == name);
+            var spawnObject = _spawnObjects
+                .FirstOrDefault(x => x.Name == name);
+
+            if(spawnObject is null)
+            {
+                Debug.LogError($"SpawnObject with name {name} not found");
+
+                return;
+            }
 
             var newInstance = Instantiate(spawnObject.Prefab, spawnObject.Target.position, Quaternion.identity);
             newInstance.transform.localScale = spawnObject.Target.lossyScale;
