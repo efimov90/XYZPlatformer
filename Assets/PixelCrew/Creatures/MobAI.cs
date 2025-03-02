@@ -9,7 +9,7 @@ namespace Assets.PixelCrew.Creatures
     {
         [SerializeField]
         private LayerCollisionCheck _visionCheck;
-        
+
         [SerializeField]
         private LayerCollisionCheck _attackCheck;
 
@@ -63,7 +63,7 @@ namespace Assets.PixelCrew.Creatures
         {
             while (_visionCheck.IsTouchingLayer)
             {
-                if(_attackCheck.IsTouchingLayer)
+                if (_attackCheck.IsTouchingLayer)
                 {
                     StartState(Attack());
                 }
@@ -84,7 +84,7 @@ namespace Assets.PixelCrew.Creatures
         {
             ResetDirection();
 
-            while(_attackCheck.IsTouchingLayer)
+            while (_attackCheck.IsTouchingLayer)
             {
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
@@ -119,9 +119,31 @@ namespace Assets.PixelCrew.Creatures
             yield return null;
         }
 
+        public void Die()
+        {
+            ResetDirection();
+
+            if (_currentCoroutine != null)
+            {
+                StopCoroutine(_currentCoroutine);
+            }
+
+            _creature.Die();
+        }
+
         private void StartState(IEnumerator coroutine)
         {
-            if(_currentCoroutine != null)
+            if (_creature.IsDead)
+            {
+                if (_currentCoroutine != null)
+                {
+                    StopCoroutine(_currentCoroutine);
+                }
+
+                return;
+            }
+
+            if (_currentCoroutine != null)
             {
                 StopCoroutine(_currentCoroutine);
             }

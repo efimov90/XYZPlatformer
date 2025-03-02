@@ -413,7 +413,6 @@ GameObject:
   - component: {fileID: 8701511278655396694}
   - component: {fileID: 2932966600243602135}
   - component: {fileID: 4531043595785675510}
-  - component: {fileID: 8190628197929658735}
   - component: {fileID: 1778840690276098697}
   m_Layer: 11
   m_Name: Sharky
@@ -582,8 +581,8 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8190628197929658735}
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 1778840690276098697}
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -652,19 +651,6 @@ MonoBehaviour:
   _attackValue: 1
   _attackRange: {fileID: 5209056384972781758}
   _groundCollisionCheck: {fileID: 8701511277626807722}
---- !u!114 &8190628197929658735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701511278655396703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 8701511278655396703}
 --- !u!114 &1778840690276098697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,3 +666,4 @@ MonoBehaviour:
   _visionCheck: {fileID: 3620866960079984514}
   _attackCheck: {fileID: 7760388474293510768}
   _alarmDelay: 1
+  _attackCooldown: 1

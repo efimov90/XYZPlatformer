@@ -20,6 +20,10 @@ namespace Assets.PixelCrew.Creatures
 
         private static readonly int _attackHashString =
             Animator.StringToHash("Attack Trigger");
+
+        private static readonly int _isDeadHashString =
+            Animator.StringToHash("IsDead");
+
         #endregion Animation Keys
 
         [Header("Parameters")]
@@ -53,6 +57,8 @@ namespace Assets.PixelCrew.Creatures
 
         public bool IsOnFloor { get; protected set; }
 
+        public bool IsDead { get; protected set; } = false;
+
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
@@ -69,6 +75,12 @@ namespace Assets.PixelCrew.Creatures
         {
             _animator.SetTrigger(_hitHashString);
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _damageJumpSpeed);
+        }
+
+        public void Die()
+        {
+            _animator.SetBool(_isDeadHashString, true);
+            IsDead = true;
         }
 
         protected virtual void Awake()
