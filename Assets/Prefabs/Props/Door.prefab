@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 537785859804457224}
   m_Layer: 9
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde39338c5fddd640a2c9f9da77fc6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: 
+  _sceneName: Level2
 --- !u!114 &7934970632747893011
 MonoBehaviour:
   m_ObjectHideFlags: 0

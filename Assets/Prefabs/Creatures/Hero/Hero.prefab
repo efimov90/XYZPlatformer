@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5660479943093108897}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FootStepTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 7523234708175374603}
   - component: {fileID: 607087655971441951}
   - component: {fileID: 7364425582015531344}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CoinsOnDamageParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4842,6 +4842,82 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &5026679342972555647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4477070988322934818}
+  - component: {fileID: 5277828391195267486}
+  - component: {fileID: 7002833525791936160}
+  m_Layer: 12
+  m_Name: InteractionPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4477070988322934818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026679342972555647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8701511278655396701}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5277828391195267486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026679342972555647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58a7a05ee8c18a49bcbbce0800a1891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.6
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _tags:
+  - Interactable
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7002833525791936160}
+        m_MethodName: DoInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7002833525791936160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026679342972555647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9c79b5358c05d4f8ad51f103929782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5360145664566848346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4852,7 +4928,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2057645368935943034}
   - component: {fileID: 5209056384972781758}
-  m_Layer: 0
+  - component: {fileID: 1345421067452702762}
+  m_Layer: 12
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -4886,7 +4963,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 0.5
-  _tag: Enemy
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 3895
+  _tags:
+  - Enemy
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1345421067452702762}
+        m_MethodName: Modify
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1345421067452702762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5360145664566848346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d23fe04463d78f4791a68df0542706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
 --- !u!1 &7278574024676556496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,7 +5004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6340411703624860753}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SlamParticleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4926,7 +5034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759603967743537265}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: JumpParticlesTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4958,7 +5066,7 @@ GameObject:
   - component: {fileID: 8701511277626807700}
   - component: {fileID: 8701511277626807723}
   - component: {fileID: 8701511277626807722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundCheckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5140,7 @@ GameObject:
   - component: {fileID: 5424278314895115681}
   - component: {fileID: 5196127121938451454}
   - component: {fileID: 2994632665407025581}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5056,6 +5164,7 @@ Transform:
   - {fileID: 6340411703624860753}
   - {fileID: 7523234708175374603}
   - {fileID: 2057645368935943034}
+  - {fileID: 4477070988322934818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5142,13 +5251,10 @@ MonoBehaviour:
   _attackRange: {fileID: 5209056384972781758}
   _groundCollisionCheck: {fileID: 8701511277626807722}
   _slamDownVelocity: 20
-  _interactionRadius: 1
-  _interactionLayer:
-    serializedVersion: 2
-    m_Bits: 512
   _particleSystem: {fileID: 607087655971441951}
   _armedController: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
   _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
+  _interactionRange: {fileID: 5277828391195267486}
 --- !u!50 &8701511278655396689
 Rigidbody2D:
   serializedVersion: 4

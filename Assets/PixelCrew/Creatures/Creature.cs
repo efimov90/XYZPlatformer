@@ -146,5 +146,10 @@ namespace Assets.PixelCrew.Creatures
                 transform.localScale = new Vector3(-1, 1, 1);
             }
         }
+
+        public virtual void OnAttack()
+        {
+            _attackRange.Check();
+        }
     }
 }

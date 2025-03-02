@@ -5196,11 +5196,6 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 595230667}
-    - target: {fileID: 4683903001121893349, guid: ec6dd3f6478e26943b5830fdcd9804a6,
-        type: 3}
-      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Switch
-      objectReference: {fileID: 0}
     - target: {fileID: 6487512515004293428, guid: ec6dd3f6478e26943b5830fdcd9804a6,
         type: 3}
       propertyPath: m_Name
@@ -5866,11 +5861,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7934970632747893010, guid: 09e4beff51a95774e8311bec41d0b833,
-        type: 3}
-      propertyPath: _sceneName
-      value: Level2
-      objectReference: {fileID: 0}
     - target: {fileID: 7934970632747893012, guid: 09e4beff51a95774e8311bec41d0b833,
         type: 3}
       propertyPath: m_RootOrder

@@ -10,35 +10,33 @@ namespace Assets.CommonComponents
         private float _radius = 1f;
 
         [SerializeField]
-        private string _tag;
+        private LayerMask _layerMask;
 
-        /// <summary>
-        /// Небезопасная штука в плане конкурентности
-        /// </summary>
-        private Collider2D[] _interationResult = new Collider2D[5];
+        [SerializeField]
+        private string[] _tags;
 
-        public GameObject[] Check()
+        [SerializeField]
+        private OnOverlapEvent _onOverlap;
+
+        private readonly Collider2D[] _interationResult = new Collider2D[10];
+
+        public void Check()
         {
-            var intersectionsCount = Physics2D.OverlapCircleNonAlloc(
+            var size = Physics2D.OverlapCircleNonAlloc(
                transform.position,
                _radius,
-               _interationResult);
+               _interationResult,
+               _layerMask);
 
-            // Код из видео
+            for (var i = 0; i < size; i++)
+            {
+                var overlapResult = _interationResult[i];
 
-            //var overlaps = new List<GameObject>();
-
-            //for (int i = 0; i < intersectionsCount; i++)
-            //{
-            //    overlaps.Add(_interationResult[i].gameObject);
-            //}
-
-            //return overlaps.ToArray();
-
-            return _interationResult
-                .Select(x => x?.gameObject)
-                .Where(x => x != null && x.tag == _tag)
-                .ToArray();
+                if (_tags.Any(overlapResult.CompareTag))
+                {
+                    _onOverlap?.Invoke(overlapResult.gameObject);
+                }
+            }
         }
 
 #if UNITY_EDITOR

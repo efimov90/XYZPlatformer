@@ -11,12 +11,6 @@ namespace Assets.PixelCrew.Creatures
         private float _slamDownVelocity;
 
         [SerializeField]
-        private float _interactionRadius;
-
-        [SerializeField]
-        private LayerMask _interactionLayer;
-
-        [SerializeField]
         private ParticleSystem _particleSystem;
 
         [SerializeField]
@@ -25,7 +19,8 @@ namespace Assets.PixelCrew.Creatures
         [SerializeField]
         private AnimatorController _disarmedController;
 
-        private Collider2D[] _interationResult = new Collider2D[1];
+        [SerializeField]
+        private CheckCircleOverlap _interactionRange;
 
         private BuffComponent _buffComponent;
         private MoneyBagComponent _moneyBagComponent;
@@ -81,11 +76,6 @@ namespace Assets.PixelCrew.Creatures
                 _allowSecondJump = true;
             }
 
-            //if (!isJumping)
-            //{
-            //    return 0f;
-            //}
-
             return base.CalculateVelocityY();
         }
 
@@ -108,22 +98,7 @@ namespace Assets.PixelCrew.Creatures
 
         public void Interact()
         {
-            var intersectionsCount = Physics2D.OverlapCircleNonAlloc(
-                transform.position,
-                _interactionRadius,
-                _interationResult,
-                _interactionLayer);
-
-            Debug.Log(intersectionsCount);
-
-            for (int i = 0; i < intersectionsCount; i++)
-            {
-                if (_interationResult[i].GetComponent<InteractableComponent>() is InteractableComponent interactableComponent)
-                {
-                    interactableComponent.Interact();
-                    return;
-                }
-            }
+            _interactionRange.Check();
         }
 
         public override void Attack()
@@ -134,22 +109,6 @@ namespace Assets.PixelCrew.Creatures
             }
 
             base.Attack();
-        }
-
-        public void OnAttack()
-        {
-            var attackedGameObjects = _attackRange.Check();
-
-            Debug.Log($"{attackedGameObjects.Length}");
-
-            for (int i = 0; i < attackedGameObjects.Length; i++)
-            {
-                if (attackedGameObjects[i].GetComponent<HealthComponent>() is HealthComponent healthComponent)
-                {
-                    Debug.Log($"Found attackable: {attackedGameObjects[i].name}");
-                    healthComponent.ModifyHealth(-_attackValue);
-                }
-            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
