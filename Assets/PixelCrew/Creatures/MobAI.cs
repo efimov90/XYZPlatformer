@@ -1,4 +1,5 @@
 ﻿using Assets.CommonComponents;
+using Assets.PixelCrew.Creatures.Behaviours;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -18,6 +19,8 @@ namespace Assets.PixelCrew.Creatures
         [SerializeField]
         private float _alarmDelay = 1f;
 
+        private Patrol _patrol;
+
         [SerializeField]
         private float _attackCooldown = 1f;
 
@@ -32,11 +35,12 @@ namespace Assets.PixelCrew.Creatures
         {
             _spawnComponent = GetComponent<SpawnComponent>();
             _creature = GetComponent<Creature>();
+            _patrol = GetComponent<Patrol>();
         }
 
         private void Start()
         {
-            StartState(Patrolling());
+            StartState(_patrol.DoPatrol());
         }
 
         public void OnHeroInVision(GameObject hero)
@@ -77,7 +81,7 @@ namespace Assets.PixelCrew.Creatures
             _spawnComponent.Spawn("Interrogation");
             _isAgro = false;
             ResetDirection();
-            StartState(Patrolling());
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
@@ -98,7 +102,7 @@ namespace Assets.PixelCrew.Creatures
             {
                 _isAgro = false;
                 _spawnComponent.Spawn("Interrogation");
-                StartState(Patrolling());
+                StartState(_patrol.DoPatrol());
             }
         }
 
@@ -112,11 +116,6 @@ namespace Assets.PixelCrew.Creatures
         private void ResetDirection()
         {
             _creature.SetDirection(Vector3.zero);
-        }
-
-        private IEnumerator Patrolling()
-        {
-            yield return null;
         }
 
         public void Die()
