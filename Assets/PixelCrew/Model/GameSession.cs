@@ -21,8 +21,6 @@ namespace Assets.PixelCrew.Model
             {
                 DontDestroyOnLoad(this);
             }
-
-            _data = new PlayerData();
         }
 
         private bool IsSessionExitst()
