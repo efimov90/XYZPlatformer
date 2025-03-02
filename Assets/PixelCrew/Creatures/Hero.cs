@@ -5,28 +5,10 @@ using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures
 {
-    public class Hero : MonoBehaviour
+    public class Hero : Creature
     {
-        private static readonly int _isOnFloorHashString = Animator.StringToHash("IsOnFloor");
-        private static readonly int _verticalVelocityHashString = Animator.StringToHash("VerticalVelocity");
-        private static readonly int _isRunningHashString = Animator.StringToHash("IsRunning");
-        private static readonly int _hitHashString = Animator.StringToHash("Hit Trigger");
-        private static readonly int _attackHashString = Animator.StringToHash("Attack Trigger");
-
-        [SerializeField]
-        private float _speed = 0f;
-
-        [SerializeField]
-        private float _jumpSpeed;
-
-        [SerializeField]
-        private float _damageJumpSpeed;
-
         [SerializeField]
         private float _slamDownVelocity;
-
-        [SerializeField]
-        private LayerCollisionCheck _groundCollisionCheck;
 
         [SerializeField]
         private float _interactionRadius;
@@ -38,12 +20,6 @@ namespace Assets.PixelCrew.Creatures
         private ParticleSystem _particleSystem;
 
         [SerializeField]
-        private CheckCircleOverlap _attackRange;
-
-        [SerializeField]
-        private int _attackValue;
-
-        [SerializeField]
         private AnimatorController _armedController;
 
         [SerializeField]
@@ -51,18 +27,11 @@ namespace Assets.PixelCrew.Creatures
 
         private Collider2D[] _interationResult = new Collider2D[1];
 
-        private Rigidbody2D _rigidbody2D;
-        private Vector2 _direction = Vector2.zero;
-        private Animator _animator;
-        private SpawnComponent _spawnComponent;
         private BuffComponent _buffComponent;
         private MoneyBagComponent _moneyBagComponent;
-        private HealthComponent _healthComponent;
         private bool _allowSecondJump = true;
 
         private GameSession _gameSession;
-
-        public bool IsOnFloor { get; private set; }
 
         private void Start()
         {
@@ -72,19 +41,12 @@ namespace Assets.PixelCrew.Creatures
             UpdateHeroWeapon();
         }
 
-        private void Update()
+        protected override void Awake()
         {
-            IsOnFloor = _groundCollisionCheck.IsTouchingLayer;
-        }
-
-        private void Awake()
-        {
-            _rigidbody2D = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
-            _spawnComponent = GetComponent<SpawnComponent>();
+            base.Awake();
             _buffComponent = GetComponent<BuffComponent>();
             _moneyBagComponent = GetComponent<MoneyBagComponent>();
-            _healthComponent = GetComponent<HealthComponent>();
+
 
             _animator.runtimeAnimatorController = _disarmedController;
 
@@ -110,40 +72,8 @@ namespace Assets.PixelCrew.Creatures
             }
         }
 
-        public void SetDirection(Vector2 direction)
+        protected override float CalculateVelocityY()
         {
-            _direction = direction;
-        }
-
-        public void SaySomething()
-        {
-            Debug.Log("Something!");
-        }
-
-        public void TakeDamage()
-        {
-            _animator.SetTrigger(_hitHashString);
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _damageJumpSpeed);
-        }
-
-        private void FixedUpdate()
-        {
-            var velocityX = _direction.x * _speed;
-            var velocityY = CalculateVelocityY();
-
-            _rigidbody2D.velocity = new Vector2(velocityX, velocityY);
-
-            _animator.SetBool(_isOnFloorHashString, IsOnFloor);
-            _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
-            _animator.SetBool(_isRunningHashString, _direction.x != 0);
-
-            UpdateSpriteDirection();
-        }
-
-        private float CalculateVelocityY()
-        {
-            var velocityY = _rigidbody2D.velocity.y;
-
             var isJumping = _direction.y > 0;
 
             if (IsOnFloor)
@@ -151,28 +81,16 @@ namespace Assets.PixelCrew.Creatures
                 _allowSecondJump = true;
             }
 
-            if (isJumping)
+            if (!isJumping)
             {
-                velocityY = CalculateJumpVelocity(velocityY);
-
-            }
-            else if (_rigidbody2D.velocity.y > 0)
-            {
-                velocityY *= 0.5f;
+                return 0f;
             }
 
-            return velocityY;
+            return base.CalculateVelocityY();
         }
 
-        private float CalculateJumpVelocity(float velocityY)
+        protected override float CalculateJumpVelocity(float velocityY)
         {
-            var isFalling = _rigidbody2D.velocity.y <= 0;
-
-            if (!isFalling)
-            {
-                return velocityY;
-            }
-
             if (IsOnFloor)
             {
                 SpawnJumpDust();
@@ -186,18 +104,6 @@ namespace Assets.PixelCrew.Creatures
             }
 
             return velocityY;
-        }
-
-        private void UpdateSpriteDirection()
-        {
-            if (_direction.x > 0)
-            {
-                transform.localScale = Vector3.one;
-            }
-            else if (_direction.x < 0)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
         }
 
         public void Interact()
@@ -220,16 +126,14 @@ namespace Assets.PixelCrew.Creatures
             }
         }
 
-        public void Attack()
+        public override void Attack()
         {
             if (!_gameSession.PlayerData.IsArmed)
             {
                 return;
             }
 
-            _spawnComponent.Spawn("SwordParticle");
-
-            _animator.SetTrigger(_attackHashString);
+            base.Attack();
         }
 
         public void OnAttack()
@@ -258,21 +162,6 @@ namespace Assets.PixelCrew.Creatures
                     SpawnSlamDust();
                 }
             }
-        }
-
-        public void SpawnFootDust()
-        {
-            _spawnComponent?.Spawn("FootDust");
-        }
-
-        public void SpawnJumpDust()
-        {
-            _spawnComponent?.Spawn("JumpDust");
-        }
-
-        public void SpawnSlamDust()
-        {
-            _spawnComponent?.Spawn("SlamDust");
         }
 
         public void SpawnCoins(int count)
