@@ -120,12 +120,12 @@ namespace Assets.PixelCrew.Creatures
 
         public void Die()
         {
-            ResetDirection();
-
             if (_currentCoroutine != null)
             {
                 StopCoroutine(_currentCoroutine);
             }
+
+            ResetDirection();
 
             _creature.Die();
         }
