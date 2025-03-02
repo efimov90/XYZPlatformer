@@ -5,6 +5,7 @@ namespace Assets.CommonComponents
 {
     public class MoneyBagComponent : MonoBehaviour
     {
+        public event EventHandler<MoneyChanged> MoneyChanged;
         public event EventHandler<MoneyWithdrawed> MoneyWithdrawed;
 
         [SerializeField] public int Money;
@@ -16,12 +17,19 @@ namespace Assets.CommonComponents
             MoneyWithdrawed.Invoke(this, new MoneyWithdrawed(cointsToWithdraw));
 
             Debug.Log($"Money withdrawed {cointsToWithdraw}, current money: {Money}");
+            MoneyChanged?.Invoke(this, new MoneyChanged(Money));
         }
 
         public void Give(int count)
         {
             Money += count;
             Debug.Log($"Money gived {count}, current money: {Money}");
+            MoneyChanged?.Invoke(this, new MoneyChanged(Money));
+        }
+
+        public void SetMoneySilently(int count)
+        {
+            Money = count;
         }
     }
 }

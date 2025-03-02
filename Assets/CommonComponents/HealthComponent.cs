@@ -9,6 +9,7 @@ namespace Assets.CommonComponents
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private HealthChanged _onHealthChanged;
 
         public void ModifyHealth(int hpDelta)
         {
@@ -27,6 +28,8 @@ namespace Assets.CommonComponents
             {
                 _onDie?.Invoke();
             }
+
+            _onHealthChanged?.Invoke(_health);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Assets.CommonComponents;
-using System;
+using Assets.PixelCrew.Model;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -56,9 +56,17 @@ public class Hero : MonoBehaviour
     private BuffComponent _buffComponent;
     private MoneyBagComponent _moneyBagComponent;
     private bool _allowSecondJump = true;
-    private bool _isArmed;
+
+    private GameSession _gameSession;
 
     public bool IsOnFloor { get; private set; }
+
+    private void Start()
+    {
+        _gameSession = FindObjectOfType<GameSession>();
+        _moneyBagComponent.SetMoneySilently(_gameSession.PlayerData.Money);
+        UpdateHeroWeapon();
+    }
 
     private void Update()
     {
@@ -76,6 +84,17 @@ public class Hero : MonoBehaviour
         _animator.runtimeAnimatorController = _disarmedController;
 
         _moneyBagComponent.MoneyWithdrawed += OnMoneyWithdrawed;
+        _moneyBagComponent.MoneyChanged += OnMoneyChanged;
+    }
+
+    public void OnHealthChanged(int currentHealth)
+    {
+        _gameSession.PlayerData.Health = currentHealth;
+    }
+
+    private void OnMoneyChanged(object sender, MoneyChanged e)
+    {
+        _gameSession.PlayerData.Money = e.Money;
     }
 
     private void OnMoneyWithdrawed(object sender, MoneyWithdrawed e)
@@ -195,7 +214,7 @@ public class Hero : MonoBehaviour
 
     public void Attack()
     {
-        if (!_isArmed)
+        if (!_gameSession.PlayerData.IsArmed)
         {
             return;
         }
@@ -256,7 +275,19 @@ public class Hero : MonoBehaviour
 
     public void ArmHero()
     {
-        _isArmed = true;
-        _animator.runtimeAnimatorController = _armedController;
+        _gameSession.PlayerData.IsArmed = true;
+        UpdateHeroWeapon();
+    }
+
+    public void UpdateHeroWeapon()
+    {
+        if(_gameSession.PlayerData.IsArmed)
+        {
+            _animator.runtimeAnimatorController = _armedController;
+        }
+        else
+        {
+            _animator.runtimeAnimatorController = _disarmedController;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.PixelCrew.Model;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.CommonComponents
@@ -7,6 +8,8 @@ namespace Assets.CommonComponents
     {
         public void Reload()
         {
+            var session = FindObjectOfType<GameSession>();
+            DestroyImmediate(session);
             var currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }
