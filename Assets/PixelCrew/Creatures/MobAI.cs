@@ -1,5 +1,4 @@
 ﻿using Assets.CommonComponents;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -64,6 +63,7 @@ namespace Assets.PixelCrew.Creatures
                 yield return null;
             }
 
+            _spawnComponent.Spawn("Interrogation");
             _isAgro = false;
             ResetDirection();
             StartState(Patrolling());

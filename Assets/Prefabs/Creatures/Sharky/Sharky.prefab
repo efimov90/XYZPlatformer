@@ -629,6 +629,10 @@ MonoBehaviour:
     _prefab: {fileID: 4785137563859317443, guid: 4bff9066d570e1a45a4bd8be2a4c3b87,
       type: 3}
     _target: {fileID: 6139382971226638526}
+  - _name: Interrogation
+    _prefab: {fileID: 6910950394134263082, guid: ef117657ca03e7b499c2c4bd06e51bdc,
+      type: 3}
+    _target: {fileID: 6139382971226638526}
 --- !u!114 &4531043595785675510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,4 +679,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionCheck: {fileID: 3620866960079984514}
   _attackCheck: {fileID: 7760388474293510768}
-  _alarmDelay: 2
+  _alarmDelay: 1
