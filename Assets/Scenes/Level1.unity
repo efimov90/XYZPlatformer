@@ -8156,12 +8156,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1779218110}
     - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1787070678}
+    - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
+        type: 3}
+      propertyPath: m_Lens.NearClipPlane
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 4.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4285425514735480279, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_RootOrder
@@ -8170,7 +8180,7 @@ PrefabInstance:
     - target: {fileID: 4285425514735480279, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49999976
+      value: -0.49999952
       objectReference: {fileID: 0}
     - target: {fileID: 4285425514735480279, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
@@ -8239,7 +8249,7 @@ PrefabInstance:
     - target: {fileID: 6313585275586890413, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49999976
+      value: -0.49999952
       objectReference: {fileID: 0}
     - target: {fileID: 6313585275586890413, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
@@ -8382,7 +8392,7 @@ PrefabInstance:
     - target: {fileID: 8253102985459779807, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.57
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 8253102985459779807, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
         type: 3}

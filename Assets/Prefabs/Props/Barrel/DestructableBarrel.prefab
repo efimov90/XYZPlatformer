@@ -231,6 +231,9 @@ MonoBehaviour:
           m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &8253102985459779802
 Rigidbody2D:
   serializedVersion: 4
@@ -265,7 +268,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014731884, y: -0.011048913}
+  m_Offset: {x: -0.014731884, y: -0.013240218}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -276,7 +279,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73884106, y: 0.7975476}
+  m_Size: {x: 0.72569275, y: 0.78001666}
   m_EdgeRadius: 0
 --- !u!114 &8253102985459779797
 MonoBehaviour:
