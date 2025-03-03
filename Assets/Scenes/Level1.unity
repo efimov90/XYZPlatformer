@@ -5722,7 +5722,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1779218110}
     - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_Follow
