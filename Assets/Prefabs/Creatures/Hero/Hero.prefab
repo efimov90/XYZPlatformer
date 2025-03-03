@@ -5246,8 +5246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invertScale: 0
   _speed: 4
-  _jumpSpeed: 20
-  _damageJumpSpeed: 15
+  _jumpSpeed: 10
+  _damageJumpSpeed: 10
   _attackValue: 1
   _attackRange: {fileID: 5209056384972781758}
   _groundCollisionCheck: {fileID: 8701511277626807722}

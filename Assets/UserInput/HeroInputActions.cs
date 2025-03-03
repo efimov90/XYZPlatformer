@@ -157,7 +157,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c1edd48b-0703-4a98-b46e-626df3c3778d"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
