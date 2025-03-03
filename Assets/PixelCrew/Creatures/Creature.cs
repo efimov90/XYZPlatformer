@@ -83,6 +83,11 @@ namespace Assets.PixelCrew.Creatures
             IsDead = true;
         }
 
+        public void OnDied()
+        {
+            _animator.enabled = false;
+        }
+
         protected virtual void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
