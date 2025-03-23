@@ -21,6 +21,9 @@ namespace Assets.PixelCrew.Creatures
         private static readonly int _attackHashString =
             Animator.StringToHash("Attack Trigger");
 
+        protected static readonly int _throwHashString =
+            Animator.StringToHash("Throw Trigger");
+
         private static readonly int _isDeadHashString =
             Animator.StringToHash("IsDead");
 

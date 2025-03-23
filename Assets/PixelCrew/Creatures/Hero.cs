@@ -150,5 +150,10 @@ namespace Assets.PixelCrew.Creatures
                 _animator.runtimeAnimatorController = _disarmedController;
             }
         }
+
+        public void Throw()
+        {
+            _animator.SetTrigger(_throwHashString);
+        }
     }
 }
