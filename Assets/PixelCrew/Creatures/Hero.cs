@@ -1,5 +1,6 @@
 ﻿using Assets.CommonComponents;
 using Assets.PixelCrew.Model;
+using Assets.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ namespace Assets.PixelCrew.Creatures
 
         [SerializeField]
         private ParticleSystem _particleSystem;
+
+        [SerializeField]
+        private Cooldown _throwCooldown;
 
         [SerializeField]
         private AnimatorController _armedController;
@@ -153,7 +157,13 @@ namespace Assets.PixelCrew.Creatures
 
         public void Throw()
         {
+            if (!_throwCooldown.IsReady)
+            {
+                return;
+            }
+
             _animator.SetTrigger(_throwHashString);
+            _throwCooldown.Reset();
         }
 
         public void OnThrowed()

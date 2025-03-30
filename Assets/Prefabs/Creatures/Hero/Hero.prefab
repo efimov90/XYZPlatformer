@@ -5284,6 +5284,8 @@ MonoBehaviour:
   _groundCollisionCheck: {fileID: 8701511277626807722}
   _slamDownVelocity: 20
   _particleSystem: {fileID: 607087655971441951}
+  _throwCooldown:
+    _duration: 1
   _armedController: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
   _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
   _interactionRange: {fileID: 5277828391195267486}
