@@ -155,5 +155,11 @@ namespace Assets.PixelCrew.Creatures
         {
             _animator.SetTrigger(_throwHashString);
         }
+
+        public void OnThrowed()
+        {
+            _gameSession.PlayerData.IsArmed = false;
+            UpdateHeroWeapon();
+        }
     }
 }
