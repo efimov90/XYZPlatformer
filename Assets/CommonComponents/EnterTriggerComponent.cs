@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Utils;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.CommonComponents
@@ -9,14 +10,24 @@ namespace Assets.CommonComponents
         private string _tag;
 
         [SerializeField]
+        private LayerMask _layerMask = ~0;
+
+        [SerializeField]
         private EnterEvent _action;
 
         private void OnTriggerEnter2D(Collider2D otherCollider)
         {
-            if (otherCollider.CompareTag(_tag))
+            if(!otherCollider.gameObject.IsInLayer(_layerMask))
             {
-                _action?.Invoke(otherCollider.gameObject);
+                return;
             }
+
+            if (!string.IsNullOrWhiteSpace(_tag) && !otherCollider.CompareTag(_tag))
+            {
+                return;
+            }
+
+            _action?.Invoke(otherCollider.gameObject);
         }
     }
 }
