@@ -20,8 +20,6 @@ namespace Assets.PixelCrew
             _inputActions.Hero.AxisMovement.performed += OnAxisMovement;
             _inputActions.Hero.AxisMovement.canceled += OnAxisMovement;
             _inputActions.Hero.Interact.performed += OnInteractPerformed;
-            _inputActions.Hero.Attack.performed += OnAttackPerformed;
-            _inputActions.Hero.Throw.performed += OnThrowPerformed;
             _inputActions.Enable();
         }
 
@@ -59,8 +57,6 @@ namespace Assets.PixelCrew
         {
             _inputActions.Hero.AxisMovement.performed -= OnAxisMovement;
             _inputActions.Hero.AxisMovement.canceled -= OnAxisMovement;
-            _inputActions.Hero.Interact.performed -= OnInteractPerformed;
-            _inputActions.Hero.Attack.performed -= OnAttackPerformed;
             _inputActions.Disable();
         }
     }
