@@ -17,13 +17,10 @@ namespace Assets.PixelCrew
 
         private void OnEnable()
         {
-            _inputActions.Hero.AxisMovement.performed += OnAxisMovement;
-            _inputActions.Hero.AxisMovement.canceled += OnAxisMovement;
-            _inputActions.Hero.Interact.performed += OnInteractPerformed;
             _inputActions.Enable();
         }
 
-        private void OnInteractPerformed(InputAction.CallbackContext context)
+        public void OnInteractPerformed(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
@@ -47,7 +44,7 @@ namespace Assets.PixelCrew
             }
         }
 
-        private void OnAxisMovement(InputAction.CallbackContext callbackContext)
+        public void OnAxisMovement(InputAction.CallbackContext callbackContext)
         {
             var direction = callbackContext.ReadValue<Vector2>();
             _hero.SetDirection(direction);
@@ -55,8 +52,6 @@ namespace Assets.PixelCrew
 
         private void OnDisable()
         {
-            _inputActions.Hero.AxisMovement.performed -= OnAxisMovement;
-            _inputActions.Hero.AxisMovement.canceled -= OnAxisMovement;
             _inputActions.Disable();
         }
     }

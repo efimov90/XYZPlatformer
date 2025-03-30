@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4169640969091257622}
   - component: {fileID: 4169640969091257621}
   - component: {fileID: 4478315911384811954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palm-WithCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169640969091257707}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 65.77511, y: 5.0326395, z: 59.86133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
