@@ -69,7 +69,7 @@ namespace Assets.PixelCrew.Creatures
 
         protected override float CalculateVelocityY()
         {
-            var isJumping = _direction.y > 0;
+            var isJumping = Direction.y > 0;
 
             if (IsOnFloor)
             {

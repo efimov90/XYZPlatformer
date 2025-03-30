@@ -52,6 +52,8 @@ namespace Assets.PixelCrew.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
+
             if (!_isAgro)
             {
                 _spawnComponent.Spawn("Exclamation");
@@ -61,6 +63,12 @@ namespace Assets.PixelCrew.Creatures
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(Chasing());
+        }
+
+        private void LookAtHero()
+        {
+            ResetDirection();
+            _creature.UpdateSpriteDirection(GetDirectionToTarget());
         }
 
         private IEnumerator Chasing()
@@ -106,17 +114,19 @@ namespace Assets.PixelCrew.Creatures
             }
         }
 
-        private void SetDirectionToTarget()
+        private void SetDirectionToTarget() =>
+            _creature.SetDirection(GetDirectionToTarget());
+
+        private Vector2 GetDirectionToTarget()
         {
             var directionToTarget = _target.transform.position - transform.position;
             directionToTarget.y = 0;
-            _creature.SetDirection(directionToTarget.normalized);
+
+            return directionToTarget.normalized;
         }
 
-        private void ResetDirection()
-        {
+        private void ResetDirection() =>
             _creature.SetDirection(Vector3.zero);
-        }
 
         public void Die()
         {

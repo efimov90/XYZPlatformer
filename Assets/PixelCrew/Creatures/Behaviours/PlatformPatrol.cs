@@ -20,6 +20,13 @@ namespace Assets.PixelCrew.Creatures.Behaviours
         {
             while (enabled)
             {
+                if(_creature.Direction == Vector2.zero)
+                {
+                    var direction = _creature.transform.lossyScale.normalized;
+                    direction.y = 0;
+                    _creature.SetDirection(direction);
+                }
+
                 if (!_groundProbe.IsTouchingLayer)
                 {
                     var newDirection = _creature.transform.position - _groundProbe.transform.position;
@@ -27,7 +34,6 @@ namespace Assets.PixelCrew.Creatures.Behaviours
 
                     _creature.SetDirection(newDirection.normalized);
 
-                    // Полагаю тут что-то другое должно быть
                     yield return new WaitForSeconds(1);
                 }
 

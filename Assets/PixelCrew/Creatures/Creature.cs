@@ -52,7 +52,7 @@ namespace Assets.PixelCrew.Creatures
         [SerializeField]
         protected LayerCollisionCheck _groundCollisionCheck;
 
-        protected Vector2 _direction = Vector2.zero;
+        private Vector2 _direction = Vector2.zero;
         protected Rigidbody2D _rigidbody2D;
         protected Animator _animator;
         protected HealthComponent _healthComponent;
@@ -61,6 +61,7 @@ namespace Assets.PixelCrew.Creatures
         public bool IsOnFloor { get; protected set; }
 
         public bool IsDead { get; protected set; } = false;
+        public Vector2 Direction => _direction;
 
         public void SetDirection(Vector2 direction)
         {
@@ -108,7 +109,7 @@ namespace Assets.PixelCrew.Creatures
         {
             var velocityY = _rigidbody2D.velocity.y;
 
-            var isJumping = _direction.y > 0;
+            var isJumping = Direction.y > 0;
 
             if (isJumping)
             {
@@ -146,27 +147,27 @@ namespace Assets.PixelCrew.Creatures
 
         private void FixedUpdate()
         {
-            var velocityX = _direction.x * _speed;
+            var velocityX = Direction.x * _speed;
             var velocityY = CalculateVelocityY();
 
             _rigidbody2D.velocity = new Vector2(velocityX, velocityY);
 
             _animator.SetBool(_isOnFloorHashString, IsOnFloor);
             _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
-            _animator.SetBool(_isRunningHashString, _direction.x != 0);
+            _animator.SetBool(_isRunningHashString, Direction.x != 0);
 
-            UpdateSpriteDirection();
+            UpdateSpriteDirection(Direction);
         }
 
-        private void UpdateSpriteDirection()
+        public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiply = _invertScale ? -1 : 1;
 
-            if (_direction.x > 0)
+            if (direction.x > 0)
             {
                 transform.localScale = new Vector3(multiply, 1, 1);
             }
-            else if (_direction.x < 0)
+            else if (direction.x < 0)
             {
                 transform.localScale = new Vector3(-multiply, 1, 1);
             }
