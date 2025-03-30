@@ -13,6 +13,11 @@ namespace Assets.CommonComponents
 
         public void ModifyHealth(int hpDelta)
         {
+            if(_health <= 0)
+            {
+                return;
+            }
+
             _health += hpDelta;
 
             if (hpDelta < 0)
