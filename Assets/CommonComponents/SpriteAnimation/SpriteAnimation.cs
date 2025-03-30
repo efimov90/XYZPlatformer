@@ -81,7 +81,7 @@ namespace Assets.CommonComponents.SpriteAnimation
 
         private void OnEnable()
         {
-            _nextFrameTime = Time.time + _secondsPerFrame;
+            _nextFrameTime = Time.time;
             _isPlaying = true;
             _currentSprite = 0;
         }
