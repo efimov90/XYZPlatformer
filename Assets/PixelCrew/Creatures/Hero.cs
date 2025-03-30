@@ -158,8 +158,9 @@ namespace Assets.PixelCrew.Creatures
 
         public void OnThrowed()
         {
-            _gameSession.PlayerData.IsArmed = false;
-            UpdateHeroWeapon();
+            _spawnComponent.Spawn("SwordProjectile");
+            //_gameSession.PlayerData.IsArmed = false;
+            //UpdateHeroWeapon();
         }
     }
 }
