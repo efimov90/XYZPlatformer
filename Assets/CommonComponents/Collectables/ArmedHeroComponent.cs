@@ -1,4 +1,4 @@
-﻿using Assets.PixelCrew.Creatures;
+﻿using Assets.PixelCrew.Creatures.Hero;
 using UnityEngine;
 
 namespace Assets.CommonComponents.Collectables

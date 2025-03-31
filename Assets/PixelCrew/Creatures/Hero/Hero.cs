@@ -8,9 +8,8 @@ using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace Assets.PixelCrew.Creatures
+namespace Assets.PixelCrew.Creatures.Hero
 {
     public class Hero : Creature
     {
