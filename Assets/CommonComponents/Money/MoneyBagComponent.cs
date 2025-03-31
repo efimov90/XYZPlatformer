@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Money
 {
     public class MoneyBagComponent : MonoBehaviour
     {

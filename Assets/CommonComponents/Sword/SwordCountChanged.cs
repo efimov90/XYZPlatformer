@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Sword
 {
     public class SwordCountChanged : EventArgs
     {

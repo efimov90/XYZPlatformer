@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Money
 {
     public class MoneyWithdrawed : EventArgs
     {

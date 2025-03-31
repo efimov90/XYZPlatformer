@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Health
 {
     [Serializable]
     public class HealthChanged : UnityEvent<int>

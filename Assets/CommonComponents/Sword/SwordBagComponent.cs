@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Sword
 {
     public class SwordBagComponent : MonoBehaviour
     {

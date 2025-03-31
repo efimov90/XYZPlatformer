@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.CommonComponents.Sword;
+using UnityEngine;
 
 namespace Assets.CommonComponents.Collectables
 {
