@@ -2,7 +2,7 @@
 using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.Money;
 using Assets.CommonComponents.Sword;
-using Assets.PixelCrew.Model;
+using Assets.Model;
 using Assets.Utils;
 using System;
 using System.Collections;

@@ -1,4 +1,4 @@
-﻿using Assets.PixelCrew.Model;
+﻿using Assets.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

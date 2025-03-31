@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Model
+namespace Assets.Model
 {
     [Serializable]
     public class GameSession : MonoBehaviour
