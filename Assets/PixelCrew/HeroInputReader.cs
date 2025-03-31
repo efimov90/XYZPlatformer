@@ -10,6 +10,8 @@ namespace Assets.PixelCrew
         private Hero _hero;
         private HeroInputActions _inputActions;
 
+        private float _throwPerformed;
+
         private void Awake()
         {
             _inputActions = new HeroInputActions();
@@ -38,9 +40,21 @@ namespace Assets.PixelCrew
 
         public void OnThrowPerformed(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            if(context.performed)
             {
-                _hero.Throw();
+                _throwPerformed = Time.time;
+            }
+
+            if (context.canceled)
+            {
+                if (_throwPerformed + 1 < Time.time)
+                {
+                    _hero.Throw(true);
+                }
+                else
+                {
+                    _hero.Throw();
+                }
             }
         }
 

@@ -2,8 +2,10 @@
 using Assets.PixelCrew.Model;
 using Assets.Utils;
 using System;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Assets.PixelCrew.Creatures
 {
@@ -171,9 +173,11 @@ namespace Assets.PixelCrew.Creatures
             }
         }
 
-        public void Throw()
+        public void Throw(bool multiple = false)
         {
-            if(_swordBagComponent.SwordCount <= _swordBagComponent.MinSwordCount)
+            const int maxSwordsSpawn = 3;
+
+            if (_swordBagComponent.SwordCount <= _swordBagComponent.MinSwordCount)
             {
                 return;
             }
@@ -183,9 +187,30 @@ namespace Assets.PixelCrew.Creatures
                 return;
             }
 
-            _swordBagComponent.Withdraw(1);
-            _animator.SetTrigger(_throwHashString);
+            if(multiple
+                && _swordBagComponent.SwordCount >= _swordBagComponent.MinSwordCount + maxSwordsSpawn)
+            {
+                Debug.Log("Throw multiple");
+                StartCoroutine(nameof(ThrowMultiple));
+            }
+            else
+            {
+                Debug.Log("Throw single");
+                _swordBagComponent.Withdraw(1);
+                _animator.SetTrigger(_throwHashString);
+            }
+
             _throwCooldown.Reset();
+        }
+
+        private IEnumerator ThrowMultiple()
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                _animator.SetTrigger(_throwHashString);
+                _swordBagComponent.Withdraw(1);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
         public void OnThrowed()
