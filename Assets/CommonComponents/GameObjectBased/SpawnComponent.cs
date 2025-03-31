@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.GameObjectBased
 {
     public class SpawnComponent : MonoBehaviour
     {

@@ -1,5 +1,5 @@
-﻿using Assets.CommonComponents;
-using Assets.CommonComponents.ColliderBased;
+﻿using Assets.CommonComponents.ColliderBased;
+using Assets.CommonComponents.GameObjectBased;
 using Assets.PixelCrew.Creatures.Behaviours;
 using System;
 using System.Collections;

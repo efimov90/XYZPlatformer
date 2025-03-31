@@ -1,5 +1,6 @@
 ﻿using Assets.CommonComponents;
 using Assets.CommonComponents.ColliderBased;
+using Assets.CommonComponents.GameObjectBased;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures
