@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Collectables
 {
     public class BuffComponent : MonoBehaviour
     {

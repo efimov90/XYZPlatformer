@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.CommonComponents.Collectables;
+using UnityEngine;
 
 namespace Assets.CommonComponents
 {

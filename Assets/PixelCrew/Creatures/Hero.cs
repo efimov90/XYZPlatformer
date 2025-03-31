@@ -1,4 +1,5 @@
 ﻿using Assets.CommonComponents;
+using Assets.CommonComponents.Collectables;
 using Assets.PixelCrew.Model;
 using Assets.Utils;
 using System;

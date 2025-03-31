@@ -1,7 +1,7 @@
 ﻿using Assets.PixelCrew.Creatures;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.Collectables
 {
     public class ArmedHeroComponent : MonoBehaviour
     {
