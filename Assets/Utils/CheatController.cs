@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Assets.CommonComponents
+namespace Assets.Utils
 {
     public class CheatController : MonoBehaviour
     {

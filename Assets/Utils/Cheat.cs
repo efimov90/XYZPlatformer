@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents
+namespace Assets.Utils
 {
     [Serializable]
     public class Cheat
