@@ -1,5 +1,6 @@
 ﻿using Assets.CommonComponents;
 using Assets.CommonComponents.Collectables;
+using Assets.CommonComponents.ColliderBased;
 using Assets.PixelCrew.Model;
 using Assets.Utils;
 using System;

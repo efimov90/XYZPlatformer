@@ -2,9 +2,9 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.CommonComponents.ColliderBased
 {
-    public class CheckCircleOverlap: MonoBehaviour
+    public class CheckCircleOverlap : MonoBehaviour
     {
         [SerializeField]
         private float _radius = 1f;

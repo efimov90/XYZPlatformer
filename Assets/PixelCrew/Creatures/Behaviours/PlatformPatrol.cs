@@ -1,4 +1,4 @@
-﻿using Assets.CommonComponents;
+﻿using Assets.CommonComponents.ColliderBased;
 using System.Collections;
 using UnityEngine;
 
