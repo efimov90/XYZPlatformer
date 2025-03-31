@@ -1,11 +1,10 @@
 ﻿using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.GameObjectBased;
-using Assets.PixelCrew.Creatures.Behaviours;
-using System;
+using Assets.PixelCrew.Creatures.Mobs.Behaviours;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Creatures
+namespace Assets.PixelCrew.Creatures.Mobs
 {
     public class MobAI : MonoBehaviour
     {
