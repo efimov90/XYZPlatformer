@@ -8,7 +8,8 @@ namespace Assets.CommonComponents
         public event EventHandler<MoneyChanged> MoneyChanged;
         public event EventHandler<MoneyWithdrawed> MoneyWithdrawed;
 
-        [SerializeField] public int Money;
+        [SerializeField]
+        public int Money;
 
         public void Withdraw(int count)
         {

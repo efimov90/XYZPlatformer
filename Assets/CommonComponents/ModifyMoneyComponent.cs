@@ -8,16 +8,18 @@ namespace Assets.CommonComponents
 
         public void Modify(GameObject target)
         {
-            if (target.GetComponent<MoneyBagComponent>() is MoneyBagComponent moneyBagComponent)
+            if (!(target.GetComponent<MoneyBagComponent>() is MoneyBagComponent moneyBagComponent))
             {
-                if (_moneyDelta > 0)
-                {
-                    moneyBagComponent.Give(_moneyDelta);
-                }
-                else
-                {
-                    moneyBagComponent.Withdraw(-_moneyDelta);
-                }
+                return;
+            }
+
+            if (_moneyDelta > 0)
+            {
+                moneyBagComponent.Give(_moneyDelta);
+            }
+            else
+            {
+                moneyBagComponent.Withdraw(-_moneyDelta);
             }
         }
     }

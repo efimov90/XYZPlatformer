@@ -1,6 +1,7 @@
 ﻿using Assets.CommonComponents;
 using Assets.PixelCrew.Model;
 using Assets.Utils;
+using System;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -28,6 +29,8 @@ namespace Assets.PixelCrew.Creatures
 
         private BuffComponent _buffComponent;
         private MoneyBagComponent _moneyBagComponent;
+        private SwordBagComponent _swordBagComponent;
+
         private bool _allowSecondJump = true;
 
         private GameSession _gameSession;
@@ -46,11 +49,23 @@ namespace Assets.PixelCrew.Creatures
             _buffComponent = GetComponent<BuffComponent>();
             _moneyBagComponent = GetComponent<MoneyBagComponent>();
 
-
             _animator.runtimeAnimatorController = _disarmedController;
 
             _moneyBagComponent.MoneyWithdrawed += OnMoneyWithdrawed;
             _moneyBagComponent.MoneyChanged += OnMoneyChanged;
+
+            _swordBagComponent = GetComponent<SwordBagComponent>();
+
+            _swordBagComponent.SwordsCountChanged += OnSwordsCountChanged;
+        }
+
+        private void OnSwordsCountChanged(object sender, SwordCountChanged e)
+        {
+            if(e.SwordsCount == _swordBagComponent.MinSwordCount)
+            {
+                _gameSession.PlayerData.IsArmed = true;
+                UpdateHeroWeapon();
+            }
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -137,6 +152,7 @@ namespace Assets.PixelCrew.Creatures
             _particleSystem?.Play();
         }
 
+        [Obsolete("Не используется, указан в устаревшем компоненте")]
         public void ArmHero()
         {
             _gameSession.PlayerData.IsArmed = true;
@@ -157,11 +173,17 @@ namespace Assets.PixelCrew.Creatures
 
         public void Throw()
         {
+            if(_swordBagComponent.SwordCount <= _swordBagComponent.MinSwordCount)
+            {
+                return;
+            }
+
             if (!_throwCooldown.IsReady)
             {
                 return;
             }
 
+            _swordBagComponent.Withdraw(1);
             _animator.SetTrigger(_throwHashString);
             _throwCooldown.Reset();
         }
