@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures.Mobs
 {
-    public class ShootingTrapA : MonoBehaviour
+    public class ShootingTrapAI : MonoBehaviour
     {
         [SerializeField]
         private LayerCollisionCheck _vision;
