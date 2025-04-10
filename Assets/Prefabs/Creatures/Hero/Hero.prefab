@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5660479943093108897}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: FootStepTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,7 +4817,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1525650027
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 4477070988322934818}
   - component: {fileID: 5277828391195267486}
   - component: {fileID: 7002833525791936160}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: InteractionPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4929,7 +4929,7 @@ GameObject:
   - component: {fileID: 2057645368935943034}
   - component: {fileID: 5209056384972781758}
   - component: {fileID: 1345421067452702762}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5004,7 +5004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717536966087927268}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -5034,7 +5034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6340411703624860753}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: SlamParticleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5064,7 +5064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759603967743537265}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: JumpParticlesTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5096,7 +5096,7 @@ GameObject:
   - component: {fileID: 8701511277626807700}
   - component: {fileID: 8701511277626807723}
   - component: {fileID: 8701511277626807722}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: GroundCheckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
