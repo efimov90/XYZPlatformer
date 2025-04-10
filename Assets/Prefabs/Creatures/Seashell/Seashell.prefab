@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7335887590648066651}
   - component: {fileID: 7335887590648066650}
-  m_Layer: 0
+  - component: {fileID: 1738409121324425240}
+  m_Layer: 11
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.7660418, y: 0.4122622}
@@ -57,6 +58,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.6657906, y: 2.0028005}
   m_EdgeRadius: 0
+--- !u!114 &1738409121324425240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887590648066648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3499f955fbdd1341be092cd88ddbd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  _isTouchingLayer: 0
 --- !u!1 &7335887591678249574
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,9 +87,12 @@ GameObject:
   - component: {fileID: 7335887591678249571}
   - component: {fileID: 7335887591678249570}
   - component: {fileID: 7335887591678249885}
-  m_Layer: 0
+  - component: {fileID: 863547715831483446}
+  - component: {fileID: 5964639667833633652}
+  - component: {fileID: 7002252855984259626}
+  m_Layer: 11
   m_Name: Seashell
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,6 +242,86 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &863547715831483446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591678249574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb5dbb30dd9f0f4882e7fd14f18bf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vision: {fileID: 1738409121324425240}
+  _meleeCooldown:
+    _duration: 2
+  _meleeAttackRange: {fileID: 879198865627276085}
+  _meleeCanAttack: {fileID: 3364076777591288092}
+  _rangeCooldown:
+    _duration: 2
+  _spawnComponent: {fileID: 7335887592244600177}
+--- !u!114 &5964639667833633652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591678249574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49906297c4db2f4429cf1f0471006336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 2
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7335887591678249885}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Hit Trigger
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7002252855984259626}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7002252855984259626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591678249574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 7335887591678249574}
 --- !u!1 &7335887591783892827
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +332,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7335887591783892826}
   - component: {fileID: 7335887591783892821}
-  m_Layer: 0
+  - component: {fileID: 879198865627276085}
+  - component: {fileID: 3364076777591288092}
+  m_Layer: 11
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,12 +365,49 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3499355
+--- !u!114 &879198865627276085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591783892827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58a7a05ee8c18a49bcbbce0800a1891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 1
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  _tags:
+  - Player
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3364076777591288092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591783892827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3499f955fbdd1341be092cd88ddbd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  _isTouchingLayer: 0
 --- !u!1 &7335887592244600183
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7335887592244600182}
   - component: {fileID: 7335887592244600177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
