@@ -68,11 +68,13 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         private void OnMeleeAttack()
         {
+            _meleeCooldown.Reset();
             _meleeAttackRange.Check();
         }
 
         private void OnRangeAttack()
         {
+            _rangeCooldown.Reset();
             _spawnComponent.Spawn("Pearl");
         }
     }
