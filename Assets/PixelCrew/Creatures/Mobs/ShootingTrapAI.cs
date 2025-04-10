@@ -1,7 +1,7 @@
-﻿using Assets.CommonComponents.ColliderBased;
+﻿using Assets.CommonComponents.Collectables;
+using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.GameObjectBased;
 using Assets.Utils;
-using System;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures.Mobs
@@ -26,7 +26,6 @@ namespace Assets.PixelCrew.Creatures.Mobs
         private SpawnComponent _spawnComponent;
 
         private Animator _animator;
-
         private static readonly int MeleeTriggerHash = Animator.StringToHash("Melee Trigger");
         private static readonly int RangeTriggerHash = Animator.StringToHash("Range Trigger");
 

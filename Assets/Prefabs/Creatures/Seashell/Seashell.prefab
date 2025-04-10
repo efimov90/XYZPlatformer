@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: 863547715831483446}
   - component: {fileID: 5964639667833633652}
   - component: {fileID: 7002252855984259626}
+  - component: {fileID: 9067948370733808431}
+  - component: {fileID: 2802276695944876082}
   m_Layer: 11
   m_Name: Seashell
   m_TagString: Enemy
@@ -278,8 +280,8 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7335887591678249885}
-        m_MethodName: SetTrigger
+      - m_Target: {fileID: 9067948370733808431}
+        m_MethodName: Spawn
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -295,6 +297,17 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 9067948370733808431}
+        m_MethodName: Spawn
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SeashellDead
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7002252855984259626}
         m_MethodName: DestroyObject
         m_Mode: 1
@@ -322,6 +335,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7335887591678249574}
+--- !u!114 &9067948370733808431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591678249574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576836fa409df4a40afb0ab2230b5a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnObjects:
+  - _name: SeashellDead
+    _prefab: {fileID: 1412217588287620454, guid: 36430e4de630dad44ad160daa04ae75d,
+      type: 3}
+    _target: {fileID: 7335887591678249569}
+--- !u!114 &2802276695944876082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335887591678249574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d23fe04463d78f4791a68df0542706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
 --- !u!1 &7335887591783892827
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +434,18 @@ MonoBehaviour:
   - Player
   _onOverlap:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2802276695944876082}
+        m_MethodName: Modify
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3364076777591288092
 MonoBehaviour:
   m_ObjectHideFlags: 0

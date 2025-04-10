@@ -23,6 +23,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnInteractPerformed(InputAction.CallbackContext context)
         {
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
             if (context.performed)
             {
                 _hero.Interact();
@@ -31,6 +36,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnAttackPerformed(InputAction.CallbackContext context)
         {
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
             if (context.performed)
             {
                 _hero.Attack();
@@ -39,7 +49,12 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnThrowPerformed(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
+            if (context.performed)
             {
                 _throwPerformed = Time.time;
             }
@@ -59,6 +74,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnAxisMovement(InputAction.CallbackContext callbackContext)
         {
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
             var direction = callbackContext.ReadValue<Vector2>();
             _hero.SetDirection(direction);
         }
