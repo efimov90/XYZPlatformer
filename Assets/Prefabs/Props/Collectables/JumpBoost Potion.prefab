@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 360367372380611998}
   - component: {fileID: 5069054178835990320}
   - component: {fileID: 1806688132476060727}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: JumpBoost Potion
   m_TagString: Collectables
   m_Icon: {fileID: 0}

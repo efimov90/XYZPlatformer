@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2336664301160239710}
   - component: {fileID: 1247577708688555970}
   - component: {fileID: 3210450865897805555}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Health Potion
   m_TagString: Collectables
   m_Icon: {fileID: 0}
