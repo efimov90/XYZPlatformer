@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6877371998700525191}
   - component: {fileID: 6877371998700525190}
   - component: {fileID: 4420474947848599805}
+  - component: {fileID: 1581650851205035450}
+  - component: {fileID: 3314926078812384485}
   m_Layer: 14
   m_Name: SilverCoin
   m_TagString: Collectables
@@ -217,3 +219,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyDelta: 5
+--- !u!50 &1581650851205035450
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877371998700525212}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3314926078812384485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877371998700525212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75672d4e3da9ec646a59395bc4d5d838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 1
+  _amplitude: 0.05

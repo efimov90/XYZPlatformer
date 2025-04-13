@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.7660418, y: 0.4122622}
+  m_Offset: {x: -3.88195, y: 0.4122622}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6657906, y: 2.0028005}
+  m_Size: {x: 8.897607, y: 2.0028005}
   m_EdgeRadius: 0
 --- !u!114 &1738409121324425240
 MonoBehaviour:
@@ -507,6 +507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnObjects:
   - _name: Pearl
-    _prefab: {fileID: 2401318753667927015, guid: f4e1aa434c552c44592f0040f8134652,
+    _prefab: {fileID: 3398067154600233154, guid: edd1207840706664f92f6108281ae95c,
       type: 3}
     _target: {fileID: 7335887592244600182}
