@@ -280,8 +280,8 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9067948370733808431}
-        m_MethodName: Spawn
+      - m_Target: {fileID: 7335887591678249885}
+        m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

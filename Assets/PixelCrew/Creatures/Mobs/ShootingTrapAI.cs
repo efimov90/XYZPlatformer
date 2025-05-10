@@ -1,5 +1,4 @@
-﻿using Assets.CommonComponents.Collectables;
-using Assets.CommonComponents.ColliderBased;
+﻿using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.GameObjectBased;
 using Assets.Utils;
 using UnityEngine;
