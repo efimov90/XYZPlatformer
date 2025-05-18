@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using Assets.CommonComponents.Cooldowns;
+using Assets.PixelCrew.Creatures.Mobs;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.CommonComponents.Placement
@@ -6,7 +8,10 @@ namespace Assets.CommonComponents.Placement
     [ExecuteInEditMode]
     public class TotemPlacementComponent : MonoBehaviour
     {
-        private float placementDistance = 0.7f;
+        [SerializeField]
+        private CooldownComponent _rangeCooldownComponent;
+        [SerializeField]
+        private float placementDistance = 0.65f;
         private int lastChildCount = 0;
 
         static TotemPlacementComponent()
@@ -50,6 +55,12 @@ namespace Assets.CommonComponents.Placement
                 {
                     child.position = transform.position + Vector3.up * placementDistance * i;
                     child.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = i;
+
+                    if(child.GetChild(0).GetComponent<TotemHead>() is TotemHead totemHead
+                        && totemHead._rangeCooldownComponent is null)
+                    {
+                        totemHead._rangeCooldownComponent = _rangeCooldownComponent;
+                    }
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿using Assets.CommonComponents.ColliderBased;
+using Assets.CommonComponents.Cooldowns;
 using Assets.CommonComponents.GameObjectBased;
-using Assets.Utils;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures.Mobs
@@ -12,7 +12,8 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         [Header("Range attack")]
         [SerializeField]
-        private Cooldown _rangeCooldown;
+        public CooldownComponent _rangeCooldownComponent;
+
         [SerializeField]
         private SpawnComponent _spawnComponent;
 
@@ -28,8 +29,9 @@ namespace Assets.PixelCrew.Creatures.Mobs
         {
             if (_vision.IsTouchingLayer)
             {
-                if (_rangeCooldown.IsReady)
+                if (_rangeCooldownComponent.IsReady)
                 {
+                    _rangeCooldownComponent.Reset();
                     RangeAttack();
                 }
             }
@@ -42,7 +44,6 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         private void OnRangeAttack()
         {
-            _rangeCooldown.Reset();
             _spawnComponent.Spawn("Pearl");
         }
     }
