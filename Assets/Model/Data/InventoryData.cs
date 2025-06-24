@@ -13,37 +13,6 @@ namespace Assets.Model.Data
         private List<InventoryItemData> _inventoryItems
             = new List<InventoryItemData>();
 
-        public void Set(string id, int count)
-        {
-            if (count < 0)
-            {
-                return;
-            }
-
-            var itemDefinition = DefinitionsFacade.Instance.Get(id);
-
-            if (itemDefinition.IsDefault)
-            {
-                Debug.LogWarning($"Attempted to set an item with an invalid ID: {id}");
-                return;
-            }
-
-            var item = GetItem(id);
-
-            if (item is null)
-            {
-                item = new InventoryItemData(id);
-                _inventoryItems.Add(item);
-            }
-
-            item.Count = count;
-
-            if (item.Count <= 0)
-            {
-                _inventoryItems.Remove(item);
-            }
-        }
-
         public void Add(string id, int count)
         {
             if (count <= 0)

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8183e2e9d162d394ea1b43ba9ac7fe36, type: 3}
   m_Name: DefinitionsFacade
   m_EditorClassIdentifier: 
-  inventoryItemDefinitions: {fileID: 11400000, guid: c2ece6f9f9d5f944cb38ff56345f5130,
+  _inventoryItemDefinitions: {fileID: 11400000, guid: c2ece6f9f9d5f944cb38ff56345f5130,
     type: 2}

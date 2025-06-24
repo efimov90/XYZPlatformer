@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8483213287949612725}
   - component: {fileID: 306920461396360065}
   - component: {fileID: 4998967848654169621}
-  - component: {fileID: 308461787067901427}
   m_Layer: 8
   m_Name: Spikes
   m_TagString: Untagged
@@ -138,7 +137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 308461787067901427}
+      - m_Target: {fileID: 0}
         m_MethodName: Modify
         m_Mode: 0
         m_Arguments:
@@ -162,16 +161,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpDelta: -1
---- !u!114 &308461787067901427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483213287949612728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f160724a79cca45b4d4e16ccb2d855, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moneyDelta: -5

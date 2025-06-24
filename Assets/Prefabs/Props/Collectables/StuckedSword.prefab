@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6465402005657505756}
   - component: {fileID: 8797543974841870162}
   - component: {fileID: 1878576896515830192}
-  - component: {fileID: 1482379233671346301}
+  - component: {fileID: 2863196213348550936}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -146,8 +146,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482379233671346301}
-        m_MethodName: Modify
+      - m_Target: {fileID: 2863196213348550936}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8951284427265023278}
---- !u!114 &1482379233671346301
+--- !u!114 &2863196213348550936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +190,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8951284427265023278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8350ca9608ee0fa49b6259f3b083e216, type: 3}
+  m_Script: {fileID: 11500000, guid: e6398feebb03a8948933b3aeaea3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swordDelta: 1
+  _id: Sword
+  _count: 1

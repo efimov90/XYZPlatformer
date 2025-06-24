@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1807521971466035648}
   - component: {fileID: 1807521971466035649}
   - component: {fileID: 1807521971466035654}
-  - component: {fileID: 7253480050787321057}
   - component: {fileID: 3429839678753647414}
   - component: {fileID: 5365077887255118779}
+  - component: {fileID: 6803032343396365146}
   m_Layer: 14
   m_Name: GoldCoin
   m_TagString: Collectables
@@ -135,8 +135,8 @@ MonoBehaviour:
           m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7253480050787321057}
-        m_MethodName: Modify
+      - m_Target: {fileID: 6803032343396365146}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -206,19 +206,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &7253480050787321057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807521971466035660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24f160724a79cca45b4d4e16ccb2d855, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moneyDelta: 15
 --- !u!114 &3429839678753647414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frequency: 1
   _amplitude: 0.05
+  _randomize: 1
 --- !u!50 &5365077887255118779
 Rigidbody2D:
   serializedVersion: 4
@@ -254,3 +242,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6803032343396365146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807521971466035660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6398feebb03a8948933b3aeaea3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 10

@@ -1,10 +1,7 @@
 ﻿using Assets.CommonComponents.Collectables;
 using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Money;
-using Assets.CommonComponents.Sword;
 using Assets.Model;
 using Assets.Utils;
-using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -32,8 +29,6 @@ namespace Assets.PixelCrew.Creatures.Hero
         private CheckCircleOverlap _interactionRange;
 
         private BuffComponent _buffComponent;
-        private MoneyBagComponent _moneyBagComponent;
-        private SwordBagComponent _swordBagComponent;
 
         private bool _allowSecondJump = true;
 
@@ -42,8 +37,6 @@ namespace Assets.PixelCrew.Creatures.Hero
         private void Start()
         {
             _gameSession = FindObjectOfType<GameSession>();
-            _moneyBagComponent.SetMoneySilently(_gameSession.PlayerData.Inventory.GetCountOf("Coin"));
-            _swordBagComponent.SetSwordCountSilently(_gameSession.PlayerData.Inventory.GetCountOf("Sword"));
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health);
             UpdateHeroWeapon();
         }
@@ -52,26 +45,8 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             base.Awake();
             _buffComponent = GetComponent<BuffComponent>();
-            _moneyBagComponent = GetComponent<MoneyBagComponent>();
 
             _animator.runtimeAnimatorController = _disarmedController;
-
-            _moneyBagComponent.MoneyWithdrawed += OnMoneyWithdrawed;
-            _moneyBagComponent.MoneyChanged += OnMoneyChanged;
-
-            _swordBagComponent = GetComponent<SwordBagComponent>();
-
-            _swordBagComponent.SwordsCountChanged += OnSwordsCountChanged;
-        }
-
-        private void OnSwordsCountChanged(object sender, SwordCountChanged e)
-        {
-            if(e.SwordsCount == _swordBagComponent.MinSwordCount)
-            {
-                UpdateHeroWeapon();
-            }
-
-            _gameSession.PlayerData.Inventory.Set("Sword", e.SwordsCount);
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -84,17 +59,9 @@ namespace Assets.PixelCrew.Creatures.Hero
             _gameSession.PlayerData.Inventory.Add(id, count);
         }
 
-        private void OnMoneyChanged(object sender, MoneyChanged e)
+        public void RemoveFromInventory(string id, int count)
         {
-            _gameSession.PlayerData.Inventory.Set("Coin", e.Money);
-        }
-
-        private void OnMoneyWithdrawed(object sender, MoneyWithdrawed e)
-        {
-            if (_moneyBagComponent.Money > 0)
-            {
-                SpawnCoins(e.Money);
-            }
+            _gameSession.PlayerData.Inventory.Remove(id, count);
         }
 
         protected override float CalculateVelocityY()
@@ -179,7 +146,9 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             const int maxSwordsSpawn = 3;
 
-            if (_swordBagComponent.SwordCount <= _swordBagComponent.MinSwordCount)
+            var swordCount = _gameSession.PlayerData.Inventory.GetCountOf("Sword");
+
+            if (swordCount <= 1)
             {
                 return;
             }
@@ -189,8 +158,7 @@ namespace Assets.PixelCrew.Creatures.Hero
                 return;
             }
 
-            if(multiple
-                && _swordBagComponent.SwordCount >= _swordBagComponent.MinSwordCount + maxSwordsSpawn)
+            if(multiple && swordCount >= maxSwordsSpawn + 1)
             {
                 Debug.Log("Throw multiple");
                 StartCoroutine(nameof(ThrowMultiple));
@@ -198,7 +166,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             else
             {
                 Debug.Log("Throw single");
-                _swordBagComponent.Withdraw(1);
+                RemoveFromInventory("sword", 1);
                 _animator.SetTrigger(_throwHashString);
             }
 
@@ -210,7 +178,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             for (var i = 0; i < 3; i++)
             {
                 _animator.SetTrigger(_throwHashString);
-                _swordBagComponent.Withdraw(1);
+                RemoveFromInventory("sword", 1);
                 yield return new WaitForSeconds(0.2f);
             }
         }

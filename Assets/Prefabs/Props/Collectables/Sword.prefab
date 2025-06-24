@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3200885425414699853}
   - component: {fileID: 3200885425414699843}
   - component: {fileID: 3200885425414699842}
-  - component: {fileID: 6955249434290129273}
+  - component: {fileID: 4141147570719470200}
   m_Layer: 14
   m_Name: Sword
   m_TagString: Collectables
@@ -150,8 +150,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6955249434290129273}
-        m_MethodName: Modify
+      - m_Target: {fileID: 4141147570719470200}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 3200885425414699849}
---- !u!114 &6955249434290129273
+--- !u!114 &4141147570719470200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +194,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3200885425414699849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8350ca9608ee0fa49b6259f3b083e216, type: 3}
+  m_Script: {fileID: 11500000, guid: e6398feebb03a8948933b3aeaea3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swordDelta: 1
+  _id: Sword
+  _count: 1
