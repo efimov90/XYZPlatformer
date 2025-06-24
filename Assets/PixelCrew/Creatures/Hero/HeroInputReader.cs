@@ -90,12 +90,8 @@ namespace Assets.PixelCrew.Creatures.Hero
                 return;
             }
 
-            Debug.Log("Use health potion");
-
             if (context.performed)
             {
-                Debug.Log("Used health potion");
-
                 _hero.UseHealthPotion();
             }
         }
