@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Assets.Model
 {
@@ -8,5 +9,11 @@ namespace Assets.Model
         public int Money;
         public int Health;
         public bool IsArmed;
+
+        public PlayerData Clone()
+        {
+            var json = JsonUtility.ToJson(this);
+            return JsonUtility.FromJson<PlayerData>(json);
+        }
     }
 }
