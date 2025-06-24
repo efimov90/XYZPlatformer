@@ -8,6 +8,7 @@ namespace Assets.Model.Data
     {
         [InventoryId]
         public string Id;
+
         public int Count;
 
         public InventoryItemData(string id)

@@ -1954,8 +1954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420f8f83b2eb58d478aaa9d811f45b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: Key
-  _count: 1
+  _required:
+  - Id: Key
+    Count: 1
   _removeAfterUse: 1
   _onSuccess:
     m_PersistentCalls:

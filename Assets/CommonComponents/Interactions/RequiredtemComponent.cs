@@ -1,5 +1,5 @@
 ﻿using Assets.Model;
-using Assets.Model.Definitions;
+using Assets.Model.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,12 +7,8 @@ namespace Assets.CommonComponents.Interactions
 {
     public class RequiredtemComponent : MonoBehaviour
     {
-        [InventoryId]
         [SerializeField]
-        private string _id;
-
-        [SerializeField]
-        private int _count;
+        private InventoryItemData[] _required;
 
         [SerializeField]
         private bool _removeAfterUse;
@@ -27,13 +23,13 @@ namespace Assets.CommonComponents.Interactions
         {
             var session = FindObjectOfType<GameSession>();
 
-            var count = session.PlayerData.Inventory.GetCountOf(_id);
+            var inventory = session.PlayerData.Inventory;
 
-            if (count >= _count)
+            if (inventory.Contains(_required))
             {
                 if (_removeAfterUse)
                 {
-                    session.PlayerData.Inventory.Remove(_id, _count);
+                    session.PlayerData.Inventory.Remove(_required);
                 }
 
                 _onSuccess?.Invoke();

@@ -81,11 +81,22 @@ namespace Assets.Model.Data
             InventoryChanged?.Invoke(id, -count, GetCountOf(id));
         }
 
+        public void Remove(InventoryItemData[] required)
+        {
+            foreach (var item in required)
+            {
+                Remove(item.Id, item.Count);
+            }
+        }
+
         public int GetCountOf(string id)
         {
             var item = GetItem(id);
             return item?.Count ?? 0;
         }
+
+        public bool Contains(InventoryItemData[] required)
+            => required.All(ri => _inventoryItems.Any(ii => ii.Id == ri.Id && ii.Count >= ri.Count));
 
         public InventoryItemData GetItem(string id)
             => _inventoryItems.FirstOrDefault(i => i.Id == id);
