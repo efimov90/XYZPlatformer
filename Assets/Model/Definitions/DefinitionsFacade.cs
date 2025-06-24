@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Model.Definitions
 {
@@ -19,7 +14,7 @@ namespace Assets.Model.Definitions
             => _inventoryItemDefinitions;
 
         public static DefinitionsFacade Instance
-            => _instance ? LoadDefinitions() : _instance;
+            => _instance == null ? LoadDefinitions() : _instance;
 
         private static DefinitionsFacade LoadDefinitions()
             => _instance = Resources.Load<DefinitionsFacade>("DefinitionsFacade");

@@ -7655,9 +7655,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Money: 0
+    _inventory:
+      _inventoryItems: []
     Health: 5
-    IsArmed: 0
 --- !u!1001 &1939515314
 PrefabInstance:
   m_ObjectHideFlags: 0
