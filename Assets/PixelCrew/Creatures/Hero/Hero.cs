@@ -202,5 +202,13 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             _spawnComponent.Spawn("SwordProjectile");
         }
+
+        private void OnDestroy()
+        {
+            if (_gameSession != null)
+            {
+                _gameSession.PlayerData.Inventory.InventoryChanged -= OnInventoryChaged;
+            }
+        }
     }
 }
