@@ -83,6 +83,22 @@ namespace Assets.PixelCrew.Creatures.Hero
             _hero.SetDirection(direction);
         }
 
+        public void OnUseHealthPotion(InputAction.CallbackContext context)
+        {
+            Debug.Log("Use health potion");
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
+            if (context.performed)
+            {
+                Debug.Log("Used health potion");
+
+                _hero.UseHealthPotion();
+            }
+        }
+
         private void OnDisable()
         {
             _inputActions.Disable();

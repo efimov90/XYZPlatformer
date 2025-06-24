@@ -56,7 +56,7 @@ namespace Assets.Model.Data
 
             if (itemDefinition.IsDefault)
             {
-                Debug.LogWarning($"Attempted to add an item with an invalid ID: {id}");
+                Debug.LogWarning($"Attempted to remove an item with an invalid ID: {id}");
                 return;
             }
 

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5097756596732939536}
   - component: {fileID: 1540390362333449219}
   - component: {fileID: 585580465712010400}
-  - component: {fileID: 7645772148119776000}
   - component: {fileID: 2336664301160239710}
   - component: {fileID: 1247577708688555970}
   - component: {fileID: 3210450865897805555}
   - component: {fileID: 2089187200336939641}
   - component: {fileID: 7615440146100331164}
+  - component: {fileID: 692298466452427881}
   m_Layer: 14
   m_Name: Health Potion
   m_TagString: Collectables
@@ -105,19 +105,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &7645772148119776000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7988263350300785619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d23fe04463d78f4791a68df0542706c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hpDelta: 10
 --- !u!114 &2336664301160239710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +187,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7645772148119776000}
-        m_MethodName: Modify
+      - m_Target: {fileID: 692298466452427881}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -269,3 +256,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &692298466452427881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988263350300785619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6398feebb03a8948933b3aeaea3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: HealthPotion
+  _count: 1

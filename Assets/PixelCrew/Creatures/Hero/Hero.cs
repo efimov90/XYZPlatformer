@@ -181,7 +181,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             else
             {
                 Debug.Log("Throw single");
-                RemoveFromInventory("sword", 1);
+                RemoveFromInventory("Sword", 1);
                 _animator.SetTrigger(_throwHashString);
             }
 
@@ -193,7 +193,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             for (var i = 0; i < 3; i++)
             {
                 _animator.SetTrigger(_throwHashString);
-                RemoveFromInventory("sword", 1);
+                RemoveFromInventory("Sword", 1);
                 yield return new WaitForSeconds(0.2f);
             }
         }
@@ -201,6 +201,17 @@ namespace Assets.PixelCrew.Creatures.Hero
         public void OnThrowed()
         {
             _spawnComponent.Spawn("SwordProjectile");
+        }
+
+        public void UseHealthPotion()
+        {
+            if (_gameSession.PlayerData.Inventory.GetCountOf("HealthPotion") <= 0)
+            {
+                return;
+            }
+
+            _gameSession.PlayerData.Inventory.Remove("HealthPotion", 1);
+            _healthComponent.ModifyHealth(10);
         }
 
         private void OnDestroy()
