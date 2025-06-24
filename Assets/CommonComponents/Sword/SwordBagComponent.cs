@@ -34,5 +34,10 @@ namespace Assets.CommonComponents.Sword
             Debug.Log($"Swords gived {count}, current swords: {SwordCount}");
             SwordsCountChanged?.Invoke(this, new SwordCountChanged(SwordCount));
         }
+
+        public void SetSwordCountSilently(int count)
+        {
+            SwordCount = count;
+        }
     }
 }

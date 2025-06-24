@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Model.Data
@@ -101,6 +99,12 @@ namespace Assets.Model.Data
             }
 
             item.Count -= count;
+        }
+
+        public int GetCountOf(string id)
+        {
+            var item = GetItem(id);
+            return item?.Count ?? 0;
         }
 
         public InventoryItemData GetItem(string id)

@@ -10,9 +10,9 @@ namespace Assets.Model
         [SerializeField]
         private InventoryData _inventory;
 
-        public int Money;
+        public InventoryData Inventory => _inventory;
+
         public int Health;
-        public bool IsArmed;
 
         public PlayerData Clone()
         {

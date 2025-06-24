@@ -42,7 +42,8 @@ namespace Assets.PixelCrew.Creatures.Hero
         private void Start()
         {
             _gameSession = FindObjectOfType<GameSession>();
-            _moneyBagComponent.SetMoneySilently(_gameSession.PlayerData.Money);
+            _moneyBagComponent.SetMoneySilently(_gameSession.PlayerData.Inventory.GetCountOf("Coin"));
+            _swordBagComponent.SetSwordCountSilently(_gameSession.PlayerData.Inventory.GetCountOf("Sword"));
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health);
             UpdateHeroWeapon();
         }
@@ -67,9 +68,10 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             if(e.SwordsCount == _swordBagComponent.MinSwordCount)
             {
-                _gameSession.PlayerData.IsArmed = true;
                 UpdateHeroWeapon();
             }
+
+            _gameSession.PlayerData.Inventory.Set("Sword", e.SwordsCount);
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -77,9 +79,14 @@ namespace Assets.PixelCrew.Creatures.Hero
             _gameSession.PlayerData.Health = currentHealth;
         }
 
+        public void AddInInventory(string id, int count)
+        {
+            _gameSession.PlayerData.Inventory.Add(id, count);
+        }
+
         private void OnMoneyChanged(object sender, MoneyChanged e)
         {
-            _gameSession.PlayerData.Money = e.Money;
+            _gameSession.PlayerData.Inventory.Set("Coin", e.Money);
         }
 
         private void OnMoneyWithdrawed(object sender, MoneyWithdrawed e)
@@ -126,7 +133,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public override void Attack()
         {
-            if (!_gameSession.PlayerData.IsArmed)
+            if (_gameSession.PlayerData.Inventory.GetCountOf("Sword") <= 0)
             {
                 return;
             }
@@ -159,13 +166,12 @@ namespace Assets.PixelCrew.Creatures.Hero
         [Obsolete("Не используется, указан в устаревшем компоненте")]
         public void ArmHero()
         {
-            _gameSession.PlayerData.IsArmed = true;
             UpdateHeroWeapon();
         }
 
         public void UpdateHeroWeapon()
         {
-            if (_gameSession.PlayerData.IsArmed)
+            if (_gameSession.PlayerData.Inventory.GetCountOf("Sword") > 0)
             {
                 _animator.runtimeAnimatorController = _armedController;
             }
