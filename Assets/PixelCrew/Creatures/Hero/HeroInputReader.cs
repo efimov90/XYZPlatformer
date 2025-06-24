@@ -85,11 +85,12 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnUseHealthPotion(InputAction.CallbackContext context)
         {
-            Debug.Log("Use health potion");
             if (_hero.IsDead)
             {
                 return;
             }
+
+            Debug.Log("Use health potion");
 
             if (context.performed)
             {
