@@ -2,6 +2,7 @@
 using Assets.CommonComponents.ColliderBased;
 using Assets.Model;
 using Assets.Utils;
+using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -37,6 +38,7 @@ namespace Assets.PixelCrew.Creatures.Hero
         private void Start()
         {
             _gameSession = FindObjectOfType<GameSession>();
+            _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health);
             UpdateHeroWeapon();
         }
@@ -62,6 +64,19 @@ namespace Assets.PixelCrew.Creatures.Hero
         public void RemoveFromInventory(string id, int count)
         {
             _gameSession.PlayerData.Inventory.Remove(id, count);
+        }
+
+        private void OnInventoryChaged(string id, int delta, int count)
+        {
+            if (id == "Sword")
+            {
+                UpdateHeroWeapon();
+            }
+
+            if (id == "Coin" && delta < 0)
+            {
+                SpawnCoins(delta);
+            }
         }
 
         protected override float CalculateVelocityY()
@@ -158,7 +173,7 @@ namespace Assets.PixelCrew.Creatures.Hero
                 return;
             }
 
-            if(multiple && swordCount >= maxSwordsSpawn + 1)
+            if (multiple && swordCount >= maxSwordsSpawn + 1)
             {
                 Debug.Log("Throw multiple");
                 StartCoroutine(nameof(ThrowMultiple));

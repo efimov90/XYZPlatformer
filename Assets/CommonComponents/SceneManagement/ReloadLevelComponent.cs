@@ -9,7 +9,7 @@ namespace Assets.CommonComponents.SceneManagement
         public void Reload()
         {
             var session = FindObjectOfType<GameSession>();
-            DestroyImmediate(session);
+            Destroy(session);
             var currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }

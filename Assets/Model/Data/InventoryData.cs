@@ -13,6 +13,10 @@ namespace Assets.Model.Data
         private List<InventoryItemData> _inventoryItems
             = new List<InventoryItemData>();
 
+        public delegate void InventoryChangedEventHandler(string id, int delta, int count);
+
+        public event InventoryChangedEventHandler InventoryChanged;
+
         public void Add(string id, int count)
         {
             if (count <= 0)
@@ -37,6 +41,8 @@ namespace Assets.Model.Data
             }
 
             item.Count += count;
+
+            InventoryChanged?.Invoke(id, count, GetCountOf(id));
         }
 
         public void Remove(string id, int count)
@@ -63,11 +69,16 @@ namespace Assets.Model.Data
 
             if (item.Count <= count)
             {
+                var delta = -item.Count;
                 _inventoryItems.Remove(item);
+
+                InventoryChanged?.Invoke(id, delta, GetCountOf(id));
                 return;
             }
 
             item.Count -= count;
+
+            InventoryChanged?.Invoke(id, -count, GetCountOf(id));
         }
 
         public int GetCountOf(string id)
