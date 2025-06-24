@@ -18,7 +18,8 @@ namespace Assets.Model.Definitions.Editor
 
             var index = Mathf.Max(Array.IndexOf(ids, property.stringValue), 0);
 
-            EditorGUI.Popup(position, property.displayName, index, ids);
+            var newIndex = EditorGUI.Popup(position, property.displayName, index, ids);
+            property.stringValue = ids[newIndex];
         }
     }
 }
