@@ -7,5 +7,10 @@ namespace Assets.Model.Data
     {
         public string Id;
         public int Count;
+
+        public InventoryItemData(string id)
+        {
+            Id = id;
+        }
     }
 }
