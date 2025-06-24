@@ -163,12 +163,6 @@ namespace Assets.PixelCrew.Creatures.Hero
             _particleSystem?.Play();
         }
 
-        [Obsolete("Не используется, указан в устаревшем компоненте")]
-        public void ArmHero()
-        {
-            UpdateHeroWeapon();
-        }
-
         public void UpdateHeroWeapon()
         {
             if (_gameSession.PlayerData.Inventory.GetCountOf("Sword") > 0)
