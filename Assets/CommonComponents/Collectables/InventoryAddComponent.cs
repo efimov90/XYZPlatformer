@@ -1,10 +1,12 @@
-﻿using Assets.PixelCrew.Creatures.Hero;
+﻿using Assets.Model.Definitions;
+using Assets.PixelCrew.Creatures.Hero;
 using UnityEngine;
 
 namespace Assets.CommonComponents.Collectables
 {
     public class InventoryAddComponent : MonoBehaviour
     {
+        [InventoryId]
         [SerializeField]
         private string _id;
 

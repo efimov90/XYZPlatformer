@@ -9,6 +9,13 @@ namespace Assets.Model.Definitions
         [SerializeField]
         private ItemDefinition[] _items;
 
+#if UNITY_EDITOR
+
+        public ItemDefinition[] ItemsForEditor
+            => _items;
+
+#endif
+
         public ItemDefinition Get(string id)
             => _items.FirstOrDefault(item => item.Id == id);
     }
