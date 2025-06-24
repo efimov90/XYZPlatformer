@@ -10,5 +10,7 @@ namespace Assets.Model.Definitions
         private string _id;
 
         public string Id => _id;
+
+        public bool IsDefault => string.IsNullOrEmpty(_id);
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.Model.Definitions
 {
@@ -7,5 +8,8 @@ namespace Assets.Model.Definitions
     {
         [SerializeField]
         private ItemDefinition[] _items;
+
+        public ItemDefinition Get(string id)
+            => _items.FirstOrDefault(item => item.Id == id);
     }
 }
