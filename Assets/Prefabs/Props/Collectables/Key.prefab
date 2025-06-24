@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 631590815379983507}
   - component: {fileID: 2148350902067560716}
   - component: {fileID: 417388867}
+  - component: {fileID: 8705598053059687027}
   m_Layer: 14
   m_Name: Key
   m_TagString: Collectables
@@ -223,3 +224,24 @@ MonoBehaviour:
   _frequency: 1
   _amplitude: 0.05
   _randomize: 1
+--- !u!50 &8705598053059687027
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819480009635262449}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

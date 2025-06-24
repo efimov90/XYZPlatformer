@@ -16,7 +16,7 @@ namespace Assets.Model.Definitions.Editor
                 .Select(item => item.Id)
                 .ToArray();
 
-            var index = Array.IndexOf(ids, property.stringValue);
+            var index = Mathf.Max(Array.IndexOf(ids, property.stringValue), 0);
 
             EditorGUI.Popup(position, property.displayName, index, ids);
         }
