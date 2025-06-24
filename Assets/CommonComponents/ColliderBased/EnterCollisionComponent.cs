@@ -11,11 +11,8 @@ namespace Assets.CommonComponents.ColliderBased
 
         private void OnCollisionEnter2D(Collision2D otherCollider)
         {
-            Debug.Log("Collision with " + otherCollider.gameObject.name);
-
             if (otherCollider.collider.CompareTag(_tag))
             {
-                Debug.Log("Collision with " + otherCollider.gameObject.name);
                 _action?.Invoke(otherCollider.gameObject);
             }
         }
