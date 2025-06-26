@@ -4882,7 +4882,8 @@ AudioSource:
   m_GameObject: {fileID: 2838300136750671955}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f7ff4b26a0e459b4882c6182c48d7e97,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 251398f76ec1af44abbbe6cb520036e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.66
@@ -4981,7 +4982,7 @@ GameObject:
   - component: {fileID: 8844041276697511436}
   - component: {fileID: 6936373068669675744}
   m_Layer: 12
-  m_Name: Sounds
+  m_Name: Vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5018,7 +5019,8 @@ AudioSource:
   m_GameObject: {fileID: 4685005890434067385}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d40d421e716386545ac73eed174a8247,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
