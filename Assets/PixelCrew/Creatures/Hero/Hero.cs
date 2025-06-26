@@ -95,12 +95,12 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             if (IsOnFloor)
             {
-                SpawnJumpDust();
+                DoJumpEffects();
                 velocityY += _jumpSpeed * _buffComponent.JumpBoostAmount;
             }
             else if (_allowSecondJump)
             {
-                SpawnJumpDust();
+                DoJumpEffects();
                 velocityY = _jumpSpeed * _buffComponent.JumpBoostAmount;
                 _allowSecondJump = false;
             }
@@ -200,6 +200,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnThrowed()
         {
+            _playSoundsComponent?.Play("Range");
             _spawnComponent.Spawn("SwordProjectile");
         }
 

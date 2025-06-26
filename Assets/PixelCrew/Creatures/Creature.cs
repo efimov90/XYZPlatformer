@@ -1,4 +1,5 @@
-﻿using Assets.CommonComponents.ColliderBased;
+﻿using Assets.CommonComponents.Audio;
+using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.GameObjectBased;
 using Assets.CommonComponents.Health;
 using UnityEngine;
@@ -57,6 +58,7 @@ namespace Assets.PixelCrew.Creatures
         private Vector2 _direction = Vector2.zero;
         protected Rigidbody2D _rigidbody2D;
         protected Animator _animator;
+        protected PlaySoundsComponent _playSoundsComponent;
         protected HealthComponent _healthComponent;
         protected SpawnComponent _spawnComponent;
 
@@ -72,8 +74,6 @@ namespace Assets.PixelCrew.Creatures
 
         public virtual void Attack()
         {
-            _spawnComponent.Spawn("SwordParticle");
-
             _animator.SetTrigger(_attackHashString);
         }
 
@@ -98,6 +98,7 @@ namespace Assets.PixelCrew.Creatures
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _playSoundsComponent = GetComponent<PlaySoundsComponent>();
             _spawnComponent = GetComponent<SpawnComponent>();
             _healthComponent = GetComponent<HealthComponent>();
         }
@@ -135,10 +136,16 @@ namespace Assets.PixelCrew.Creatures
             if (IsOnFloor)
             {
                 velocityY += _jumpSpeed;
-                SpawnJumpDust();
+                DoJumpEffects();
             }
 
             return velocityY;
+        }
+
+        protected void DoJumpEffects()
+        {
+            _playSoundsComponent?.Play("Jump");
+            SpawnJumpDust();
         }
 
         protected void SpawnJumpDust() => _spawnComponent?.Spawn("JumpDust");
@@ -178,6 +185,8 @@ namespace Assets.PixelCrew.Creatures
         public virtual void OnAttack()
         {
             _attackRange.Check();
+            _spawnComponent.Spawn("SwordParticle");
+            _playSoundsComponent?.Play("Melee");
         }
     }
 }
