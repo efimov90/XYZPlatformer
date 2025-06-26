@@ -5867,3 +5867,5 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: a12311bcf6b71a7489daf0656d89d78b, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 0a5f185ebdbc66f41a416d2a3cca686f, type: 3}
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 045e215aecfa8d647bf2611b4bb5d38d, type: 3}

@@ -85,6 +85,7 @@ namespace Assets.PixelCrew.Creatures
 
         public void Die()
         {
+            _playSoundsComponent?.Play("Die");
             _animator.SetBool(_isDeadHashString, true);
             IsDead = true;
         }
