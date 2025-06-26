@@ -5169,6 +5169,7 @@ GameObject:
   - component: {fileID: 2932966600243602135}
   - component: {fileID: 5196127121938451454}
   - component: {fileID: 2994632665407025581}
+  - component: {fileID: 1868631161992827731}
   m_Layer: 12
   m_Name: Hero
   m_TagString: Player
@@ -5534,6 +5535,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 46530e6a-03ac-4246-862d-fa2524f0f5db
     m_ActionName: Hero/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd7b494f-db51-461d-9512-90aa5c860093
+    m_ActionName: Hero/UseHealthPotion[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5551,3 +5556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e5431068b012243ba1a7210e3ef406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &1868631161992827731
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701511278655396703}
+  m_Enabled: 1
