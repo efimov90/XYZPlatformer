@@ -9311,11 +9311,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DestructableBarrel
       objectReference: {fileID: 0}
-    - target: {fileID: 8253102985459779805, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8253102985459779807, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
         type: 3}
       propertyPath: m_RootOrder
@@ -9329,7 +9324,7 @@ PrefabInstance:
     - target: {fileID: 8253102985459779807, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.7961273
+      value: -7.786
       objectReference: {fileID: 0}
     - target: {fileID: 8253102985459779807, guid: a5139fe90cfbb9144b32e2bbc0c6b2ee,
         type: 3}
