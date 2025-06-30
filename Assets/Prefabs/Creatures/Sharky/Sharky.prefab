@@ -481,7 +481,6 @@ GameObject:
   - component: {fileID: 2932966600243602135}
   - component: {fileID: 4531043595785675510}
   - component: {fileID: 1778840690276098697}
-  - component: {fileID: 200431844}
   m_Layer: 11
   m_Name: Sharky
   m_TagString: Enemy
@@ -736,16 +735,3 @@ MonoBehaviour:
   _attackCheck: {fileID: 7760388474293510768}
   _alarmDelay: 1
   _attackCooldown: 1
---- !u!114 &200431844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8701511278655396703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07d5d247d3ab7e5479c8198e94faba88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundProbe: {fileID: 982692701}
