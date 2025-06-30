@@ -40,6 +40,11 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         private void Start()
         {
+            if(_patrol == null)
+            {
+                return;
+            }
+
             StartState(_patrol.DoPatrol());
         }
 
@@ -89,7 +94,11 @@ namespace Assets.PixelCrew.Creatures.Mobs
             _spawnComponent.Spawn("Interrogation");
             _isAgro = false;
             ResetDirection();
-            StartState(_patrol.DoPatrol());
+
+            if (_patrol != null)
+            {
+                StartState(_patrol.DoPatrol());
+            }
         }
 
         private IEnumerator Attack()
@@ -110,7 +119,11 @@ namespace Assets.PixelCrew.Creatures.Mobs
             {
                 _isAgro = false;
                 _spawnComponent.Spawn("Interrogation");
-                StartState(_patrol.DoPatrol());
+
+                if (_patrol != null)
+                {
+                    StartState(_patrol.DoPatrol());
+                }
             }
         }
 

@@ -105,6 +105,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2387825467507485101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7429424646577090917}
+  m_Layer: 11
+  m_Name: StarkyMiniSpawnTarget1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7429424646577090917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387825467507485101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4782697222864311191}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3323812732021576256
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +366,9 @@ Transform:
   - {fileID: 1610586833814677924}
   - {fileID: 8047105597689528436}
   - {fileID: 4223945094875511697}
+  - {fileID: 7429424646577090917}
+  - {fileID: 4185359630889997748}
+  - {fileID: 5556316932714520655}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,7 +519,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MiniStarky
+          m_StringArgument: MiniStarky1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1309855049719392797}
@@ -497,7 +530,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MiniStarky
+          m_StringArgument: MiniStarky2
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1309855049719392797}
@@ -508,18 +541,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MiniStarky
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4782697222864311186}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MiniStarky3
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2463963234562386499}
@@ -573,10 +595,18 @@ MonoBehaviour:
     _prefab: {fileID: 6910950394134263082, guid: ef117657ca03e7b499c2c4bd06e51bdc,
       type: 3}
     _target: {fileID: 8047105597689528436}
-  - _name: MiniStarky
+  - _name: MiniStarky1
     _prefab: {fileID: 9057399600797044394, guid: 9d283b9096549754f93a4d1d8e685928,
       type: 3}
-    _target: {fileID: 8047105597689528436}
+    _target: {fileID: 7429424646577090917}
+  - _name: MiniStarky2
+    _prefab: {fileID: 9057399600797044394, guid: 9d283b9096549754f93a4d1d8e685928,
+      type: 3}
+    _target: {fileID: 4185359630889997748}
+  - _name: MiniStarky3
+    _prefab: {fileID: 9057399600797044394, guid: 9d283b9096549754f93a4d1d8e685928,
+      type: 3}
+    _target: {fileID: 5556316932714520655}
 --- !u!114 &324249878270143036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +642,36 @@ MonoBehaviour:
   _attackCheck: {fileID: 5849058384540641978}
   _alarmDelay: 1
   _attackCooldown: 1
+--- !u!1 &5204494996011434797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4185359630889997748}
+  m_Layer: 11
+  m_Name: StarkyMiniSpawnTarget2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4185359630889997748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204494996011434797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4782697222864311191}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5705232172144880510
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +731,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4782697222864311191}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7022422848770197596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5556316932714520655}
+  m_Layer: 11
+  m_Name: StarkyMiniSpawnTarget3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5556316932714520655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022422848770197596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4782697222864311191}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8141777750463030160
 GameObject:
