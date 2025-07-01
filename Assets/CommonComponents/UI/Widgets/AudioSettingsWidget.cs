@@ -22,7 +22,8 @@ namespace Assets.CommonComponents.UI.Widgets
 
             _slider.onValueChanged.AddListener(OnSliderValueChanged);
 
-            OnPropertyChanged(_persistentProperty.Value, _persistentProperty.Value);
+            _value.text = $"{_persistentProperty.Value * 100:F0}";
+            _slider.normalizedValue = _persistentProperty.Value;
         }
 
         private void OnSliderValueChanged(float value)
