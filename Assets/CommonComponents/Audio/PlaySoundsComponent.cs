@@ -5,7 +5,6 @@ namespace Assets.CommonComponents.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {
-        [SerializeField]
         private AudioSource _audioSource;
 
         [SerializeField]
@@ -13,11 +12,24 @@ namespace Assets.CommonComponents.Audio
 
         public void Play(string id)
         {
-            if(_sounds.FirstOrDefault(x => x.Id == id) is AudioData audioData)
+            if (_audioSource == null)
+            {
+                _audioSource = GameObject
+                    .FindWithTag("SfxAudioSource")
+                    ?.GetComponent<AudioSource>();
+            }
+
+            if (_audioSource == null)
+            {
+                Debug.LogWarning("AudioSource not found with tag 'SfxAudioSource'.");
+                return;
+            }
+
+            if (_sounds.FirstOrDefault(x => x.Id == id) is AudioData audioData)
             {
                 if (audioData.Clip != null)
                 {
-                    _audioSource.PlayOneShot(audioData.Clip);
+                    _audioSource?.PlayOneShot(audioData.Clip);
                 }
                 else
                 {

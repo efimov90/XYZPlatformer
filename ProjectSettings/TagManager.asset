@@ -8,6 +8,7 @@ TagManager:
   - Trash
   - Interactable
   - Collectables
+  - SfxAudioSource
   layers:
   - Default
   - TransparentFX
