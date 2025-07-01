@@ -8000,7 +8000,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventoryItems: []
-    Health: 5
+    Health:
+      _value: 10
 --- !u!1001 &1939515314
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9684,7 +9684,8 @@ MonoBehaviour:
       _inventoryItems:
       - Id: Sword
         Count: 1
-    Health: 20
+    Health:
+      _value: 10
 --- !u!1001 &1864613462
 PrefabInstance:
   m_ObjectHideFlags: 0

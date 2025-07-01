@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8183e2e9d162d394ea1b43ba9ac7fe36, type: 3}
-  m_Name: DefinitionsFacade
+  m_Script: {fileID: 11500000, guid: 6fca2c9ac76b35c45b54f47ab3e00f42, type: 3}
+  m_Name: PlayerDefinition
   m_EditorClassIdentifier: 
-  _inventoryItemDefinitions: {fileID: 11400000, guid: c2ece6f9f9d5f944cb38ff56345f5130,
-    type: 2}
-  _playerDefinition: {fileID: 11400000, guid: 7587f8b1cab0bb14daa9e1f630f63e91, type: 2}
+  _inventorySize: 32
+  _maxHealth: 100

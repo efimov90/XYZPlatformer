@@ -1,4 +1,5 @@
 ﻿using Assets.Model.Data;
+using Assets.Model.Data.Properties;
 using System;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Assets.Model
 
         public InventoryData Inventory => _inventory;
 
-        public int Health;
+        public IntProperty Health = new IntProperty();
 
         public PlayerData Clone()
         {

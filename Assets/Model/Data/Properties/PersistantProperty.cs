@@ -5,8 +5,9 @@ namespace Assets.Model.Data.Properties
     public abstract class PersistantProperty<TPropertyType>
     {
         [SerializeField]
-        private TPropertyType _value;
-        private TPropertyType _storedValue;
+        protected TPropertyType _value;
+
+        protected TPropertyType _storedValue;
         private TPropertyType _defaultValue;
 
         public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Model
 {
@@ -13,6 +14,8 @@ namespace Assets.Model
 
         private void Awake()
         {
+            LoadHud();
+
             if(IsSessionExitst())
             {
                 DestroyImmediate(gameObject);
@@ -21,6 +24,11 @@ namespace Assets.Model
             {
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExitst()

@@ -8,10 +8,16 @@ namespace Assets.Model.Definitions
         [SerializeField]
         private InventoryItemsDefinitions _inventoryItemDefinitions;
 
+        [SerializeField]
+        private PlayerDefinition _playerDefinition;
+
         private static DefinitionsFacade _instance;
 
         public InventoryItemsDefinitions InventoryItemDefinitions
             => _inventoryItemDefinitions;
+
+        public PlayerDefinition PlayerDefinition
+            => _playerDefinition;
 
         public static DefinitionsFacade Instance
             => _instance == null ? LoadDefinitions() : _instance;

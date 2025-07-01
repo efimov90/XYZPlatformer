@@ -39,7 +39,7 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             _gameSession = FindObjectOfType<GameSession>();
             _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
-            _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health);
+            _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health.Value);
             UpdateHeroWeapon();
         }
 
@@ -53,7 +53,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int currentHealth)
         {
-            _gameSession.PlayerData.Health = currentHealth;
+            _gameSession.PlayerData.Health.Value = currentHealth;
         }
 
         public void AddInInventory(string id, int count)
