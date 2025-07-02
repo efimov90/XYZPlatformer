@@ -19,7 +19,6 @@ namespace Assets.CommonComponents.Collectables
 
             if (hero == null)
             {
-                Debug.LogError("Hero component not found on the GameObject.");
                 return;
             }
 

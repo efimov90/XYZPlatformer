@@ -39,13 +39,6 @@ namespace Assets.Model.Data
 
         private void OnInventoryChanged(string id, int delta, int count)
         {
-            var index = Array.FindIndex(InventoryItems, item => item.Id == id);
-
-            if (index == -1)
-            {
-                return;
-            }
-
             RefreshItems();
             SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, InventoryItems.Length - 1);
             OnChanged?.Invoke();
