@@ -96,6 +96,19 @@ namespace Assets.PixelCrew.Creatures.Hero
             }
         }
 
+        public void OnNextQuickItem(InputAction.CallbackContext context)
+        {
+            if (_hero.IsDead)
+            {
+                return;
+            }
+
+            if (context.performed)
+            {
+                _hero.NextQuickItem();
+            }
+        }
+
         private void OnDisable()
         {
             _inputActions.Disable();

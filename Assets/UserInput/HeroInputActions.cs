@@ -57,6 +57,14 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""NextQuickItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e3ef684-d346-4c9c-9f99-dd593177f03f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -206,11 +214,22 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""93645b60-fbc3-4464-94ca-602ae66ab0f3"",
-                    ""path"": ""<Keyboard>/h"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UseHealthPotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef8ab2b7-cf3f-4d52-9e44-d33df75de127"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextQuickItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -226,6 +245,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
         m_Hero_UseHealthPotion = m_Hero.FindAction("UseHealthPotion", throwIfNotFound: true);
+        m_Hero_NextQuickItem = m_Hero.FindAction("NextQuickItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -280,6 +300,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_Attack;
     private readonly InputAction m_Hero_Throw;
     private readonly InputAction m_Hero_UseHealthPotion;
+    private readonly InputAction m_Hero_NextQuickItem;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -289,6 +310,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
         public InputAction @UseHealthPotion => m_Wrapper.m_Hero_UseHealthPotion;
+        public InputAction @NextQuickItem => m_Wrapper.m_Hero_NextQuickItem;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -313,6 +335,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @UseHealthPotion.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnUseHealthPotion;
                 @UseHealthPotion.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnUseHealthPotion;
                 @UseHealthPotion.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnUseHealthPotion;
+                @NextQuickItem.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
+                @NextQuickItem.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
+                @NextQuickItem.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -332,6 +357,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @UseHealthPotion.started += instance.OnUseHealthPotion;
                 @UseHealthPotion.performed += instance.OnUseHealthPotion;
                 @UseHealthPotion.canceled += instance.OnUseHealthPotion;
+                @NextQuickItem.started += instance.OnNextQuickItem;
+                @NextQuickItem.performed += instance.OnNextQuickItem;
+                @NextQuickItem.canceled += instance.OnNextQuickItem;
             }
         }
     }
@@ -343,5 +371,6 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnUseHealthPotion(InputAction.CallbackContext context);
+        void OnNextQuickItem(InputAction.CallbackContext context);
     }
 }

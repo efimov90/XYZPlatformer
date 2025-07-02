@@ -5588,9 +5588,9 @@ MonoBehaviour:
     m_ActionName: Hero/Throw[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8701511278655396700}
-        m_MethodName: UseHealthPotion
-        m_Mode: 1
+      - m_Target: {fileID: 8701511278655396691}
+        m_MethodName: OnUseHealthPotion
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5601,6 +5601,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cd7b494f-db51-461d-9512-90aa5c860093
     m_ActionName: Hero/UseHealthPotion[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8701511278655396691}
+        m_MethodName: OnNextQuickItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7e3ef684-d346-4c9c-9f99-dd593177f03f
+    m_ActionName: Hero/NextQuickItem[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5630,7 +5645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464849153e0df8c4eabc8b1909e6e856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: 35fb596c65137fe428696094b4a930f3, type: 3}

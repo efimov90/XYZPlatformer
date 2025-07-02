@@ -29,7 +29,7 @@ namespace Assets.CommonComponents.UI.Widgets
             var definition = DefinitionsFacade.Instance.Get(inventoryItemData.Id);
 
             _icon.sprite = definition.Icon;
-            _value.text = definition.IsStackable
+            _value.text = definition.HasTag(ItemTag.Stackable)
                 ? $"{inventoryItemData.Count}"
                 : "";
         }

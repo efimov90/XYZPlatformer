@@ -18,23 +18,22 @@ namespace Assets.CommonComponents.UI.Hud.QuickInventory
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         private GameSession _session;
-        private InventoryItemData[] _inventoryItems;
         private List<InventoryItemWidget> _createdItems = new List<InventoryItemWidget>();
 
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-
+            _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
             Rebuild();
         }
 
         private void Rebuild()
         {
-            _inventoryItems = _session.PlayerData.Inventory.GetAll();
+            var inventoryItems = _session.QuickInventory.InventoryItems;
 
             // Create required items
 
-            for (var i = _createdItems.Count; i < _inventoryItems.Length; i++)
+            for (var i = _createdItems.Count; i < inventoryItems.Length; i++)
             {
                 var itemWidget = Instantiate(_prefab, _container);
                 _createdItems.Add(itemWidget);
@@ -42,15 +41,15 @@ namespace Assets.CommonComponents.UI.Hud.QuickInventory
 
             // Update existing items
 
-            for (var i = 0; i < _inventoryItems.Length; i++)
+            for (var i = 0; i < inventoryItems.Length; i++)
             {
-                _createdItems[i].SetData(_inventoryItems[i], i);
+                _createdItems[i].SetData(inventoryItems[i], i);
                 _createdItems[i].gameObject.SetActive(true);
             }
 
             // Hide unused items
 
-            for (var i = _inventoryItems.Length; i < _createdItems.Count; i++)
+            for (var i = inventoryItems.Length; i < _createdItems.Count; i++)
             {
                 _createdItems[i].gameObject.SetActive(false);
             }
@@ -58,7 +57,7 @@ namespace Assets.CommonComponents.UI.Hud.QuickInventory
 
         private void OnDestroy()
         {
-            // TODO: unsubscribe model
+            _trash.Dispose();
         }
     }
 }

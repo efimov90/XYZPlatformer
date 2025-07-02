@@ -7999,7 +7999,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventoryItems: []
+      _inventoryItems:
+      - Id: Coin
+        Count: 1
+      - Id: Sword
+        Count: 1
+      - Id: Key
+        Count: 1
+      - Id: HealthPotion
+        Count: 1
     Health:
       _value: 10
 --- !u!1001 &1939515314

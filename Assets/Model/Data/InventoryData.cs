@@ -81,8 +81,29 @@ namespace Assets.Model.Data
             InventoryChanged?.Invoke(id, -count, GetCountOf(id));
         }
 
-        public InventoryItemData[] GetAll()
-            => _inventoryItems.ToArray();
+        public InventoryItemData[] GetAll(params ItemTag[] itemTags)
+        {
+            if(!itemTags.Any())
+            {
+                return _inventoryItems.ToArray();
+            }
+
+            var result = new List<InventoryItemData>();
+
+            foreach (var inventoryItem in _inventoryItems)
+            {
+                var definition = DefinitionsFacade.Instance.Get(inventoryItem.Id);
+
+                if(itemTags.Any(it => !definition.HasTag(it)))
+                {
+                    continue;
+                }
+
+                result.Add(inventoryItem);
+            }
+
+            return result.ToArray();
+        }
 
         public void Remove(InventoryItemData[] required)
         {

@@ -215,6 +215,11 @@ namespace Assets.PixelCrew.Creatures.Hero
             _healthComponent.ModifyHealth(10);
         }
 
+        public void NextQuickItem()
+        {
+            _gameSession.QuickInventory.SetNextItem();
+        }
+
         private void OnDestroy()
         {
             if (_gameSession != null)

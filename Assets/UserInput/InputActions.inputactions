@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "NextQuickItem",
+                    "type": "Button",
+                    "id": "7e3ef684-d346-4c9c-9f99-dd593177f03f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -193,11 +201,22 @@
                 {
                     "name": "",
                     "id": "93645b60-fbc3-4464-94ca-602ae66ab0f3",
-                    "path": "<Keyboard>/h",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "UseHealthPotion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef8ab2b7-cf3f-4d52-9e44-d33df75de127",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextQuickItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

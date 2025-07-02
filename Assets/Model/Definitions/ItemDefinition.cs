@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Model.Definitions
@@ -13,7 +14,7 @@ namespace Assets.Model.Definitions
         private Sprite _icon;
 
         [SerializeField]
-        private bool _isStackable;
+        private ItemTag[] _itemTags;
 
         public string Id => _id;
 
@@ -21,6 +22,8 @@ namespace Assets.Model.Definitions
 
         public Sprite Icon => _icon;
 
-        public bool IsStackable => _isStackable;
+        public ItemTag[] ItemTags => _itemTags;
+
+        public bool HasTag(ItemTag tag) => _itemTags.Contains(tag);
     }
 }
