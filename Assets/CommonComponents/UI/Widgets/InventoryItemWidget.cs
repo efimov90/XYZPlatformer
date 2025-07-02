@@ -37,12 +37,19 @@ namespace Assets.CommonComponents.UI.Widgets
         private void Start()
         {
             var session = FindObjectOfType<GameSession>();
-            session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnSelectedIndexChanged);
+
+            _trash.Retain(
+                session.QuickInventory.SelectedIndex.SubscribeAndInvoke(OnSelectedIndexChanged));
         }
 
         private void OnSelectedIndexChanged(int newValue, int _)
         {
             _selection.SetActive(newValue == _index);
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Assets.Model.Data;
+using Assets.Utils.Disposables;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ namespace Assets.Model
     [Serializable]
     public class GameSession : MonoBehaviour
     {
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+
         [SerializeField]
         private PlayerData _data;
 
@@ -36,9 +39,16 @@ namespace Assets.Model
         private void InitModels()
         {
             QuickInventory = new QuickInventoryData(PlayerData);
+
+            _trash.Retain(QuickInventory);
         }
 
         private void Save()
+        {
+            _save = _data.Clone();
+        }
+
+        public void LoadLastSave()
         {
             _save = _data.Clone();
         }
@@ -61,6 +71,11 @@ namespace Assets.Model
             }
 
             return false;
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

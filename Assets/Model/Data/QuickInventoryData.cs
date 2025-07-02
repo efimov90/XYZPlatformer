@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Model.Data
 {
-    public class QuickInventoryData
+    public class QuickInventoryData : IDisposable
     {
         private readonly PlayerData _playerData;
 
@@ -47,6 +47,11 @@ namespace Assets.Model.Data
         private void RefreshItems()
         {
             InventoryItems = _playerData.Inventory.GetAll(ItemTag.Usable);
+        }
+
+        public void Dispose()
+        {
+            _playerData.Inventory.InventoryChanged -= OnInventoryChanged;
         }
     }
 }
