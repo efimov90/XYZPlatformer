@@ -1,5 +1,6 @@
 ﻿using Assets.CommonComponents.Collectables;
 using Assets.CommonComponents.ColliderBased;
+using Assets.CommonComponents.GameObjectBased;
 using Assets.Model;
 using Assets.Utils;
 using System;
@@ -28,6 +29,9 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         [SerializeField]
         private CheckCircleOverlap _interactionRange;
+
+        [SerializeField]
+        protected SpawnComponent _throwSpawnComponent;
 
         private BuffComponent _buffComponent;
 
@@ -181,8 +185,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             else
             {
                 Debug.Log("Throw single");
-                RemoveFromInventory("Sword", 1);
-                _animator.SetTrigger(_throwHashString);
+                ThrowAndRemoveFromInventory();
             }
 
             _throwCooldown.Reset();
@@ -192,16 +195,21 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             for (var i = 0; i < 3; i++)
             {
-                _animator.SetTrigger(_throwHashString);
-                RemoveFromInventory("Sword", 1);
+                ThrowAndRemoveFromInventory();
                 yield return new WaitForSeconds(0.2f);
             }
         }
 
-        public void OnThrowed()
+        private void ThrowAndRemoveFromInventory()
         {
             _playSoundsComponent?.Play("Range");
-            _spawnComponent.Spawn("SwordProjectile");
+            _animator.SetTrigger(_throwHashString);
+            RemoveFromInventory("Sword", 1);
+        }
+
+        public void OnThrowed()
+        {
+            _throwSpawnComponent.Spawn("Sword");
         }
 
         public void UseHealthPotion()

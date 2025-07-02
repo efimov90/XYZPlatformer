@@ -16,6 +16,6 @@ MonoBehaviour:
   - _id: Sword
     _projectilePrefab: {fileID: 2840650573357483545, guid: 93507751ee237b148850d62cf92bc94c,
       type: 3}
-  - _id: PearlProjectile
+  - _id: Pearl
     _projectilePrefab: {fileID: 4959269432982580988, guid: df878392c5d75ec4c86116a4458c24f3,
       type: 3}
