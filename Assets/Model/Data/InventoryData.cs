@@ -81,6 +81,9 @@ namespace Assets.Model.Data
             InventoryChanged?.Invoke(id, -count, GetCountOf(id));
         }
 
+        public InventoryItemData[] GetAll()
+            => _inventoryItems.ToArray();
+
         public void Remove(InventoryItemData[] required)
         {
             foreach (var item in required)

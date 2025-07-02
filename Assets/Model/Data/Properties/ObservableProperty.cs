@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Utils.Disposables;
+using System;
 using UnityEngine;
 
 namespace Assets.Model.Data.Properties
@@ -27,6 +28,22 @@ namespace Assets.Model.Data.Properties
                 _value = value;
                 PropertyChanged?.Invoke(_value, oldValue);
             }
+        }
+
+        public IDisposable Subscribe(OnPropertyChanged propertyChangedHandler)
+        {
+            PropertyChanged += propertyChangedHandler;
+            return new ActionDisposable(() => PropertyChanged -= propertyChangedHandler);
+        }
+
+        public IDisposable SubscribeAndInvoke(OnPropertyChanged propertyChangedHandler)
+        {
+            PropertyChanged += propertyChangedHandler;
+            var disposableAction = new ActionDisposable(() => PropertyChanged -= propertyChangedHandler);
+
+            propertyChangedHandler.Invoke(_value, _value);
+
+            return disposableAction;
         }
     }
 }

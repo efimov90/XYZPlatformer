@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Model.Data;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,10 @@ namespace Assets.Model
     {
         [SerializeField]
         private PlayerData _data;
+
+        private PlayerData _save;
+
+        public QuickInventoryData QuickInventory { get; private set; }
 
         public PlayerData PlayerData => _data;
 
@@ -22,8 +27,20 @@ namespace Assets.Model
             }
             else
             {
+                Save();
+                InitModels();
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void InitModels()
+        {
+            QuickInventory = new QuickInventoryData(PlayerData);
+        }
+
+        private void Save()
+        {
+            _save = _data.Clone();
         }
 
         private void LoadHud()
