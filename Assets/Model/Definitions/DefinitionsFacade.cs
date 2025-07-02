@@ -11,10 +11,16 @@ namespace Assets.Model.Definitions
         [SerializeField]
         private PlayerDefinition _playerDefinition;
 
+        [SerializeField]
+        private ThrowableItemsDefinition _throwableItemsDefinition;
+
         private static DefinitionsFacade _instance;
 
         public InventoryItemsDefinitions InventoryItemDefinitions
             => _inventoryItemDefinitions;
+
+        public ThrowableItemsDefinition ThrowableItemsDefinition
+            => _throwableItemsDefinition;
 
         public PlayerDefinition PlayerDefinition
             => _playerDefinition;

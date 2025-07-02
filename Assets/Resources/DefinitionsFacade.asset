@@ -15,3 +15,5 @@ MonoBehaviour:
   _inventoryItemDefinitions: {fileID: 11400000, guid: c2ece6f9f9d5f944cb38ff56345f5130,
     type: 2}
   _playerDefinition: {fileID: 11400000, guid: 7587f8b1cab0bb14daa9e1f630f63e91, type: 2}
+  _throwableItemsDefinition: {fileID: 11400000, guid: c4ea05e7768eb554d8668b5e66c8d27c,
+    type: 2}
