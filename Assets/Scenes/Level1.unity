@@ -8002,11 +8002,9 @@ MonoBehaviour:
       _inventoryItems:
       - Id: Coin
         Count: 1
-      - Id: Sword
+      - Id: HealthPotion
         Count: 1
       - Id: Key
-        Count: 1
-      - Id: HealthPotion
         Count: 1
       - Id: Pearl
         Count: 3
