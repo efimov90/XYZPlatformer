@@ -13,6 +13,7 @@ namespace Assets.PixelCrew.Creatures.Hero
     public class Hero : Creature
     {
         private const string SwordId = "Sword";
+        private const string HealthPotionId = "HealthPotion";
         private const int maxThrowableSpawn = 3;
 
         [SerializeField]
@@ -274,13 +275,13 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void UseHealthPotion()
         {
-            if (_gameSession.PlayerData.Inventory.GetCountOf("HealthPotion") <= 0)
+            if (_gameSession.PlayerData.Inventory.GetCountOf(HealthPotionId) <= 0)
             {
                 return;
             }
 
-            _gameSession.PlayerData.Inventory.Remove("HealthPotion", 1);
-            _healthComponent.ModifyHealth(10);
+            _gameSession.PlayerData.Inventory.Remove(HealthPotionId, 1);
+            _healthComponent.ModifyHealth(Random.Range(5, 25));
         }
 
         public void NextQuickItem()
