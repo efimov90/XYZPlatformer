@@ -241,7 +241,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             for (var i = 0; i < 3; i++)
             {
                 ThrowAndRemoveFromInventory();
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.3f);
             }
         }
 
@@ -256,7 +256,6 @@ namespace Assets.PixelCrew.Creatures.Hero
 
             _playSoundsComponent?.Play("Range");
             _animator.SetTrigger(_throwHashString);
-            RemoveFromInventory(QuickInventorySelectedId, 1);
         }
 
         public void OnThrowed()
@@ -270,6 +269,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
             _throwSpawnComponent.SetPrefab(throwable.ProjectilePrefab);
             _throwSpawnComponent.Spawn();
+            RemoveFromInventory(QuickInventorySelectedId, 1);
         }
 
         public void UseHealthPotion()
