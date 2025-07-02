@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Assets.Utils;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.CommonComponents.Audio
@@ -14,9 +15,7 @@ namespace Assets.CommonComponents.Audio
         {
             if (_audioSource == null)
             {
-                _audioSource = GameObject
-                    .FindWithTag("SfxAudioSource")
-                    ?.GetComponent<AudioSource>();
+                _audioSource = AudioUtils.FindSfxSource();
             }
 
             if (_audioSource == null)

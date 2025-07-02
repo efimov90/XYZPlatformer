@@ -2282,7 +2282,18 @@ MonoBehaviour:
         m_CallState: 2
   _onFailure:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 549414109}
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549414108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4653085746644185051, guid: 09e4beff51a95774e8311bec41d0b833,
@@ -2295,6 +2306,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201d7015bab0c1345aece1f6a777bf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &549414109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549414106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb37ffc9e38fc24bb2fc76aec915cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - The door does not open...
+    - I need to find a key
+  _external: {fileID: 0}
 --- !u!1001 &585979089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8965,12 +8994,12 @@ PrefabInstance:
     - target: {fileID: 1819480009635262455, guid: 98396665cb6f1044f809114ee18f6634,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.090202
+      value: -111.34
       objectReference: {fileID: 0}
     - target: {fileID: 1819480009635262455, guid: 98396665cb6f1044f809114ee18f6634,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.7161274
+      value: -5.72
       objectReference: {fileID: 0}
     - target: {fileID: 1819480009635262455, guid: 98396665cb6f1044f809114ee18f6634,
         type: 3}
