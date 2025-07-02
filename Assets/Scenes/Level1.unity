@@ -8008,6 +8008,8 @@ MonoBehaviour:
         Count: 1
       - Id: HealthPotion
         Count: 1
+      - Id: PearlProjectile
+        Count: 3
     Health:
       _value: 10
 --- !u!1001 &1939515314
