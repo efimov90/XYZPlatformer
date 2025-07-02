@@ -5043,7 +5043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1717536966087927268}
-  - component: {fileID: 2721057812775505919}
+  - component: {fileID: 3572773082971641550}
   m_Layer: 15
   m_Name: ThrowSpawnPosition
   m_TagString: Untagged
@@ -5059,13 +5059,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6063686337109581238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.352, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.352, y: 0.066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701511278655396701}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2721057812775505919
+--- !u!114 &3572773082971641550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5074,18 +5074,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6063686337109581238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576836fa409df4a40afb0ab2230b5a8b, type: 3}
+  m_Script: {fileID: 11500000, guid: cc7ce5f3b9112c241ac2e0c4020fb473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnObjects:
-  - _name: Sword
-    _prefab: {fileID: 2840650573357483545, guid: 93507751ee237b148850d62cf92bc94c,
-      type: 3}
-    _target: {fileID: 1717536966087927268}
-  - _name: Pearl
-    _prefab: {fileID: 4959269432982580988, guid: df878392c5d75ec4c86116a4458c24f3,
-      type: 3}
-    _target: {fileID: 1717536966087927268}
+  _spawnPoint: {fileID: 1717536966087927268}
+  _prefab: {fileID: 0}
 --- !u!1 &7278574024676556496
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,7 +5344,7 @@ MonoBehaviour:
   _armedController: {fileID: 9100000, guid: b5f859fd0300950479da9af113c2380a, type: 2}
   _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
   _interactionRange: {fileID: 5277828391195267486}
-  _throwSpawnComponent: {fileID: 2721057812775505919}
+  _throwSpawnComponent: {fileID: 3572773082971641550}
 --- !u!50 &8701511278655396689
 Rigidbody2D:
   serializedVersion: 4

@@ -1,6 +1,5 @@
 ﻿using Assets.CommonComponents.UI.Widgets;
 using Assets.Model;
-using Assets.Model.Data;
 using Assets.Utils.Disposables;
 using System.Collections.Generic;
 using UnityEngine;

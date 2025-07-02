@@ -14,6 +14,8 @@ namespace Assets.Model.Data
 
         public readonly IntProperty SelectedIndex = new IntProperty();
 
+        public InventoryItemData SelectedItem => InventoryItems[SelectedIndex.Value];
+
         public event Action OnChanged;
 
         public QuickInventoryData(PlayerData playerData)

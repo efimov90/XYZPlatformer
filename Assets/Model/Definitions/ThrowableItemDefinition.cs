@@ -16,5 +16,7 @@ namespace Assets.Model.Definitions
         public string Id => _id;
 
         public GameObject ProjectilePrefab => _projectilePrefab;
+
+        public bool IsDefault => string.IsNullOrEmpty(_id);
     }
 }

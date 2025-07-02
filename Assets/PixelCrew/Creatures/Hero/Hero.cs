@@ -1,7 +1,8 @@
-using Assets.CommonComponents.Collectables;
+﻿using Assets.CommonComponents.Collectables;
 using Assets.CommonComponents.ColliderBased;
 using Assets.CommonComponents.Spawners;
 using Assets.Model;
+using Assets.Model.Definitions;
 using Assets.Utils;
 using System;
 using System.Collections;
@@ -31,7 +32,7 @@ namespace Assets.PixelCrew.Creatures.Hero
         private CheckCircleOverlap _interactionRange;
 
         [SerializeField]
-        protected SpawnComponent _throwSpawnComponent;
+        protected AdjustableSpawnComponent _throwSpawnComponent;
 
         private BuffComponent _buffComponent;
 
@@ -202,14 +203,31 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void ThrowAndRemoveFromInventory()
         {
+            var throwableId = _gameSession.QuickInventory.SelectedItem.Id;
+            var throwable = DefinitionsFacade.Instance.ThrowableItemsDefinition.Get(throwableId);
+
+            if (throwable.IsDefault)
+            {
+                return;
+            }
+
             _playSoundsComponent?.Play("Range");
             _animator.SetTrigger(_throwHashString);
-            RemoveFromInventory("Sword", 1);
+            RemoveFromInventory(throwableId, 1);
         }
 
         public void OnThrowed()
         {
-            _throwSpawnComponent.Spawn("Sword");
+            var throwableId = _gameSession.QuickInventory.SelectedItem.Id;
+            var throwable = DefinitionsFacade.Instance.ThrowableItemsDefinition.Get(throwableId);
+
+            if (throwable.IsDefault)
+            {
+                return;
+            }
+
+            _throwSpawnComponent.SetPrefab(throwable.ProjectilePrefab);
+            _throwSpawnComponent.Spawn();
         }
 
         public void UseHealthPotion()
