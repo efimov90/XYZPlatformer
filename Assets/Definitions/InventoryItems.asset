@@ -30,3 +30,6 @@ MonoBehaviour:
   - _id: Pearl
     _icon: {fileID: 21300000, guid: 112be37549e268f43b5a8f436026de9c, type: 3}
     _itemTags: 000000000100000002000000
+  - _id: GreenDiamond
+    _icon: {fileID: 5489425550423852611, guid: 57e4fda186540464399b41bc73485c50, type: 3}
+    _itemTags: 00000000
