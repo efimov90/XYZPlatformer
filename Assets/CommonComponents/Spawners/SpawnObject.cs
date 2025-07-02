@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents.GameObjectBased
+namespace Assets.CommonComponents.Spawners
 {
     [Serializable]
     public class SpawnObject

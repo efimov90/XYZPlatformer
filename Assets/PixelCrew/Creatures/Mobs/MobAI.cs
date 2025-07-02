@@ -1,5 +1,5 @@
 ﻿using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.GameObjectBased;
+using Assets.CommonComponents.Spawners;
 using Assets.PixelCrew.Creatures.Mobs.Behaviours;
 using System.Collections;
 using UnityEngine;

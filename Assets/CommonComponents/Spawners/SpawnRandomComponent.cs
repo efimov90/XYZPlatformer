@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.GameObjectBased
+namespace Assets.CommonComponents.Spawners
 {
     public class SpawnRandomComponent : MonoBehaviour
     {
