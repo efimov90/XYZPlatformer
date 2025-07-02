@@ -4,7 +4,6 @@ using Assets.CommonComponents.Spawners;
 using Assets.Model;
 using Assets.Model.Definitions;
 using Assets.Utils;
-using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -13,6 +12,9 @@ namespace Assets.PixelCrew.Creatures.Hero
 {
     public class Hero : Creature
     {
+        private const string SwordId = "Sword";
+        private const int maxThrowableSpawn = 3;
+
         [SerializeField]
         private float _slamDownVelocity;
 
@@ -39,6 +41,52 @@ namespace Assets.PixelCrew.Creatures.Hero
         private bool _allowSecondJump = true;
 
         private GameSession _gameSession;
+
+        public string QuickInventorySelectedId => _gameSession.QuickInventory.SelectedItem.Id;
+
+        public bool CanThrow
+        {
+            get
+            {
+                var canThrow = DefinitionsFacade.Instance.InventoryItemDefinitions.Get(QuickInventorySelectedId).HasTag(ItemTag.Throwable);
+
+                if (!canThrow)
+                {
+                    return false;
+                }
+
+                var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
+
+                if(QuickInventorySelectedId == SwordId)
+                {
+                    return throwableCount > 1;
+                }
+
+                return throwableCount > 0;
+            }
+        }
+
+        public bool CanThrowMultiple
+        {
+            get
+            {
+                var canThrow = DefinitionsFacade.Instance.InventoryItemDefinitions.Get(QuickInventorySelectedId).HasTag(ItemTag.Throwable);
+
+                if (!canThrow)
+                {
+                    return false;
+                }
+
+                var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
+
+                if(QuickInventorySelectedId == SwordId)
+                {
+                    return throwableCount >= maxThrowableSpawn + 1;
+                }
+
+                return throwableCount >= maxThrowableSpawn;
+            }
+        }
 
         private void Start()
         {
@@ -73,7 +121,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void OnInventoryChaged(string id, int delta, int count)
         {
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -120,7 +168,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public override void Attack()
         {
-            if (_gameSession.PlayerData.Inventory.GetCountOf("Sword") <= 0)
+            if (_gameSession.PlayerData.Inventory.GetCountOf(SwordId) <= 0)
             {
                 return;
             }
@@ -152,7 +200,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void UpdateHeroWeapon()
         {
-            if (_gameSession.PlayerData.Inventory.GetCountOf("Sword") > 0)
+            if (_gameSession.PlayerData.Inventory.GetCountOf(SwordId) > 0)
             {
                 _animator.runtimeAnimatorController = _armedController;
             }
@@ -164,11 +212,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void Throw(bool multiple = false)
         {
-            const int maxSwordsSpawn = 3;
-
-            var swordCount = _gameSession.PlayerData.Inventory.GetCountOf("Sword");
-
-            if (swordCount <= 1)
+            if (!CanThrow)
             {
                 return;
             }
@@ -178,7 +222,7 @@ namespace Assets.PixelCrew.Creatures.Hero
                 return;
             }
 
-            if (multiple && swordCount >= maxSwordsSpawn + 1)
+            if (multiple && CanThrowMultiple)
             {
                 Debug.Log("Throw multiple");
                 StartCoroutine(nameof(ThrowMultiple));
@@ -203,23 +247,21 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void ThrowAndRemoveFromInventory()
         {
-            var throwableId = _gameSession.QuickInventory.SelectedItem.Id;
-            var throwable = DefinitionsFacade.Instance.ThrowableItemsDefinition.Get(throwableId);
+            var isThrowable = DefinitionsFacade.Instance.InventoryItemDefinitions.Get(QuickInventorySelectedId).HasTag(ItemTag.Throwable);
 
-            if (throwable.IsDefault)
+            if (!isThrowable)
             {
                 return;
             }
 
             _playSoundsComponent?.Play("Range");
             _animator.SetTrigger(_throwHashString);
-            RemoveFromInventory(throwableId, 1);
+            RemoveFromInventory(QuickInventorySelectedId, 1);
         }
 
         public void OnThrowed()
         {
-            var throwableId = _gameSession.QuickInventory.SelectedItem.Id;
-            var throwable = DefinitionsFacade.Instance.ThrowableItemsDefinition.Get(throwableId);
+            var throwable = DefinitionsFacade.Instance.ThrowableItemsDefinition.Get(QuickInventorySelectedId);
 
             if (throwable.IsDefault)
             {
