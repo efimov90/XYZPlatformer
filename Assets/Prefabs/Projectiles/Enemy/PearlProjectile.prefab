@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 5132878303464099514}
   - component: {fileID: 4178918251911626860}
   - component: {fileID: 3469413373097972360}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PearlProjectile
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

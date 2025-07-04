@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 3323987229626636293}
   - component: {fileID: 194409281617577359}
   - component: {fileID: 4443819049298788181}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PearlSinusoidalProjectile
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
