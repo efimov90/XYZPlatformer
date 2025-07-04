@@ -27,6 +27,8 @@ namespace Assets.CommonComponents.Spawners
             var newInstance = Instantiate(_prefab, _spawnPoint.position, Quaternion.identity);
             newInstance.transform.localScale = _spawnPoint.lossyScale;
             newInstance.SetActive(true);
+
+            return;
         }
 
         public void SetPrefab(GameObject projectilePrefab)

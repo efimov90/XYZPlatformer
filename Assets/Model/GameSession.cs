@@ -1,6 +1,9 @@
-﻿using Assets.Model.Data;
+﻿using Assets.CommonComponents.SceneManagement;
+using Assets.Model.Data;
 using Assets.Utils.Disposables;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,24 +19,59 @@ namespace Assets.Model
 
         private PlayerData _save;
 
+        [SerializeField]
+        private string _defaultCheckpointId;
+
+        private List<string> _chechedCheckpoints = new List<string>();
+
         public QuickInventoryData QuickInventory { get; private set; }
 
         public PlayerData PlayerData => _data;
 
+        public bool IsChecked(string id)
+            => _chechedCheckpoints.Contains(id);
+
+        public void SetChecked(string id)
+        {
+            if(IsChecked(id))
+            {
+                return;
+            }
+
+            Save();
+            _chechedCheckpoints.Add(id);
+        }
+
         private void Awake()
         {
-            LoadHud();
-
-            if(IsSessionExitst())
+            if(GetExistingSession() is GameSession gameSession)
             {
-                DestroyImmediate(gameObject);
+                gameSession.StartSesion(_defaultCheckpointId);
+                Destroy(gameObject);
             }
             else
             {
-                Save();
                 InitModels();
                 DontDestroyOnLoad(this);
+                StartSesion(_defaultCheckpointId);
             }
+        }
+
+        private void StartSesion(string defaultCheckpointId)
+        {
+            SetChecked(defaultCheckpointId);
+
+            LoadHud();
+            SpawnHero(defaultCheckpointId);
+        }
+
+        private void SpawnHero(string defaultCheckpointId)
+        {
+            var lastCheckpointId = _chechedCheckpoints.Last();
+
+            FindObjectsOfType<CheckPointComponent>()
+                .FirstOrDefault(cp => cp.Id == lastCheckpointId)
+                ?.SpawnHero();
         }
 
         private void InitModels()
@@ -50,7 +88,10 @@ namespace Assets.Model
 
         public void LoadLastSave()
         {
-            _save = _data.Clone();
+            _data = _save.Clone();
+
+            _trash.Dispose();
+            InitModels();
         }
 
         private void LoadHud()
@@ -58,7 +99,7 @@ namespace Assets.Model
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
-        private bool IsSessionExitst()
+        private GameSession GetExistingSession()
         {
             var sessions = FindObjectsOfType<GameSession>();
 
@@ -66,11 +107,11 @@ namespace Assets.Model
             {
                 if(session != this)
                 {
-                    return true;
+                    return session;
                 }
             }
 
-            return false;
+            return null;
         }
 
         private void OnDestroy()
