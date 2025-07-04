@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.UI
+namespace Assets.CommonComponents.UI.Windows
 {
     public class AnimatedWindow : MonoBehaviour
     {

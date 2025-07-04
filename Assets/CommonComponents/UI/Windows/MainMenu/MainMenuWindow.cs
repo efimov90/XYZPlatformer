@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.CommonComponents.UI.MainMenu
+namespace Assets.CommonComponents.UI.Windows.MainMenu
 {
     public class MainMenuWindow : AnimatedWindow
     {
@@ -17,6 +17,14 @@ namespace Assets.CommonComponents.UI.MainMenu
         public void OnShowSettings()
         {
             var window = Resources.Load<GameObject>("UI/SettingsWindow");
+            var canvas = FindObjectOfType<Canvas>();
+
+            Instantiate(window, canvas.transform);
+        }
+
+        public void OnShowLanguage()
+        {
+            var window = Resources.Load<GameObject>("UI/LocalizationMenuWindow");
             var canvas = FindObjectOfType<Canvas>();
 
             Instantiate(window, canvas.transform);

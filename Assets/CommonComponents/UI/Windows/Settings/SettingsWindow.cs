@@ -2,7 +2,7 @@
 using Assets.Model.Data;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Settings
+namespace Assets.CommonComponents.UI.Windows.Settings
 {
     public class SettingsWindow : AnimatedWindow
     {
