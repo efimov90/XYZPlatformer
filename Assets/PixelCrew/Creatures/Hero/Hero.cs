@@ -129,7 +129,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
             if (id == "Coin" && delta < 0)
             {
-                SpawnCoins(delta);
+                SpawnCoins(-delta);
             }
         }
 
