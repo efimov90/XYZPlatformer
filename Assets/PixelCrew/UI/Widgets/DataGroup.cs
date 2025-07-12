@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Assets.PixelCrew.UI.Widgets
 {
     public class DataGroup<TDataType, TItemType> where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {
-        protected readonly List<TItemType> CreatedItems = new List<TItemType>();
+        protected readonly List<TItemType> _createdItems = new List<TItemType>();
         private readonly TItemType _prefab;
         private readonly Transform _container;
 
@@ -19,23 +18,23 @@ namespace Assets.PixelCrew.UI.Widgets
         public virtual void SetData(IList<TDataType> data)
         {
             // create required items
-            for (var i = CreatedItems.Count; i < data.Count(); i++)
+            for (var i = _createdItems.Count; i < data.Count; i++)
             {
                 var item = Object.Instantiate(_prefab, _container);
-                CreatedItems.Add(item);
+                _createdItems.Add(item);
             }
 
             // update data and activate
             for (var i = 0; i < data.Count; i++)
             {
-                CreatedItems[i].SetData(data[i], i);
-                CreatedItems[i].gameObject.SetActive(true);
+                _createdItems[i].SetData(data[i], i);
+                _createdItems[i].gameObject.SetActive(true);
             }
 
             // hide unused items
-            for (var i = data.Count; i < CreatedItems.Count; i++)
+            for (var i = data.Count; i < _createdItems.Count; i++)
             {
-                CreatedItems[i].gameObject.SetActive(false);
+                _createdItems[i].gameObject.SetActive(false);
             }
         }
     }
