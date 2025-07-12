@@ -16,7 +16,7 @@ namespace Assets.CommonComponents.ColliderBased
 
         private void OnTriggerEnter2D(Collider2D otherCollider)
         {
-            if(!otherCollider.gameObject.IsInLayer(_layerMask))
+            if (!otherCollider.gameObject.IsInLayer(_layerMask))
             {
                 return;
             }

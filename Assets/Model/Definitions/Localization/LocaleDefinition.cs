@@ -32,7 +32,7 @@ namespace Assets.Model.Definitions.Localization
         [ContextMenu("Update Locals")]
         public void LoadLocals()
         {
-            if(_request != null)
+            if (_request != null)
             {
                 return;
             }

@@ -39,7 +39,7 @@ namespace Assets.Model.Data.Properties
 
         public void Validate()
         {
-            if(!_storedValue.Equals(_value))
+            if (!_storedValue.Equals(_value))
             {
                 Value = _value;
             }

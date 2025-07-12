@@ -5,7 +5,7 @@ namespace Assets.CommonComponents.Spawners
     public class SpawnRandomComponent : MonoBehaviour
     {
         [SerializeField]
-        SpawnComponent _spawnComponent;
+        private SpawnComponent _spawnComponent;
 
         public void SpawnRandomCoins()
         {

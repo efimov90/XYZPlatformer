@@ -45,11 +45,11 @@ namespace Assets.CommonComponents.Effects
             var cameraPositionX = _camera.transform.position.x;
 
             var screenLeft = new Vector3(
-                cameraPositionX - _screenSize.x / 2,
+                cameraPositionX - (_screenSize.x / 2),
                 _containerBounds.center.y);
 
             var screenRight = new Vector3(
-                cameraPositionX + _screenSize.x / 2,
+                cameraPositionX + (_screenSize.x / 2),
                 _containerBounds.center.y);
 
             if (!_allBounds.Contains(screenLeft))

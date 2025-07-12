@@ -6,7 +6,7 @@ namespace Assets.Utils
     public class CheatController : MonoBehaviour
     {
         private string _currentInput;
-        
+
         [SerializeField] private float _inputTimeToLive;
         [SerializeField] private Cheat[] _cheats;
 

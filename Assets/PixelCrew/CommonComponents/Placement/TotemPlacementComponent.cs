@@ -53,10 +53,10 @@ namespace Assets.CommonComponents.Placement
                 Transform child = transform.GetChild(i);
                 if (child != null)
                 {
-                    child.position = transform.position + Vector3.up * placementDistance * i;
+                    child.position = transform.position + (Vector3.up * placementDistance * i);
                     child.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = i;
 
-                    if(child.GetChild(0).GetComponent<TotemHead>() is TotemHead totemHead
+                    if (child.GetChild(0).GetComponent<TotemHead>() is TotemHead totemHead
                         && totemHead._rangeCooldownComponent is null)
                     {
                         totemHead._rangeCooldownComponent = _rangeCooldownComponent;
@@ -74,7 +74,7 @@ namespace Assets.CommonComponents.Placement
         {
             Gizmos.color = Color.blue;
 
-            var positionUpper = transform.position + Vector3.up * 3f;
+            var positionUpper = transform.position + (Vector3.up * 3f);
 
             Gizmos.DrawLine(transform.position, positionUpper);
         }

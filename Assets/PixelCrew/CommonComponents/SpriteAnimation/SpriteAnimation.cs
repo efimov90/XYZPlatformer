@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.CommonComponents.SpriteAnimation
 {
@@ -40,7 +39,7 @@ namespace Assets.CommonComponents.SpriteAnimation
 
         private void Update()
         {
-            if(_currentSequence is null)
+            if (_currentSequence is null)
             {
                 return;
             }

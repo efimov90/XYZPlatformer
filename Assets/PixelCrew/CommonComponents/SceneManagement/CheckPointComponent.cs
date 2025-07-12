@@ -1,6 +1,5 @@
 ﻿using Assets.CommonComponents.Spawners;
 using Assets.Model;
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 

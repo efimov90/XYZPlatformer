@@ -33,7 +33,7 @@ namespace Assets.Model
 
         public void SetChecked(string id)
         {
-            if(IsChecked(id))
+            if (IsChecked(id))
             {
                 return;
             }
@@ -44,7 +44,7 @@ namespace Assets.Model
 
         private void Awake()
         {
-            if(GetExistingSession() is GameSession gameSession)
+            if (GetExistingSession() is GameSession gameSession)
             {
                 gameSession.StartSesion(_defaultCheckpointId);
                 Destroy(gameObject);
@@ -103,9 +103,9 @@ namespace Assets.Model
         {
             var sessions = FindObjectsOfType<GameSession>();
 
-            foreach(var session in sessions)
+            foreach (var session in sessions)
             {
-                if(session != this)
+                if (session != this)
                 {
                     return session;
                 }

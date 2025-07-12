@@ -13,7 +13,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void OnEnable()
         {
-            if(_inputActions == null)
+            if (_inputActions == null)
             {
                 _inputActions = new HeroInputActions();
             }

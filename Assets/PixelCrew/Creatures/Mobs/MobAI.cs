@@ -40,7 +40,7 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         private void Start()
         {
-            if(_patrol == null)
+            if (_patrol == null)
             {
                 return;
             }

@@ -1,6 +1,5 @@
 ﻿using Assets.Model.Data.Dialogs;
 using Assets.Utils;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;

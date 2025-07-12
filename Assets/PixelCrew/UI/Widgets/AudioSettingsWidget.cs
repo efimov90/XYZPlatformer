@@ -44,7 +44,7 @@ namespace Assets.CommonComponents.UI.Widgets
                 _persistentProperty.PropertyChanged -= OnPropertyChanged;
             }
 
-            if(_slider != null)
+            if (_slider != null)
             {
                 _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
             }

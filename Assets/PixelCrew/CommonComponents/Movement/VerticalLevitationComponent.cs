@@ -32,7 +32,7 @@ namespace Assets.CommonComponents.Movement
         private void Update()
         {
             var position = _rigidbody.position;
-            position.y = _originalY + Mathf.Sin(_seed + _time * _frequency) * _amplitude;
+            position.y = _originalY + (Mathf.Sin(_seed + (_time * _frequency)) * _amplitude);
 
             _rigidbody.MovePosition(position);
 

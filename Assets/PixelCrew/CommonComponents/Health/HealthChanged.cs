@@ -8,7 +8,7 @@ namespace Assets.CommonComponents.Health
     {
         public HealthChanged()
         {
-            
+
         }
 
         public HealthChanged(int health)

@@ -83,7 +83,7 @@ namespace Assets.Model.Data
 
         public InventoryItemData[] GetAll(params ItemTag[] itemTags)
         {
-            if(!itemTags.Any())
+            if (!itemTags.Any())
             {
                 return _inventoryItems.ToArray();
             }
@@ -94,7 +94,7 @@ namespace Assets.Model.Data
             {
                 var definition = DefinitionsFacade.Instance.Get(inventoryItem.Id);
 
-                if(itemTags.Any(it => !definition.HasTag(it)))
+                if (itemTags.Any(it => !definition.HasTag(it)))
                 {
                     continue;
                 }

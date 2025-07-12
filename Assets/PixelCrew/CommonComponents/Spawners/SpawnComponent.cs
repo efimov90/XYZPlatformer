@@ -12,7 +12,7 @@ namespace Assets.CommonComponents.Spawners
             var spawnObject = _spawnObjects
                 .FirstOrDefault(x => x.Name == name);
 
-            if(spawnObject is null)
+            if (spawnObject is null)
             {
                 Debug.LogError($"SpawnObject with name {name} not found");
 

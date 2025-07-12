@@ -58,7 +58,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
                 var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
 
-                if(QuickInventorySelectedId == SwordId)
+                if (QuickInventorySelectedId == SwordId)
                 {
                     return throwableCount > 1;
                 }
@@ -80,7 +80,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
                 var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
 
-                if(QuickInventorySelectedId == SwordId)
+                if (QuickInventorySelectedId == SwordId)
                 {
                     return throwableCount >= maxThrowableSpawn + 1;
                 }
