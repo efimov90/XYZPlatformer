@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Assets.PixelCrew.UI.Widgets
 {
-    public class DataGroup<TDataType, TItemType> where TItemType : MonoBehaviour, IItemRenderer<TDataType>
+    public class DataGroup<TDataType, TItemType>
+        where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {
-        protected readonly List<TItemType> _createdItems = new List<TItemType>();
+        protected List<TItemType> _createdItems = new List<TItemType>();
         private readonly TItemType _prefab;
         private readonly Transform _container;
 
