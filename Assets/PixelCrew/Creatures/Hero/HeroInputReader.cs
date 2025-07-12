@@ -11,13 +11,13 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private float _throwPerformed;
 
-        private void Awake()
-        {
-            _inputActions = new HeroInputActions();
-        }
-
         private void OnEnable()
         {
+            if(_inputActions == null)
+            {
+                _inputActions = new HeroInputActions();
+            }
+
             _inputActions.Enable();
         }
 
