@@ -3,7 +3,7 @@ using Assets.Model.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.Interactions
+namespace Assets.PixelCrew.CommonComponents.Interactions
 {
     public class RequiredtemComponent : MonoBehaviour
     {

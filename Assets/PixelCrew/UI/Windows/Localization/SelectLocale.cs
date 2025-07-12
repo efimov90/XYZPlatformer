@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.UI.Windows.Localization
+namespace Assets.PixelCrew.UI.Windows.Localization
 {
     [Serializable]
     public class SelectLocale : UnityEvent<string>

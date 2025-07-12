@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.CommonComponents.UI.Widgets
+namespace Assets.PixelCrew.UI.Widgets
 {
     public class AudioSettingsWidget : MonoBehaviour
     {

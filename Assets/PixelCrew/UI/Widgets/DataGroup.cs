@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Widgets
+namespace Assets.PixelCrew.UI.Widgets
 {
     public class DataGroup<TDataType, TItemType> where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.Collectables
+namespace Assets.PixelCrew.CommonComponents.Collectables
 {
     public class BuffComponent : MonoBehaviour
     {

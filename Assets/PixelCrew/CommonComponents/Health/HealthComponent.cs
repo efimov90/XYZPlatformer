@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.Health
+namespace Assets.PixelCrew.CommonComponents.Health
 {
     public class HealthComponent : MonoBehaviour
     {

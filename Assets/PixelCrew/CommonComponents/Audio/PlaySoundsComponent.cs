@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Audio
+namespace Assets.PixelCrew.CommonComponents.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {

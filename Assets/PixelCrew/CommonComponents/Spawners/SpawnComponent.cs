@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Spawners
+namespace Assets.PixelCrew.CommonComponents.Spawners
 {
     public class SpawnComponent : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-﻿using Assets.CommonComponents.Audio;
-using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Health;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.Audio;
+using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Health;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures

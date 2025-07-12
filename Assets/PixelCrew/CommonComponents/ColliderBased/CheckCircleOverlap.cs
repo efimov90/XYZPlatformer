@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.CommonComponents.ColliderBased
+namespace Assets.PixelCrew.CommonComponents.ColliderBased
 {
     public class CheckCircleOverlap : MonoBehaviour
     {

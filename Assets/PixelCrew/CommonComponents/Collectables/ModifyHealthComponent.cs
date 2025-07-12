@@ -1,7 +1,7 @@
-﻿using Assets.CommonComponents.Health;
+﻿using Assets.PixelCrew.CommonComponents.Health;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Collectables
+namespace Assets.PixelCrew.CommonComponents.Collectables
 {
     public class ModifyHealthComponent : MonoBehaviour
     {

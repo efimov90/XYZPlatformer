@@ -1,9 +1,9 @@
-﻿using Assets.CommonComponents.UI.Widgets;
+﻿using Assets.PixelCrew.UI.Widgets;
 using Assets.Model;
 using Assets.Model.Definitions;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Hud
+namespace Assets.PixelCrew.UI.Hud
 {
     public class HudController : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Spawners
+namespace Assets.PixelCrew.CommonComponents.Spawners
 {
     [Serializable]
     public class SpawnObject

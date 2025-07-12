@@ -2,7 +2,7 @@
 using Cinemachine;
 using UnityEngine;
 
-namespace Assets.CommonComponents.SceneManagement
+namespace Assets.PixelCrew.CommonComponents.SceneManagement
 {
     public class SetFollowComponent : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.ColliderBased
+namespace Assets.PixelCrew.CommonComponents.ColliderBased
 {
     [Serializable]
     public class OnOverlapEvent : UnityEvent<GameObject>

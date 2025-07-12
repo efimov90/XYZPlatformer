@@ -1,5 +1,5 @@
-﻿using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Utils;
 using UnityEngine;
 

@@ -1,10 +1,10 @@
-﻿using Assets.CommonComponents.UI.Hud.Dialogs;
+﻿using Assets.PixelCrew.UI.Hud.Dialogs;
 using Assets.Model.Data.Dialogs;
 using Assets.Model.Definitions;
 using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Dialogs
+namespace Assets.PixelCrew.CommonComponents.Dialogs
 {
     public partial class ShowDialogComponent : MonoBehaviour
     {

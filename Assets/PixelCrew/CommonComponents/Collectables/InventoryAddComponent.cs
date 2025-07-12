@@ -2,7 +2,7 @@
 using Assets.PixelCrew.Creatures.Hero;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Collectables
+namespace Assets.PixelCrew.CommonComponents.Collectables
 {
     public class InventoryAddComponent : MonoBehaviour
     {

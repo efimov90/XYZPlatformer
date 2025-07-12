@@ -1,7 +1,7 @@
 ﻿using Assets.Utils;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Effects
+namespace Assets.PixelCrew.CommonComponents.Effects
 {
     public class InfiniteBackground : MonoBehaviour
     {

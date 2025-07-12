@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using static Assets.Model.Data.GameSettings;
 
-namespace Assets.CommonComponents.Audio
+namespace Assets.PixelCrew.CommonComponents.Audio
 {
     [RequireComponent(typeof(AudioSource))]
     public class AudioSettingComponent : MonoBehaviour

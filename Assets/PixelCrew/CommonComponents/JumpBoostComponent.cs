@@ -1,7 +1,7 @@
-﻿using Assets.CommonComponents.Collectables;
+﻿using Assets.PixelCrew.CommonComponents.Collectables;
 using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.PixelCrew.CommonComponents
 {
     public class JumpBoostComponent : MonoBehaviour
     {

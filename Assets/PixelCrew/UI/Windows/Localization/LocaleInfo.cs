@@ -1,4 +1,4 @@
-﻿namespace Assets.CommonComponents.UI.Windows.Localization
+﻿namespace Assets.PixelCrew.UI.Windows.Localization
 {
     public class LocaleInfo
     {

@@ -1,8 +1,8 @@
-﻿using Assets.CommonComponents.UI.Widgets;
+﻿using Assets.PixelCrew.UI.Widgets;
 using Assets.Model.Data;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Windows.Settings
+namespace Assets.PixelCrew.UI.Windows.Settings
 {
     public class SettingsWindow : AnimatedWindow
     {

@@ -1,4 +1,4 @@
-﻿namespace Assets.CommonComponents.UI
+﻿namespace Assets.PixelCrew.UI
 {
     public interface IItemRenderer<in TDataType>
     {

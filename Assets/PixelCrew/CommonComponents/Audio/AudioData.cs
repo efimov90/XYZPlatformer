@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Audio
+namespace Assets.PixelCrew.CommonComponents.Audio
 {
     [Serializable]
     public class AudioData

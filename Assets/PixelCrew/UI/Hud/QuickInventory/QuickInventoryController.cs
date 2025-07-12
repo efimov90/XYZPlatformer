@@ -1,10 +1,10 @@
-﻿using Assets.CommonComponents.UI.Widgets;
+﻿using Assets.PixelCrew.UI.Widgets;
 using Assets.Model;
 using Assets.Utils.Disposables;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Hud.QuickInventory
+namespace Assets.PixelCrew.UI.Hud.QuickInventory
 {
     public class QuickInventoryController : MonoBehaviour
     {

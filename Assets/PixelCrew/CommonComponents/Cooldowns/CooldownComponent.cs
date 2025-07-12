@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.Cooldowns
+namespace Assets.PixelCrew.CommonComponents.Cooldowns
 {
     public class CooldownComponent : MonoBehaviour
     {

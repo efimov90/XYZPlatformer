@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.SpriteAnimation
+namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
 {
     [Serializable]
     public class AnimationSequence

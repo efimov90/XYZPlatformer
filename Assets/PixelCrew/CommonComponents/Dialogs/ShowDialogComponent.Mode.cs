@@ -1,4 +1,4 @@
-﻿namespace Assets.CommonComponents.Dialogs
+﻿namespace Assets.PixelCrew.CommonComponents.Dialogs
 {
     public partial class ShowDialogComponent
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.CommonComponents.UI.Windows.Localization
+namespace Assets.PixelCrew.UI.Windows.Localization
 {
     public class LocaleItemWidget : MonoBehaviour, IItemRenderer<LocaleInfo>
     {

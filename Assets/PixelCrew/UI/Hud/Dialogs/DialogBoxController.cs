@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.CommonComponents.UI.Hud.Dialogs
+namespace Assets.PixelCrew.UI.Hud.Dialogs
 {
     public class DialogBoxController : MonoBehaviour
     {

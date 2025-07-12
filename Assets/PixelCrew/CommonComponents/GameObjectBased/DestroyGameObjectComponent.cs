@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.GameObjectBased
+namespace Assets.PixelCrew.CommonComponents.GameObjectBased
 {
     public class DestroyGameObjectComponent : MonoBehaviour
     {

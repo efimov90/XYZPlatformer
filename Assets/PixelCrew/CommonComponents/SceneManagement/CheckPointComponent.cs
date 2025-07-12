@@ -1,9 +1,9 @@
-﻿using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Model;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.CommonComponents.SceneManagement
+namespace Assets.PixelCrew.CommonComponents.SceneManagement
 {
     public class CheckPointComponent : MonoBehaviour
     {

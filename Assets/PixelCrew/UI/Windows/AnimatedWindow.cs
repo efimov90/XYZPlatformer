@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Windows
+namespace Assets.PixelCrew.UI.Windows
 {
     public class AnimatedWindow : MonoBehaviour
     {

@@ -1,10 +1,10 @@
-﻿using Assets.CommonComponents.UI.Widgets;
+﻿using Assets.PixelCrew.UI.Widgets;
 using Assets.Model.Definitions.Localization;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Windows.Localization
+namespace Assets.PixelCrew.UI.Windows.Localization
 {
     public class LocalizationWindow : AnimatedWindow
     {

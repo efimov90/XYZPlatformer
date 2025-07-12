@@ -2,7 +2,7 @@
 using UnityEditor.UI;
 using UnityEngine;
 
-namespace Assets.CommonComponents.UI.Widgets.Editor
+namespace Assets.PixelCrew.UI.Widgets.Editor
 {
     [CustomEditor(typeof(CustomButton), true)]
     [CanEditMultipleObjects]

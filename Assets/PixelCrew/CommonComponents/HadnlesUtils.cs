@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents
+namespace Assets.PixelCrew.CommonComponents
 {
     public class HandlesUtils
     {

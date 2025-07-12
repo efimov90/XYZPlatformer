@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.CommonComponents.UI.Localization
+namespace Assets.PixelCrew.UI.Localization
 {
     [RequireComponent(typeof(Text))]
     public class LocalizeText : MonoBehaviour

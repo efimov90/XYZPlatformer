@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace Assets.CommonComponents.SpriteAnimation
+namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour

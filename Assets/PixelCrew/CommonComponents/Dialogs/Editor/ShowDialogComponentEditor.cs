@@ -1,7 +1,7 @@
 ﻿using Assets.Utils.Editor;
 using UnityEditor;
 
-namespace Assets.CommonComponents.Dialogs.Editor
+namespace Assets.PixelCrew.CommonComponents.Dialogs.Editor
 {
     [CustomEditor(typeof(ShowDialogComponent))]
     public class ShowDialogComponentEditor : UnityEditor.Editor

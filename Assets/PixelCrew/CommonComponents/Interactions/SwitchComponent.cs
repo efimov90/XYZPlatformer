@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.CommonComponents.Interactions
+namespace Assets.PixelCrew.CommonComponents.Interactions
 {
     public class SwitchComponent : MonoBehaviour
     {

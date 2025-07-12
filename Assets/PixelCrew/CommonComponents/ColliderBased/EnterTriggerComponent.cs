@@ -1,7 +1,7 @@
 ﻿using Assets.Utils;
 using UnityEngine;
 
-namespace Assets.CommonComponents.ColliderBased
+namespace Assets.PixelCrew.CommonComponents.ColliderBased
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

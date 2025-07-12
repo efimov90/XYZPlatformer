@@ -1,6 +1,6 @@
-﻿using Assets.CommonComponents.Collectables;
-using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.Collectables;
+using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Model;
 using Assets.Model.Definitions;
 using Assets.Utils;

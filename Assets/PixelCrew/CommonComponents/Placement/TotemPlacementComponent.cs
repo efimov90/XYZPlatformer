@@ -1,9 +1,9 @@
-﻿using Assets.CommonComponents.Cooldowns;
+﻿using Assets.PixelCrew.CommonComponents.Cooldowns;
 using Assets.PixelCrew.Creatures.Mobs;
 using UnityEditor;
 using UnityEngine;
 
-namespace Assets.CommonComponents.Placement
+namespace Assets.PixelCrew.CommonComponents.Placement
 {
     [ExecuteInEditMode]
     public class TotemPlacementComponent : MonoBehaviour
