@@ -4,13 +4,12 @@ using Assets.Model.Definitions.Localization;
 using Assets.Model.Definitions.Repositories;
 using Assets.PixelCrew.UI.Widgets;
 using Assets.Utils.Disposables;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.PixelCrew.UI.Windows.Perks
 {
-    public class ManagePerksWindow : AnimatedWindow, IDisposable
+    public class ManagePerksWindow : AnimatedWindow
     {
         [SerializeField]
         private Button _buyButton;
@@ -54,7 +53,7 @@ namespace Assets.PixelCrew.UI.Windows.Perks
             var selectedPerkId = _gameSession.PerksModel.InterfaceSelection.Value;
 
             _useButton.gameObject.SetActive(_gameSession.PerksModel.IsUnlocked(selectedPerkId));
-            _useButton.interactable = _gameSession.PerksModel.InterfaceSelection.Value != selectedPerkId;
+            _useButton.interactable = _gameSession.PerksModel.Used != selectedPerkId;
 
             _buyButton.gameObject.SetActive(!_gameSession.PerksModel.IsUnlocked(selectedPerkId));
             _buyButton.interactable = _gameSession.PerksModel.CanBuy(selectedPerkId);
@@ -77,7 +76,7 @@ namespace Assets.PixelCrew.UI.Windows.Perks
             _gameSession.PerksModel.Use(perkId);
         }
 
-        public void Dispose()
+        private void OnDestroy()
         {
             _trash.Dispose();
         }
