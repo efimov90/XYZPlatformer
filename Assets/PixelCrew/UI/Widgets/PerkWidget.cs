@@ -1,6 +1,5 @@
 ﻿using Assets.Model;
 using Assets.Model.Definitions.Repositories;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 

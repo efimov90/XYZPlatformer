@@ -39,9 +39,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private BuffComponent _buffComponent;
 
-        private bool _allowSecondJump = true;
+        private bool _allowSecondJump;
 
         private GameSession _gameSession;
+
+        public bool IsDoubleJumpAllowed => _allowSecondJump && _gameSession.PerksModel.IsDoubleJumpAllowed;
 
         public string QuickInventorySelectedId => _gameSession.QuickInventory.SelectedItem.Id;
 
@@ -71,6 +73,11 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             get
             {
+                if (!_gameSession.PerksModel.IsSuperThrowAllowed)
+                {
+                    return false;
+                }
+
                 var canThrow = DefinitionsFacade.Instance.InventoryItemDefinitions.Get(QuickInventorySelectedId).HasTag(ItemTag.Throwable);
 
                 if (!canThrow)
@@ -152,7 +159,7 @@ namespace Assets.PixelCrew.Creatures.Hero
                 DoJumpEffects();
                 velocityY += _jumpSpeed * _buffComponent.JumpBoostAmount;
             }
-            else if (_allowSecondJump)
+            else if (IsDoubleJumpAllowed)
             {
                 DoJumpEffects();
                 velocityY = _jumpSpeed * _buffComponent.JumpBoostAmount;

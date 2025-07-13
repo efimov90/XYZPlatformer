@@ -27,6 +27,10 @@ namespace Assets.Model.Data
 
         public string Used => _data.Perks.Used.Value;
 
+        public bool IsSuperThrowAllowed => _data.Perks.IsUnlocked("SuperThrow");
+
+        public bool IsDoubleJumpAllowed => _data.Perks.IsUnlocked("DoubleJump");
+
         public IDisposable Subscribe(Action call)
         {
             OnChanged += call;
