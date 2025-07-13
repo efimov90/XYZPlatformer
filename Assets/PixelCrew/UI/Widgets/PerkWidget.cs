@@ -1,11 +1,18 @@
-﻿using UnityEngine;
+﻿using Assets.Model;
+using Assets.Model.Definitions.Repositories;
+using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.PixelCrew.UI.Widgets
 {
-    public class PerkWidget : MonoBehaviour, IItemRenderer<string>
+    public class PerkWidget : MonoBehaviour, IItemRenderer<PerkDefinition>
     {
+        private GameSession _gameSession;
+        private PerkDefinition _perkDefinition;
+
         [SerializeField]
-        private GameObject _icon;
+        private Image _icon;
 
         [SerializeField]
         private GameObject _isLocked;
@@ -16,14 +23,33 @@ namespace Assets.PixelCrew.UI.Widgets
         [SerializeField]
         private GameObject _isSelected;
 
-        public void SetData(string data, int index)
+        private void Start()
         {
+            _gameSession = FindObjectOfType<GameSession>();
+            UpdateView();
+        }
 
+        public void SetData(PerkDefinition data, int index)
+        {
+            _perkDefinition = data;
+
+            if (_gameSession != null)
+            {
+                UpdateView();
+            }
         }
 
         public void OnSelect()
         {
+            _gameSession.PerksModel.InterfaceSelection.Value = _perkDefinition.Id;
+        }
 
+        private void UpdateView()
+        {
+            _icon.sprite = _perkDefinition.Icon;
+            _isUsed.SetActive(_gameSession.PerksModel.IsUsed(_perkDefinition.Id));
+            _isSelected.SetActive(_gameSession.PerksModel.InterfaceSelection.Value == _perkDefinition.Id);
+            _isLocked.SetActive(!_gameSession.PerksModel.IsUnlocked(_perkDefinition.Id));
         }
     }
 }

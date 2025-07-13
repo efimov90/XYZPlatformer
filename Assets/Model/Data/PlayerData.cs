@@ -15,6 +15,8 @@ namespace Assets.Model
 
         public IntProperty Health = new IntProperty();
 
+        public PerkData Perks = new PerkData();
+
         public PlayerData Clone()
         {
             var json = JsonUtility.ToJson(this);

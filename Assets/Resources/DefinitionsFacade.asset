@@ -17,3 +17,4 @@ MonoBehaviour:
   _playerDefinition: {fileID: 11400000, guid: 7587f8b1cab0bb14daa9e1f630f63e91, type: 2}
   _throwableItemsDefinition: {fileID: 11400000, guid: c4ea05e7768eb554d8668b5e66c8d27c,
     type: 2}
+  _perkRepository: {fileID: 11400000, guid: d5d454bff703a55498e760a639a53068, type: 2}

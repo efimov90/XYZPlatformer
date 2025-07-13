@@ -25,7 +25,7 @@ namespace Assets.PixelCrew.CommonComponents.Interactions
 
             var inventory = session.PlayerData.Inventory;
 
-            if (inventory.Contains(_required))
+            if (inventory.HasResources(_required))
             {
                 if (_removeAfterUse)
                 {

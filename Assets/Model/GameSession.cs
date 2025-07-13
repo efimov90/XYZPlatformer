@@ -26,6 +26,8 @@ namespace Assets.Model
 
         public QuickInventoryData QuickInventory { get; private set; }
 
+        public PerksModel PerksModel { get; private set; }
+
         public PlayerData PlayerData => _data;
 
         public bool IsChecked(string id)
@@ -79,6 +81,9 @@ namespace Assets.Model
             QuickInventory = new QuickInventoryData(PlayerData);
 
             _trash.Retain(QuickInventory);
+
+            PerksModel = new PerksModel(_data);
+            _trash.Retain(PerksModel);
         }
 
         private void Save()

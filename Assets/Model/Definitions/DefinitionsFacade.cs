@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Assets.Model.Definitions.Repositories;
+using UnityEngine;
 
 namespace Assets.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Definitions/DefinitionsFacade", fileName = "DefinitionsFacade")]
     public class DefinitionsFacade : ScriptableObject
     {
+        private static DefinitionsFacade _instance;
+
         [SerializeField]
         private InventoryItemsDefinitions _inventoryItemDefinitions;
 
@@ -14,13 +17,16 @@ namespace Assets.Model.Definitions
         [SerializeField]
         private ThrowableItemsDefinition _throwableItemsDefinition;
 
-        private static DefinitionsFacade _instance;
+        [SerializeField]
+        private PerkRepository _perkRepository;
 
         public InventoryItemsDefinitions InventoryItemDefinitions
             => _inventoryItemDefinitions;
 
         public ThrowableItemsDefinition ThrowableItemsDefinition
             => _throwableItemsDefinition;
+
+        public PerkRepository PerkRepository => _perkRepository;
 
         public PlayerDefinition PlayerDefinition
             => _playerDefinition;

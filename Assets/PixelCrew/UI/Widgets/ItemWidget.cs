@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using Assets.Model.Definitions;
+using Assets.Model.Definitions.Repositories;
+using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.PixelCrew.UI.Widgets
@@ -10,5 +13,13 @@ namespace Assets.PixelCrew.UI.Widgets
 
         [SerializeField]
         private Text _value;
+
+        public void SetData(ItemWithCount definition)
+        {
+            var itemDefinition = DefinitionsFacade.Instance.Get(definition.Id);
+
+            _icon.sprite = itemDefinition.Icon;
+            _value.text = $"{definition.Count}";
+        }
     }
 }
