@@ -18,6 +18,9 @@ namespace Assets.Model.Definitions.Repositories
         [SerializeField]
         private ItemWithCount _price;
 
+        [SerializeField]
+        private float _cooldown;
+
         public string Id => _id;
 
         public Sprite Icon => _icon;
@@ -25,5 +28,7 @@ namespace Assets.Model.Definitions.Repositories
         public string Information => _information;
 
         public ItemWithCount Price => _price;
+
+        public float Cooldown => _cooldown;
     }
 }

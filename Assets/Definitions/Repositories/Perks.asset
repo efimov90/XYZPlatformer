@@ -19,9 +19,11 @@ MonoBehaviour:
     _price:
       _id: HealthPotion
       _count: 1
+    _cooldown: 2
   - _id: SuperThrow
     _icon: {fileID: 21300000, guid: bdf142d6ffe01054f98cdeea3aa50bb6, type: 3}
     _information: This is Super Throw!
     _price:
       _id: Coin
       _count: 10
+    _cooldown: 3

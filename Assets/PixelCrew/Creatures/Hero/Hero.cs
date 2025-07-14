@@ -164,6 +164,7 @@ namespace Assets.PixelCrew.Creatures.Hero
                 DoJumpEffects();
                 velocityY = _jumpSpeed * _buffComponent.JumpBoostAmount;
                 _allowSecondJump = false;
+                StartCoroutine(_gameSession.PerksModel.StartCooldown());
             }
 
             return velocityY;
@@ -234,6 +235,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             {
                 Debug.Log("Throw multiple");
                 StartCoroutine(nameof(ThrowMultiple));
+                StartCoroutine(_gameSession.PerksModel.StartCooldown());
             }
             else
             {

@@ -2,6 +2,9 @@
 using Assets.Model.Definitions;
 using Assets.Utils.Disposables;
 using System;
+using System.Collections;
+using TreeEditor;
+using UnityEngine;
 
 namespace Assets.Model.Data
 {
@@ -13,6 +16,11 @@ namespace Assets.Model.Data
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
+
+        public event Action OnPerkUsed;
+
+        public event Action OnPerkCooldownStarted;
+        public event Action OnPerkCooldownEnded;
 
         public PerksModel(PlayerData data)
         {
@@ -27,9 +35,13 @@ namespace Assets.Model.Data
 
         public string Used => _data.Perks.Used.Value;
 
-        public bool IsSuperThrowAllowed => _data.Perks.Used.Value == "SuperThrow";
+        public bool IsSuperThrowAllowed => _data.Perks.Used.Value == "SuperThrow"
+            && !IsCooldownActive;
 
-        public bool IsDoubleJumpAllowed => _data.Perks.Used.Value == "DoubleJump";
+        public bool IsDoubleJumpAllowed => _data.Perks.Used.Value == "DoubleJump"
+            && !IsCooldownActive;
+
+        public bool IsCooldownActive {  get; private set; }
 
         public IDisposable Subscribe(Action call)
         {
@@ -60,6 +72,8 @@ namespace Assets.Model.Data
             }
 
             _data.Perks.Used.Value = perkId;
+
+            OnPerkUsed?.Invoke();
         }
 
         public bool IsUsed(string perkId)
@@ -73,6 +87,17 @@ namespace Assets.Model.Data
             var definition = DefinitionsFacade.Instance.PerkRepository.Get(perkId);
 
             return _data.Inventory.HasResources(definition.Price);
+        }
+
+        public IEnumerator StartCooldown()
+        {
+            var perkDefinition = DefinitionsFacade.Instance.PerkRepository.Get(Used);
+
+            IsCooldownActive = true;
+            OnPerkCooldownStarted?.Invoke();
+            yield return new WaitForSeconds(perkDefinition.Cooldown);
+            IsCooldownActive = false;
+            OnPerkCooldownEnded?.Invoke();
         }
 
         public void Dispose()
