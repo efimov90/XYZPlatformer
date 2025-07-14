@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fca2c9ac76b35c45b54f47ab3e00f42, type: 3}
+  m_Script: {fileID: 11500000, guid: 16b6ee3af830e2549a0efe83d82ec387, type: 3}
   m_Name: PlayerDefinition
   m_EditorClassIdentifier: 
   _inventorySize: 32

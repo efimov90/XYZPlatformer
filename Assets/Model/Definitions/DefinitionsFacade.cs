@@ -1,4 +1,5 @@
-﻿using Assets.Model.Definitions.Repositories;
+﻿using Assets.Model.Definitions.Player;
+using Assets.Model.Definitions.Repositories;
 using UnityEngine;
 
 namespace Assets.Model.Definitions
