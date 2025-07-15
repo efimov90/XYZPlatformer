@@ -10905,6 +10905,11 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4285425514735480279, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_RootOrder
@@ -11044,6 +11049,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 359565510}
     m_Modifications:
+    - target: {fileID: 1849954209173773388, guid: 4877f45691760a648946b7f068daf925,
+        type: 3}
+      propertyPath: m_CropFrameX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849954209173773388, guid: 4877f45691760a648946b7f068daf925,
+        type: 3}
+      propertyPath: m_CropFrameY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6313585275586890321, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
       propertyPath: m_Name
@@ -11052,7 +11067,7 @@ PrefabInstance:
     - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
