@@ -143,6 +143,8 @@ namespace Assets.PixelCrew.Creatures
             return velocityY;
         }
 
+        protected virtual float CalculateSpeed() => _speed;
+
         protected void DoJumpEffects()
         {
             _playSoundsComponent?.Play("Jump");
@@ -157,7 +159,7 @@ namespace Assets.PixelCrew.Creatures
 
         private void FixedUpdate()
         {
-            var velocityX = Direction.x * _speed;
+            var velocityX = Direction.x * CalculateSpeed();
             var velocityY = CalculateVelocityY();
 
             _rigidbody2D.velocity = new Vector2(velocityX, velocityY);

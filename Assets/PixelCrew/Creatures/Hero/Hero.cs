@@ -7,6 +7,7 @@ using Assets.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using Assets.Model.Definitions.Player;
 
 namespace Assets.PixelCrew.Creatures.Hero
 {
@@ -152,6 +153,9 @@ namespace Assets.PixelCrew.Creatures.Hero
             return base.CalculateVelocityY();
         }
 
+        protected override float CalculateSpeed()
+            => _gameSession.StatsModel.GetCurrentValue(StatId.Speed);
+
         protected override float CalculateJumpVelocity(float velocityY)
         {
             if (IsOnFloor)
@@ -278,7 +282,14 @@ namespace Assets.PixelCrew.Creatures.Hero
             }
 
             _throwSpawnComponent.SetPrefab(throwable.ProjectilePrefab);
-            _throwSpawnComponent.Spawn();
+            var projectile = _throwSpawnComponent.Spawn();
+            var modifyHealthComponent = projectile.GetComponent<ModifyHealthComponent>();
+
+            if (modifyHealthComponent != null)
+            {
+                modifyHealthComponent.HpDelta *= (int)_gameSession.StatsModel.GetCurrentValue(StatId.RangeDamage);
+            }
+
             RemoveFromInventory(QuickInventorySelectedId, 1);
         }
 
