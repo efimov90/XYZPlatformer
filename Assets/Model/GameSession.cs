@@ -27,6 +27,8 @@ namespace Assets.Model
 
         public QuickInventoryData QuickInventory { get; private set; }
 
+        public InventoryModel Inventory { get; private set; }
+
         public PerksModel PerksModel { get; private set; }
 
         public StatsModel StatsModel { get; private set; }
@@ -90,6 +92,8 @@ namespace Assets.Model
 
             StatsModel = new StatsModel(_data);
             _trash.Retain(StatsModel);
+
+            Inventory = new InventoryModel(_data);
 
             _data.Health.Value = (int)StatsModel.GetCurrentValue(StatId.Health);
         }

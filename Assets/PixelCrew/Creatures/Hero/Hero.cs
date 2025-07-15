@@ -143,7 +143,14 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OpenInventory()
         {
+            if (_gameSession.Inventory.IsOpened)
+            {
+                return;
+            }
 
+            _gameSession.Inventory.IsOpened = true;
+
+            WindowUtils.CreateWindow("UI/InventoryWindow");
         }
 
         public void Dash()

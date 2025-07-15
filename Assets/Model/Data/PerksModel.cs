@@ -3,7 +3,6 @@ using Assets.Model.Definitions;
 using Assets.Utils.Disposables;
 using System;
 using System.Collections;
-using TreeEditor;
 using UnityEngine;
 
 namespace Assets.Model.Data
