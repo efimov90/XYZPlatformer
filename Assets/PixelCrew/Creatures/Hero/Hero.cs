@@ -1,13 +1,13 @@
-﻿using Assets.PixelCrew.CommonComponents.Collectables;
+﻿using Assets.Model;
+using Assets.Model.Definitions;
+using Assets.Model.Definitions.Player;
+using Assets.PixelCrew.CommonComponents.Collectables;
 using Assets.PixelCrew.CommonComponents.ColliderBased;
 using Assets.PixelCrew.CommonComponents.Spawners;
-using Assets.Model;
-using Assets.Model.Definitions;
 using Assets.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using Assets.Model.Definitions.Player;
 
 namespace Assets.PixelCrew.Creatures.Hero
 {
@@ -139,6 +139,27 @@ namespace Assets.PixelCrew.Creatures.Hero
         public void OnHealthChanged(int currentHealth)
         {
             _gameSession.PlayerData.Health.Value = currentHealth;
+        }
+
+        public void OpenInventory()
+        {
+
+        }
+
+        public void Dash()
+        {
+            if (_gameSession.PerksModel.IsCooldownActive)
+            {
+                return;
+            }
+
+            var velocityX = Direction.x * 2;
+
+            _rigidbody2D.MovePosition(new Vector2(_rigidbody2D.position.x + velocityX, _rigidbody2D.position.y));
+
+            UpdateSpriteDirection(Direction);
+
+            StartCoroutine(_gameSession.PerksModel.StartCooldown());
         }
 
         public void AddInInventory(string id, int count)
