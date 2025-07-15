@@ -47,7 +47,30 @@ namespace Assets.Model.Data
             _playerData.Inventory.Remove(price);
             _playerData.Levels.LevelUp(statId);
 
+            PostProcess(statId);
+
             OnChanged?.Invoke();
+        }
+
+        private void PostProcess(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Health:
+                    var oldLevel = GetCurrentLevel(statId) - 1;
+
+                    if (oldLevel < 0 || oldLevel >= GetStatDefinition(statId).Levels.Length)
+                    {
+                        return;
+                    }
+
+                    var oldMaxHp = GetValue(statId, oldLevel);
+
+                    var newMaxHp = GetCurrentValue(statId);
+
+                    _playerData.Health.Value = (int)(_playerData.Health.Value / oldMaxHp * newMaxHp);
+                    break;
+            }
         }
 
         public float GetCurrentValue(StatId statId)
