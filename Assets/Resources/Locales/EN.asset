@@ -42,11 +42,11 @@ MonoBehaviour:
     _value: Selected language is {0}
   - _key: price_label
     _value: 'Price:'
-  - _key: health
+  - _key: Health
     _value: Health
-  - _key: speed
+  - _key: Speed
     _value: Speed
-  - _key: range_damage
+  - _key: RangeDamage
     _value: Range damage
   - _key: coin
     _value: Coin

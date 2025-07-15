@@ -1,4 +1,5 @@
-﻿using Assets.Model.Definitions;
+﻿using Assets.Model.Data.Properties;
+using Assets.Model.Definitions;
 using Assets.Model.Definitions.Player;
 using Assets.Utils.Disposables;
 using System;
@@ -8,12 +9,16 @@ namespace Assets.Model.Data
     public class StatsModel : IDisposable
     {
         private readonly PlayerData _playerData;
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
+
+        public ObservableProperty<StatId> InterfaceSelectedStat = new ObservableProperty<StatId>();
 
         public StatsModel(PlayerData playerData)
         {
             _playerData = playerData;
+            _trash.Retain(InterfaceSelectedStat.Subscribe((x, y) => OnChanged?.Invoke()));
         }
 
         public IDisposable Subscribe(Action call)
@@ -25,7 +30,7 @@ namespace Assets.Model.Data
         public void LevelUp(StatId statId)
         {
             var definition = GetStatDefinition(statId);
-            var nextLevel = GetLevel(statId) + 1;
+            var nextLevel = GetCurrentLevel(statId) + 1;
 
             if (definition.Levels.Length >= nextLevel)
             {
@@ -40,23 +45,29 @@ namespace Assets.Model.Data
             }
 
             _playerData.Inventory.Remove(price);
-            _playerData.Levles.LevelUp(statId);
+            _playerData.Levels.LevelUp(statId);
 
             OnChanged?.Invoke();
         }
 
-        public float GetValue(StatId statId)
-        {
-            var definition = GetStatDefinition(statId);
-            var level = definition.Levels[GetLevel(statId)];
-            return level.Value;
-        }
+        public float GetCurrentValue(StatId statId)
+            => GetCurrentLevelDefinition(statId).Value;
 
-        public int GetLevel(StatId statId)
-            => _playerData.Levles.GetLevel(statId);
+        public float GetValue(StatId statId, int level)
+            => GetLevelDefinition(statId, level).Value;
+
+        public StatLevelDefinition GetCurrentLevelDefinition(StatId statId)
+            => GetLevelDefinition(statId, GetCurrentLevel(statId));
+
+        public StatLevelDefinition GetLevelDefinition(StatId statId, int level)
+            => GetStatDefinition(statId).Levels[level];
+
+        public int GetCurrentLevel(StatId statId)
+            => _playerData.Levels.GetLevel(statId);
 
         public void Dispose()
         {
+            _trash.Dispose();
         }
 
         private StatDefinition GetStatDefinition(StatId statId)

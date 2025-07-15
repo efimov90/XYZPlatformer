@@ -9395,7 +9395,7 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
-    Levles:
+    Levels:
       _progresses: []
   _defaultCheckpointId: Level1-Start
 --- !u!1001 &1939515314

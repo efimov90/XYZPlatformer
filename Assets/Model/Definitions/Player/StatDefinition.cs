@@ -16,7 +16,7 @@ namespace Assets.Model.Definitions.Player
         private Sprite _icon;
 
         [SerializeField]
-        private StatLevel[] _levels;
+        private StatLevelDefinition[] _levels;
 
         public StatId Id => _id;
 
@@ -24,6 +24,6 @@ namespace Assets.Model.Definitions.Player
 
         public Sprite Icon => _icon;
 
-        public StatLevel[] Levels => _levels;
+        public StatLevelDefinition[] Levels => _levels;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Assets.Model.Definitions.Player
 {
     [Serializable]
-    public struct StatLevel
+    public struct StatLevelDefinition
     {
         [SerializeField]
         private float _value;

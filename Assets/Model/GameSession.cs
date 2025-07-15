@@ -28,7 +28,7 @@ namespace Assets.Model
 
         public PerksModel PerksModel { get; private set; }
 
-        public StatsModel LevelModel { get; private set; }
+        public StatsModel StatsModel { get; private set; }
 
         public PlayerData PlayerData => _data;
 
@@ -87,8 +87,8 @@ namespace Assets.Model
             PerksModel = new PerksModel(_data);
             _trash.Retain(PerksModel);
 
-            LevelModel = new StatsModel(_data);
-            _trash.Retain(LevelModel);
+            StatsModel = new StatsModel(_data);
+            _trash.Retain(StatsModel);
         }
 
         private void Save()

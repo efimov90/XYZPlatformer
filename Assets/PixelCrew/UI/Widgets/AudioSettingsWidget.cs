@@ -37,7 +37,7 @@ namespace Assets.PixelCrew.UI.Widgets
             _slider.normalizedValue = newValue;
         }
 
-        public void OnDestroy()
+        private void OnDestroy()
         {
             if (_persistentProperty != null)
             {
