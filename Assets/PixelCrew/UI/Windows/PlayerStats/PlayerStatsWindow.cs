@@ -54,9 +54,13 @@ namespace Assets.PixelCrew.UI.Windows.PlayerStats
             _statsGroup.SetData(stats);
 
             var selected = _gameSession.StatsModel.InterfaceSelectedStat.Value;
+            var nextLevel = _gameSession.StatsModel.GetCurrentLevel(selected) + 1;
 
-            var levelDefinition = _gameSession.StatsModel.GetCurrentLevelDefinition(selected);
-            _price.SetData(levelDefinition.Price);
+            var nextLevelDefinition = _gameSession.StatsModel.GetLevelDefinition(selected, nextLevel);
+            _price.SetData(nextLevelDefinition.Price);
+
+            _price.gameObject.SetActive(nextLevelDefinition.Price.Count != 0);
+            _buyButton.gameObject.SetActive(nextLevelDefinition.Price.Count != 0);
         }
 
         private void OnDestroy()

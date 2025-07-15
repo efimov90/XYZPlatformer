@@ -32,7 +32,7 @@ namespace Assets.Model.Data
             var definition = GetStatDefinition(statId);
             var nextLevel = GetCurrentLevel(statId) + 1;
 
-            if (definition.Levels.Length >= nextLevel)
+            if (definition.Levels.Length <= nextLevel)
             {
                 return;
             }
@@ -60,7 +60,15 @@ namespace Assets.Model.Data
             => GetLevelDefinition(statId, GetCurrentLevel(statId));
 
         public StatLevelDefinition GetLevelDefinition(StatId statId, int level)
-            => GetStatDefinition(statId).Levels[level];
+        {
+            var statDefinition = GetStatDefinition(statId);
+            if (level >= statDefinition.Levels.Length)
+            {
+                return default;
+            }
+
+            return statDefinition.Levels[level];
+        }
 
         public int GetCurrentLevel(StatId statId)
             => _playerData.Levels.GetLevel(statId);

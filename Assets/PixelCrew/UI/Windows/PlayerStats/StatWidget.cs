@@ -65,9 +65,9 @@ namespace Assets.PixelCrew.UI.Windows.PlayerStats
             _increaseValue.text = $"+{increaseValue - currentValue}";
             _increaseValue.gameObject.SetActive(increaseValue > 0);
 
-            var maxLevels = DefinitionsFacade.Instance.PlayerDefinition.GetStat(_statDefinition.Id).Levels.Length;
+            var maxLevel = DefinitionsFacade.Instance.PlayerDefinition.GetStat(_statDefinition.Id).Levels.Length - 1;
 
-            _progress.SetProgress(currentLevel / (float) maxLevels);
+            _progress.SetProgress(currentLevel / (float)maxLevel);
 
             _selector.SetActive(statsModel.InterfaceSelectedStat.Value == _statDefinition.Id);
         }
