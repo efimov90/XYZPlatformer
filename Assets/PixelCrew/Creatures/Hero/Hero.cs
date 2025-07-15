@@ -162,6 +162,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
             var velocityX = Direction.x * 2;
 
+            if(velocityX == 0)
+            {
+                return;
+            }
+
             _rigidbody2D.MovePosition(new Vector2(_rigidbody2D.position.x + velocityX, _rigidbody2D.position.y));
 
             UpdateSpriteDirection(Direction);
