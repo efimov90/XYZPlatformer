@@ -12,6 +12,7 @@ namespace Assets.Model.Data
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
+        public event Action<StatId> OnUpgraded;
 
         public ObservableProperty<StatId> InterfaceSelectedStat = new ObservableProperty<StatId>();
 
@@ -47,30 +48,8 @@ namespace Assets.Model.Data
             _playerData.Inventory.Remove(price);
             _playerData.Levels.LevelUp(statId);
 
-            PostProcess(statId);
-
+            OnUpgraded?.Invoke(statId);
             OnChanged?.Invoke();
-        }
-
-        private void PostProcess(StatId statId)
-        {
-            switch (statId)
-            {
-                case StatId.Health:
-                    var oldLevel = GetCurrentLevel(statId) - 1;
-
-                    if (oldLevel < 0 || oldLevel >= GetStatDefinition(statId).Levels.Length)
-                    {
-                        return;
-                    }
-
-                    var oldMaxHp = GetValue(statId, oldLevel);
-
-                    var newMaxHp = GetCurrentValue(statId);
-
-                    _playerData.Health.Value = (int)(_playerData.Health.Value / oldMaxHp * newMaxHp);
-                    break;
-            }
         }
 
         public float GetCurrentValue(StatId statId)
@@ -101,7 +80,7 @@ namespace Assets.Model.Data
             _trash.Dispose();
         }
 
-        private StatDefinition GetStatDefinition(StatId statId)
+        public StatDefinition GetStatDefinition(StatId statId)
             => DefinitionsFacade.Instance.PlayerDefinition.GetStat(statId);
     }
 }

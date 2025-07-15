@@ -19,7 +19,6 @@ namespace Assets.PixelCrew.UI.Hud
         {
             _session = GameObject.FindObjectOfType<GameSession>();
             _trash.Retain(_session.PlayerData.Health.Subscribe(OnHealthChanged));
-            _trash.Retain(_session.StatsModel.Subscribe(() => OnHealthChanged(_session.PlayerData.Health.Value, _session.PlayerData.Health.Value)));
 
             OnHealthChanged(_session.PlayerData.Health.Value, _session.PlayerData.Health.Value);
         }

@@ -49,5 +49,11 @@ namespace Assets.PixelCrew.CommonComponents.Health
         {
             _health = health;
         }
+
+        public void SetHealth(int health)
+        {
+            _health = health;
+            _onHealthChanged?.Invoke(_health);
+        }
     }
 }

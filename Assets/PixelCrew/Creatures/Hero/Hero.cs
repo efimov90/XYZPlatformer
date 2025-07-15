@@ -101,8 +101,31 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             _gameSession = FindObjectOfType<GameSession>();
             _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
+            _gameSession.StatsModel.OnUpgraded += OnUpgradedStat;
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health.Value);
             UpdateHeroWeapon();
+        }
+
+        private void OnUpgradedStat(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Health:
+                    var oldLevel = _gameSession.StatsModel.GetCurrentLevel(statId) - 1;
+
+                    if (oldLevel < 0 || oldLevel >= _gameSession.StatsModel.GetStatDefinition(statId).Levels.Length)
+                    {
+                        return;
+                    }
+
+                    var oldMaxHp = _gameSession.StatsModel.GetValue(statId, oldLevel);
+
+                    var newMaxHp = _gameSession.StatsModel.GetCurrentValue(statId);
+
+                    _gameSession.PlayerData.Health.Value = (int)(_gameSession.PlayerData.Health.Value / oldMaxHp * newMaxHp);
+                    _healthComponent.SetHealth(_gameSession.PlayerData.Health.Value);
+                    break;
+            }
         }
 
         protected override void Awake()
