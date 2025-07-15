@@ -81,6 +81,14 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a127ee4-1f92-47d9-af14-8b118383a47b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -270,6 +278,17 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac3e745f-ad42-4ca6-87c0-340f33cd5443"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -286,6 +305,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         m_Hero_NextQuickItem = m_Hero.FindAction("NextQuickItem", throwIfNotFound: true);
         m_Hero_OpenInventory = m_Hero.FindAction("OpenInventory", throwIfNotFound: true);
         m_Hero_Dash = m_Hero.FindAction("Dash", throwIfNotFound: true);
+        m_Hero_ToggleLight = m_Hero.FindAction("ToggleLight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +363,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_NextQuickItem;
     private readonly InputAction m_Hero_OpenInventory;
     private readonly InputAction m_Hero_Dash;
+    private readonly InputAction m_Hero_ToggleLight;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -355,6 +376,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         public InputAction @NextQuickItem => m_Wrapper.m_Hero_NextQuickItem;
         public InputAction @OpenInventory => m_Wrapper.m_Hero_OpenInventory;
         public InputAction @Dash => m_Wrapper.m_Hero_Dash;
+        public InputAction @ToggleLight => m_Wrapper.m_Hero_ToggleLight;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +410,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
+                @ToggleLight.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -416,6 +441,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @ToggleLight.started += instance.OnToggleLight;
+                @ToggleLight.performed += instance.OnToggleLight;
+                @ToggleLight.canceled += instance.OnToggleLight;
             }
         }
     }
@@ -430,5 +458,6 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         void OnNextQuickItem(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnToggleLight(InputAction.CallbackContext context);
     }
 }

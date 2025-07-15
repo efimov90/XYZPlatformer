@@ -5009,7 +5009,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000d75ee646cd60c29d2bb7867d6b92ef5a
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
-  m_LightOrder: 0
+  m_LightOrder: 10
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
@@ -5529,6 +5529,7 @@ MonoBehaviour:
   _disarmedController: {fileID: 9100000, guid: 63a7350e1e1c4ac42904fe4e75866611, type: 2}
   _interactionRange: {fileID: 5277828391195267486}
   _throwSpawnComponent: {fileID: 3572773082971641550}
+  _candle: {fileID: 6642575399395759139}
 --- !u!50 &8701511278655396689
 Rigidbody2D:
   serializedVersion: 4
@@ -5857,6 +5858,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f866e183-3663-4f92-b1e9-ad3580c3e994
     m_ActionName: Hero/Dash[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8701511278655396700}
+        m_MethodName: ToggleLight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6a127ee4-1f92-47d9-af14-8b118383a47b
+    m_ActionName: Hero/ToggleLight[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero

@@ -38,6 +38,9 @@ namespace Assets.PixelCrew.Creatures.Hero
         [SerializeField]
         protected AdjustableSpawnComponent _throwSpawnComponent;
 
+        [SerializeField]
+        private GameObject _candle;
+
         private BuffComponent _buffComponent;
 
         private bool _allowSecondJump;
@@ -172,6 +175,11 @@ namespace Assets.PixelCrew.Creatures.Hero
             UpdateSpriteDirection(Direction);
 
             StartCoroutine(_gameSession.PerksModel.StartCooldown());
+        }
+
+        public void ToggleLight()
+        {
+            _candle.SetActive(!_candle.activeSelf);
         }
 
         public void AddInInventory(string id, int count)
