@@ -28,6 +28,8 @@ namespace Assets.Model
 
         public PerksModel PerksModel { get; private set; }
 
+        public StatsModel LevelModel { get; private set; }
+
         public PlayerData PlayerData => _data;
 
         public bool IsChecked(string id)
@@ -84,6 +86,9 @@ namespace Assets.Model
 
             PerksModel = new PerksModel(_data);
             _trash.Retain(PerksModel);
+
+            LevelModel = new StatsModel(_data);
+            _trash.Retain(LevelModel);
         }
 
         private void Save()

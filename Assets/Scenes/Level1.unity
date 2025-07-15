@@ -9395,6 +9395,8 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
+    Levles:
+      _progresses: []
   _defaultCheckpointId: Level1-Start
 --- !u!1001 &1939515314
 PrefabInstance:

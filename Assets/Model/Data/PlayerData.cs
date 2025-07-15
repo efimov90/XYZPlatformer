@@ -16,6 +16,7 @@ namespace Assets.Model
         public IntProperty Health = new IntProperty();
 
         public PerkData Perks = new PerkData();
+        public LevelData Levles = new LevelData();
 
         public PlayerData Clone()
         {

@@ -15,14 +15,14 @@ MonoBehaviour:
   _collection:
   - _id: DoubleJump
     _icon: {fileID: 21300000, guid: a054643f97b752d42948090407cf4c73, type: 3}
-    _information: This is Double jump!
+    _information: double_jump_description
     _price:
       _id: HealthPotion
       _count: 1
     _cooldown: 2
   - _id: SuperThrow
     _icon: {fileID: 21300000, guid: bdf142d6ffe01054f98cdeea3aa50bb6, type: 3}
-    _information: This is Super Throw!
+    _information: super_throw_description
     _price:
       _id: Coin
       _count: 10
