@@ -1,7 +1,8 @@
 ﻿using Assets.PixelCrew.UI.Widgets;
 using Assets.Model;
-using Assets.Model.Definitions;
 using UnityEngine;
+using Assets.Model.Definitions.Player;
+using Assets.Utils.Disposables;
 
 namespace Assets.PixelCrew.UI.Hud
 {
@@ -12,17 +13,20 @@ namespace Assets.PixelCrew.UI.Hud
 
         private GameSession _session;
 
+        private CompositeDisposable _trash = new CompositeDisposable();
+
         private void Start()
         {
             _session = GameObject.FindObjectOfType<GameSession>();
-            _session.PlayerData.Health.PropertyChanged += OnHealthChanged;
+            _trash.Retain(_session.PlayerData.Health.Subscribe(OnHealthChanged));
+            _trash.Retain(_session.StatsModel.Subscribe(() => OnHealthChanged(_session.PlayerData.Health.Value, _session.PlayerData.Health.Value)));
 
             OnHealthChanged(_session.PlayerData.Health.Value, _session.PlayerData.Health.Value);
         }
 
         private void OnHealthChanged(int newValue, int oldValue)
         {
-            var maxHealth = DefinitionsFacade.Instance.PlayerDefinition.MaxHealth;
+            var maxHealth = _session.StatsModel.GetCurrentValue(StatId.Health);
 
             var healthDefinition = (float)newValue / maxHealth;
 
@@ -31,10 +35,7 @@ namespace Assets.PixelCrew.UI.Hud
 
         private void OnDestroy()
         {
-            if (_session != null)
-            {
-                _session.PlayerData.Health.PropertyChanged -= OnHealthChanged;
-            }
+            _trash.Dispose();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Model.Definitions.Player;
 
 namespace Assets.Model
 {
@@ -89,6 +90,8 @@ namespace Assets.Model
 
             StatsModel = new StatsModel(_data);
             _trash.Retain(StatsModel);
+
+            _data.Health.Value = (int)StatsModel.GetCurrentValue(StatId.Health);
         }
 
         private void Save()
