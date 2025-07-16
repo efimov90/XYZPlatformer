@@ -3,6 +3,7 @@ using Assets.Model.Definitions;
 using Assets.Model.Definitions.Player;
 using Assets.PixelCrew.CommonComponents.Collectables;
 using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
 using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Utils;
 using System.Collections;
@@ -40,6 +41,8 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         [SerializeField]
         private GameObject _candle;
+
+        private CameraShakeEffect _cameraShakeEffect;
 
         private BuffComponent _buffComponent;
 
@@ -102,6 +105,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void Start()
         {
+            _cameraShakeEffect = FindObjectOfType<CameraShakeEffect>();
             _gameSession = FindObjectOfType<GameSession>();
             _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
             _gameSession.StatsModel.OnUpgraded += OnUpgradedStat;
@@ -141,6 +145,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int currentHealth)
         {
+            if(_gameSession.PlayerData.Health.Value > currentHealth)
+            {
+                _cameraShakeEffect.Shake();
+            }
+
             _gameSession.PlayerData.Health.Value = currentHealth;
         }
 

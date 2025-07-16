@@ -2,6 +2,8 @@
 using Assets.Model;
 using UnityEngine;
 using UnityEngine.Events;
+using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
+using Assets.PixelCrew.Creatures.Hero;
 
 namespace Assets.PixelCrew.CommonComponents.SceneManagement
 {
