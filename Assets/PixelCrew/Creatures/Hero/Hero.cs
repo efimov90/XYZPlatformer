@@ -50,6 +50,9 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private GameSession _gameSession;
 
+        private bool _isDashing;
+        private float _dashDirection;
+
         public bool IsDoubleJumpAllowed => _allowSecondJump && _gameSession.PerksModel.IsDoubleJumpAllowed;
 
         public string QuickInventorySelectedId => _gameSession.QuickInventory.SelectedItem.Id;
@@ -113,6 +116,27 @@ namespace Assets.PixelCrew.Creatures.Hero
             UpdateHeroWeapon();
         }
 
+        protected override void FixedUpdate()
+        {
+            if (_isDashing)
+            {
+                var velocityX = _dashDirection * CalculateSpeed();
+                var velocityY = CalculateVelocityY();
+
+                _rigidbody2D.velocity = new Vector2(velocityX, velocityY);
+
+                _animator.SetBool(_isOnFloorHashString, IsOnFloor);
+                _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
+                _animator.SetBool(_isRunningHashString, Direction.x != 0);
+
+                UpdateSpriteDirection(Direction);
+            }
+            else
+            {
+                base.FixedUpdate();
+            }
+        }
+
         private void OnUpgradedStat(StatId statId)
         {
             switch (statId)
@@ -167,23 +191,23 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void Dash()
         {
-            if (_gameSession.PerksModel.IsCooldownActive)
+            StartCoroutine(DashCorutine());
+        }
+
+        private IEnumerator DashCorutine()
+        {
+            if (!_gameSession.PerksModel.IsCooldownActive && !_isDashing)
             {
-                return;
+                _isDashing = true;
+                _dashDirection = Direction.x * 3;
+
+                yield return new WaitForSeconds(0.2f);
+
+                _dashDirection = 0;
+                _isDashing = false;
+
+                yield return _gameSession.PerksModel.StartCooldown();
             }
-
-            var velocityX = Direction.x * 2;
-
-            if(velocityX == 0)
-            {
-                return;
-            }
-
-            _rigidbody2D.MovePosition(new Vector2(_rigidbody2D.position.x + velocityX, _rigidbody2D.position.y));
-
-            UpdateSpriteDirection(Direction);
-
-            StartCoroutine(_gameSession.PerksModel.StartCooldown());
         }
 
         public void ToggleLight()

@@ -9,13 +9,13 @@ namespace Assets.PixelCrew.Creatures
     public class Creature : MonoBehaviour
     {
         #region Animation Keys
-        private static readonly int _isOnFloorHashString =
+        protected static readonly int _isOnFloorHashString =
             Animator.StringToHash("IsOnFloor");
 
-        private static readonly int _verticalVelocityHashString =
+        protected static readonly int _verticalVelocityHashString =
             Animator.StringToHash("VerticalVelocity");
 
-        private static readonly int _isRunningHashString =
+        protected static readonly int _isRunningHashString =
             Animator.StringToHash("IsRunning");
 
         private static readonly int _hitHashString =
@@ -157,7 +157,7 @@ namespace Assets.PixelCrew.Creatures
 
         protected void SpawnSlamDust() => _spawnComponent?.Spawn("SlamDust");
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             var velocityX = Direction.x * CalculateSpeed();
             var velocityY = CalculateVelocityY();
