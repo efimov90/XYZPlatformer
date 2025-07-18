@@ -191,6 +191,11 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void Dash()
         {
+            if(_gameSession.PerksModel.Used != "Dash")
+            {
+                return;
+            }
+
             StartCoroutine(DashCorutine());
         }
 
