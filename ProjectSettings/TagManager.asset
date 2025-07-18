@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Collectables
   - SfxAudioSource
+  - MainUICanvas
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Level
     uniqueID: 1525650027
+    locked: 0
+  - name: Overlay
+    uniqueID: 135333235
     locked: 0
