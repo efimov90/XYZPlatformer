@@ -20,6 +20,8 @@ MonoBehaviour:
     _value: buy
   - _key: use_button
     _value: use
+  - _key: loading_text
+    _value: Loading...
   - _key: menu_title
     _value: menu
   - _key: start_button

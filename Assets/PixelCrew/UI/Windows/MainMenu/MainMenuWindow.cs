@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.PixelCrew.UI.LevelsLoader;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,7 +40,8 @@ namespace Assets.PixelCrew.UI.Windows.MainMenu
 
         private void StartGame()
         {
-            SceneManager.LoadScene("Level1");
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel("Level1");
         }
 
         private void QuitGame()

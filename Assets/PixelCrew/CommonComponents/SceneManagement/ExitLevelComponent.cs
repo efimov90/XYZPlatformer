@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using Assets.Model;
+using Assets.PixelCrew.UI.LevelsLoader;
+using UnityEngine;
 
 namespace Assets.PixelCrew.CommonComponents.SceneManagement
 {
@@ -10,8 +11,11 @@ namespace Assets.PixelCrew.CommonComponents.SceneManagement
 
         public void Exit()
         {
-            Debug.Log($"Exit triggered");
-            SceneManager.LoadScene(_sceneName);
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
+
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel(_sceneName);
         }
     }
 }

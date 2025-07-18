@@ -53,11 +53,11 @@ TagManager:
   - name: Tilemap
     uniqueID: 2646761677
     locked: 0
-  - name: Creatures
-    uniqueID: 2105980715
-    locked: 0
   - name: Level
     uniqueID: 1525650027
+    locked: 0
+  - name: Creatures
+    uniqueID: 2105980715
     locked: 0
   - name: Overlay
     uniqueID: 135333235

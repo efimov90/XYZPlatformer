@@ -98,7 +98,7 @@ namespace Assets.Model
             _data.Health.Value = (int)StatsModel.GetCurrentValue(StatId.Health);
         }
 
-        private void Save()
+        public void Save()
         {
             _save = _data.Clone();
         }
