@@ -16,6 +16,8 @@ namespace Assets.PixelCrew.CommonComponents.SceneManagement
 
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_sceneName);
+
+            gameObject.SetActive(false);
         }
     }
 }
