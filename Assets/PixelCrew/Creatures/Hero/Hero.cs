@@ -171,7 +171,7 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             if(_gameSession.PlayerData.Health.Value > currentHealth)
             {
-                _cameraShakeEffect.Shake();
+                _cameraShakeEffect?.Shake();
             }
 
             _gameSession.PlayerData.Health.Value = currentHealth;
