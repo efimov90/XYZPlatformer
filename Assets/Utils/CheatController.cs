@@ -25,7 +25,7 @@ namespace Assets.Utils
             }
             else
             {
-                _currentInput = string.Empty;
+                _currentInput = "";
             }
         }
 
@@ -48,7 +48,7 @@ namespace Assets.Utils
                 if (_currentInput.Contains(cheat.CheatCode))
                 {
                     cheat.Action?.Invoke();
-                    _currentInput = string.Empty;
+                    _currentInput = "";
 
                     return;
                 }
