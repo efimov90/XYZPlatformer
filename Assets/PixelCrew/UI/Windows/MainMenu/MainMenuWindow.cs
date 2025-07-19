@@ -1,4 +1,5 @@
 ﻿using Assets.PixelCrew.UI.LevelsLoader;
+using Assets.Utils;
 using System;
 using UnityEngine;
 
@@ -16,18 +17,12 @@ namespace Assets.PixelCrew.UI.Windows.MainMenu
 
         public void OnShowSettings()
         {
-            var window = Resources.Load<GameObject>("UI/SettingsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
         public void OnShowLanguage()
         {
-            var window = Resources.Load<GameObject>("UI/LocalizationMenuWindow");
-            var canvas = FindObjectOfType<Canvas>();
-
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/LocalizationMenuWindow");
         }
 
         public void OnExit()
