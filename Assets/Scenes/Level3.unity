@@ -264,6 +264,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1722744795}
+        m_MethodName: HideUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &84953740
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +769,7 @@ GameObject:
   - component: {fileID: 204774668}
   - component: {fileID: 204774669}
   - component: {fileID: 204774670}
+  - component: {fileID: 204774671}
   m_Layer: 11
   m_Name: PatricTheBoss
   m_TagString: Enemy
@@ -990,6 +1002,20 @@ MonoBehaviour:
   - {fileID: 870396105}
   - {fileID: 180000576}
   _color: {r: 0.8396226, g: 0.24512279, b: 0.11485406, a: 0}
+--- !u!114 &204774671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204774661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d2dd538fe64cf45b439e49b929018d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _floodAnimator: {fileID: 1595613528}
+  _floodTime: 3
 --- !u!114 &273727539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1657257480354171375, guid: 0f4bda03c90df4849b85b5b4afbb5eff,
@@ -8269,6 +8295,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1722744795}
+        m_MethodName: ShowUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &2081071923
