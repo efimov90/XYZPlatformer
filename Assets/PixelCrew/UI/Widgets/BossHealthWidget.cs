@@ -31,6 +31,7 @@ namespace Assets.PixelCrew.UI.Widgets
         [ContextMenu("Show UI")]
         public void ShowUI()
         {
+            OnHealthChanged(_healthComponent.Health);
             this.LerpAnimated(0, 1, 1, SetAlpha);
         }
 
