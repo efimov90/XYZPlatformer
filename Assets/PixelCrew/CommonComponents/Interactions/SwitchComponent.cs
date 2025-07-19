@@ -8,6 +8,11 @@ namespace Assets.PixelCrew.CommonComponents.Interactions
         [SerializeField] private bool _isOn;
         [SerializeField] private string _animationKey;
 
+        private void Start()
+        {
+            _animator?.SetBool(_animationKey, _isOn);
+        }
+
         public void Switch()
         {
             _isOn = !_isOn;
