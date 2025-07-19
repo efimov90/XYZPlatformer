@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Starky
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f31a726745b06334e8b5f90697f19718, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 05eb16605447b514f9a77c6de9a580ed, type: 3}
+  - {fileID: 21300000, guid: 607bb5a07fce38d4e88ee974943cc8f6, type: 3}
+  - {fileID: 21300000, guid: 3d7e38d0f4d7369478bca0ba542b3ca8, type: 3}
+  - {fileID: 21300000, guid: 23b045c148b868c49a672d5f55d3882e, type: 3}
+  - {fileID: 21300000, guid: 389a57e1286a8c14d8fa022df0a11ddc, type: 3}
+  - {fileID: 21300000, guid: 0e2cac829c55b764cabda6866f2d67f0, type: 3}
+  - {fileID: 21300000, guid: 2c9f38c2493b0344fb0838aeb739db91, type: 3}
+  - {fileID: 21300000, guid: 1600dee2dc1d8654595c7629847f48c1, type: 3}
+  - {fileID: 21300000, guid: dceae4737571d1a4a9620e71c3a35499, type: 3}
+  - {fileID: 21300000, guid: ab1acc347135cb74b9af1c9e69e17c0d, type: 3}
+  - {fileID: 21300000, guid: a4a72b057f3acf640a3a832307b40f21, type: 3}
+  - {fileID: 21300000, guid: 74d46c05886693e4a90d500266fd53a4, type: 3}
+  - {fileID: 21300000, guid: a27ecd05f4ddd3543b8fad0515baa402, type: 3}
+  - {fileID: 21300000, guid: 4dea306571f18e14ea9e87a63719e7f7, type: 3}
+  - {fileID: 21300000, guid: 9642626567372904d92ca2ac370a4e37, type: 3}
+  - {fileID: 21300000, guid: 1aa10aa5d9875a9439deff20f80e3dce, type: 3}
+  - {fileID: 21300000, guid: 83759be52fd9bc84da3d661a40842e6e, type: 3}
+  - {fileID: 21300000, guid: 2d5eac865acd24d439f514c52bd955db, type: 3}
+  - {fileID: 21300000, guid: ede59a968745a7747b44ea15cf3f7565, type: 3}
+  - {fileID: 21300000, guid: 0a9594072d2c02b40b910920193d372c, type: 3}
+  - {fileID: 21300000, guid: d502e607c481ee345b25dc541dafcc38, type: 3}
+  - {fileID: 21300000, guid: bc1798672893bdb4fa37ae2699821016, type: 3}
+  - {fileID: 21300000, guid: 1bbd18f7aaf1cf447aac97cc9fd50a62, type: 3}
+  - {fileID: 21300000, guid: ec483a1845f6d054d9bc8f861c871979, type: 3}
+  - {fileID: 21300000, guid: 15f84428ceca66341a4b14d5a30ed5d1, type: 3}
+  - {fileID: 21300000, guid: b6a38248fa3a20e45a4d4012272a88e6, type: 3}
+  - {fileID: 21300000, guid: b097ee48da3f5ad44a712af7260a98a0, type: 3}
+  - {fileID: 21300000, guid: 48b5a78848a26a94a888b30a182309b5, type: 3}
+  - {fileID: 21300000, guid: d8c47e2924a0c064daf6430ab1ce7fa8, type: 3}
+  - {fileID: 21300000, guid: ff3d4fb918ea9284a8df4be03ffce246, type: 3}
+  - {fileID: 21300000, guid: ed7937f998a0ef14391cea26244488e8, type: 3}
+  - {fileID: 21300000, guid: 02f0dc1a202815149bf53598513a7082, type: 3}
+  - {fileID: 21300000, guid: 7aa40d3baf2ab8f4da56b3a9769e93d7, type: 3}
+  - {fileID: 21300000, guid: 42991f4b3de3b5b4d890c7e22f1fa413, type: 3}
+  - {fileID: 21300000, guid: e6f6ce0c060efc2448451fb6a32d7480, type: 3}
+  - {fileID: 21300000, guid: b6c4fe6c86d171f4084bd93160516a0f, type: 3}
+  - {fileID: 21300000, guid: a647d48c26794a1488e1d52a001dff45, type: 3}
+  - {fileID: 21300000, guid: e250d9fc6a72d284ba4f9a3dc1da91b5, type: 3}
+  - {fileID: 21300000, guid: e10c8c2dd3f66c7408caa86fe5b8b133, type: 3}
+  - {fileID: 21300000, guid: d65f1c5ddb352dd46b410ef6fee82738, type: 3}
+  - {fileID: 21300000, guid: d71b42ad1277a924ca8a091b9351ea72, type: 3}
+  - {fileID: 21300000, guid: dde144ed4b6ecad49bc6d665bfe3a604, type: 3}
+  - {fileID: 21300000, guid: 8017e59f719d45b40aa12ada99099e32, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Fall 01
+  - Anticipation 02
+  - Idle 03
+  - Ground 01
+  - Attack Effect 04
+  - Run 02
+  - Dead Ground 03
+  - Dead Ground 02
+  - Idle 01
+  - Hit 01
+  - Attack Effect 03
+  - Dead Ground 01
+  - Idle 07
+  - Dead Hit 04
+  - Idle 02
+  - Run 01
+  - Attack Effect 02
+  - Hit 02
+  - Ground 02
+  - Idle 04
+  - Idle 05
+  - Anticipation 01
+  - Dead Hit 02
+  - Attack 04
+  - Dead Hit 01
+  - Attack 01
+  - Attack 03
+  - Jump 03
+  - Anticipation 03
+  - Jump 01
+  - Dead Ground 04
+  - Idle 06
+  - Run 04
+  - Dead Hit 03
+  - Hit 03
+  - Run 03
+  - Jump 02
+  - Attack 02
+  - Hit 04
+  - Run 05
+  - Attack Effect 01
+  - Idle 08
+  - Run 06
+  m_Tag: Starky
+  m_IsVariant: 0

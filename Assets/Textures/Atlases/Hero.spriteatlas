@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hero
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b93a45949c375a54cae50a491c1da3ca, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e62dc6a050291a04184483c79f170e7d, type: 3}
+  - {fileID: 21300000, guid: 2baf7fd0cd9bf5546ad6dfb7cf383481, type: 3}
+  - {fileID: 21300000, guid: ea7b58e0fd5fd70419d3f01380cf9299, type: 3}
+  - {fileID: 21300000, guid: 5d4b27618e3bac345947c18b74399e8c, type: 3}
+  - {fileID: 21300000, guid: 78c42e711b1af5947bfa4762a086f76e, type: 3}
+  - {fileID: 21300000, guid: 0aed37c1259b0d145a6f5f60e9731851, type: 3}
+  - {fileID: 21300000, guid: 0751a1d1ef6feb0418baa8a2452e7f0e, type: 3}
+  - {fileID: 21300000, guid: 1a6fd942ca99a254b95ef0bab4e9378e, type: 3}
+  - {fileID: 21300000, guid: 269a64723f821434fb8a417f452af657, type: 3}
+  - {fileID: 21300000, guid: 9279a8a228f106d4f87122269f6f59b7, type: 3}
+  - {fileID: 21300000, guid: 95df38b25918f8f4bba3978d46af25c4, type: 3}
+  - {fileID: 21300000, guid: 168d8f13baaf58d42a68a03cae6d415f, type: 3}
+  - {fileID: 21300000, guid: 4a9a6c33cf4658a41830157536c875c0, type: 3}
+  - {fileID: 21300000, guid: 7e10c4c3e44b11d43a2b773e15b69c41, type: 3}
+  - {fileID: 21300000, guid: 867895c3b9a663c4a90d9d8753b78d67, type: 3}
+  - {fileID: 21300000, guid: a6845a04a49b25845b1dd921bc7c50f4, type: 3}
+  - {fileID: 21300000, guid: 5c872c24a9948c549b2c93511d55c4bf, type: 3}
+  - {fileID: 21300000, guid: 3c1a0a848c8b16d41a2630e5ada42db7, type: 3}
+  - {fileID: 21300000, guid: 90196d05bd2e4b547ac0ef701d524fa0, type: 3}
+  - {fileID: 21300000, guid: 043cc525dfa775d4ba7bde1d0a6f306a, type: 3}
+  - {fileID: 21300000, guid: d5bee13532135bd4391d50dedeb40fbb, type: 3}
+  - {fileID: 21300000, guid: 806098850a76c8642a8235092767c85b, type: 3}
+  - {fileID: 21300000, guid: d97d7d9595e54744b9a05d49da0b2dd6, type: 3}
+  - {fileID: 21300000, guid: a98d94b5db1ffbe4792abab1c57963cf, type: 3}
+  - {fileID: 21300000, guid: b9b12cb5398225c4195aecf586341df7, type: 3}
+  - {fileID: 21300000, guid: de97fbe589c4818468b5419606d05fb3, type: 3}
+  - {fileID: 21300000, guid: f6aeb426658f49b4e89aedff2f53392d, type: 3}
+  - {fileID: 21300000, guid: 8df0a936116fa5647a633f877329e0ec, type: 3}
+  - {fileID: 21300000, guid: 686fcc366cc08804882abba4f5dbef81, type: 3}
+  - {fileID: 21300000, guid: 2b0ec2b6fa869174795982e852015880, type: 3}
+  - {fileID: 21300000, guid: 8fa30ae6abd0b0549a7868b9b9cd890b, type: 3}
+  - {fileID: 21300000, guid: 6971f807f26f0004aaab008640736cca, type: 3}
+  - {fileID: 21300000, guid: b4b6f618977ab6541bb30c88c291a81c, type: 3}
+  - {fileID: 21300000, guid: 4fe5c36831cf5d842acb0e18dc2afcc2, type: 3}
+  - {fileID: 21300000, guid: cfda8e88e3a5d7d4aa757d085e59d847, type: 3}
+  - {fileID: 21300000, guid: 7c40a2a8b7ab03e4f90555048cb85d31, type: 3}
+  - {fileID: 21300000, guid: 850bcdd894d4eb249a88e0444c9ce5c9, type: 3}
+  - {fileID: 21300000, guid: e10c4af8cb41c6c46bebfb1602ca2c77, type: 3}
+  - {fileID: 21300000, guid: 8db9faf8f2cc7164b94f764e7cb3625a, type: 3}
+  - {fileID: 21300000, guid: 53ac3cf8c61bdc24aa1a1ff5d6caa482, type: 3}
+  - {fileID: 21300000, guid: 9d5ff489e9d10e74a975a587cd6001fd, type: 3}
+  - {fileID: 21300000, guid: 632582b9f8c890646a2d84ed8c70bce2, type: 3}
+  - {fileID: 21300000, guid: a5fc78b94d668c54f8037de111d861a1, type: 3}
+  - {fileID: 21300000, guid: 7f3237d988cd7bc4e9ea92f8792b6604, type: 3}
+  - {fileID: 21300000, guid: 72e76ce9379c01946a7f66ca49f3bb52, type: 3}
+  - {fileID: 21300000, guid: c1bc9ee900b0d7a4aaacde10cbfdefca, type: 3}
+  - {fileID: 21300000, guid: dbffffe97bd54c54c859e0552b379929, type: 3}
+  - {fileID: 21300000, guid: c2e9b6f919536ce47ad55fe9cf2c1ec0, type: 3}
+  - {fileID: 21300000, guid: 8b562af979e26d047bc26c00fd2775f9, type: 3}
+  - {fileID: 21300000, guid: 2e17970a3aba59e49acac713b17f9efe, type: 3}
+  - {fileID: 21300000, guid: 2716544a25b14f141b869147137b890c, type: 3}
+  - {fileID: 21300000, guid: 4b691f4a8b92cd64396a4c4aeb344a9f, type: 3}
+  - {fileID: 21300000, guid: 8d33ca7a83e061749b455b3f5fe0f1fe, type: 3}
+  - {fileID: 21300000, guid: 8415e08ad36939345957d92f25f88605, type: 3}
+  - {fileID: 21300000, guid: 55d3d1ba50fdeca4b9faab162fc8e755, type: 3}
+  - {fileID: 21300000, guid: 73dc9ffad3c8d9f43bcbd58167e5cd44, type: 3}
+  - {fileID: 21300000, guid: 2da27c4b23821d240b5f30d79c284c17, type: 3}
+  - {fileID: 21300000, guid: 8b4247abb65f0b844915574ae3bd2451, type: 3}
+  - {fileID: 21300000, guid: 8b37432c4158c004ebdb26f8c779c10a, type: 3}
+  - {fileID: 21300000, guid: 74cfcc3c8ba240344bbe3f8659d8f054, type: 3}
+  - {fileID: 21300000, guid: a311410ddb1fadb4a9e3847aa030fd4b, type: 3}
+  - {fileID: 21300000, guid: 6b812f2d68c730c48ba4d8827fe66eb9, type: 3}
+  - {fileID: 21300000, guid: cf4bc23d759c5b749a9555e77a2bb57c, type: 3}
+  - {fileID: 21300000, guid: 378eed5dcfa189841b2b31cb869049ca, type: 3}
+  - {fileID: 21300000, guid: 4e3f647d9a28b4a47b677c2dff68e2c7, type: 3}
+  - {fileID: 21300000, guid: 003440cda1e5ca94aa3c40c1a599d5a7, type: 3}
+  - {fileID: 21300000, guid: d67258cd9b2f148438d0c2f3d1714645, type: 3}
+  - {fileID: 21300000, guid: 78d8660ebb9b24441a20a04f6172b626, type: 3}
+  - {fileID: 21300000, guid: cdecf84e77c2b3446b400a0c19a1f747, type: 3}
+  - {fileID: 21300000, guid: e917645e3c353984d8fd101b1519fea5, type: 3}
+  - {fileID: 21300000, guid: d7ef5f8e6917ba24a9e579b54141fc93, type: 3}
+  - {fileID: 21300000, guid: 89d79f8ec30ecf545829a77a95488065, type: 3}
+  - {fileID: 21300000, guid: fd1073ae87243f84c8769f80584a6cdd, type: 3}
+  - {fileID: 21300000, guid: da6bc4beb80acfd4b92188c60cf4ab45, type: 3}
+  - {fileID: 21300000, guid: 6e29a48f9f397f34ca9a2374406565a3, type: 3}
+  - {fileID: 21300000, guid: 87a03e8f26cf1d74d891956c8c1bd3b3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Throw Sword 03
+  - Jump Sword 03
+  - Idle Sword 03
+  - Throw Sword 01
+  - Run Sword 06
+  - Hit 03
+  - Idle Sword 04
+  - Air Attack 2 01
+  - Air Attack 2 02
+  - Idle Sword 01
+  - Ground Sword 01
+  - Dead Hit 03
+  - Dead Ground 01
+  - Fall Sword 01
+  - Hit 02
+  - Idle 04
+  - Air Attack 1 02
+  - Attack 3 03
+  - Attack 2 01
+  - Run 01
+  - Fall 01
+  - Jump 01
+  - Ground 02
+  - Idle 02
+  - Throw Sword 02
+  - Attack 1 03
+  - Attack 2 02
+  - Jump Sword 02
+  - Dead Ground 02
+  - Jump Sword 01
+  - Throw Sword 03
+  - Run Sword 05
+  - Dead Hit 04
+  - Air Attack 1 03
+  - Attack 1 02
+  - Air Attack 2 03
+  - Air Attack 1 01
+  - Run 03
+  - Throw Sword 02
+  - Run 02
+  - Hit 04
+  - Dead Ground 04
+  - Hit Sword 03
+  - Throw Sword 01
+  - Attack 3 01
+  - Hit Sword 01
+  - Ground Sword 02
+  - Dead Hit 01
+  - Idle Sword 02
+  - Attack 1 03
+  - Jump 02
+  - Ground 01
+  - Run Sword 03
+  - Run 04
+  - Run Sword 01
+  - Idle 01
+  - wall-armed
+  - Run 06
+  - Idle Sword 05
+  - Attack 1 02
+  - wall
+  - Run 05
+  - Attack 1 01
+  - Hit Sword 04
+  - Hit 01
+  - Run Sword 04
+  - Idle 03
+  - Dead Hit 02
+  - Hit Sword 02
+  - Attack 3 02
+  - Jump 03
+  - Attack 1 01
+  - Dead Ground 03
+  - Idle 05
+  - Attack 2 03
+  - Run Sword 02
+  m_Tag: Hero
+  m_IsVariant: 0

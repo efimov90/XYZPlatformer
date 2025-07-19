@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3a64c514dc7b225498cf328db00186b9, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4ecb44701978ade42992c886f0d16a77, type: 3}
+  - {fileID: 21300000, guid: 189cb4a0beb94bc4f9c1b84efafe2e1f, type: 3}
+  - {fileID: 21300000, guid: 05cf42e0c2b9ec04f89327d0b0f16d05, type: 3}
+  - {fileID: 21300000, guid: 3b774451b8e1fc64ca90387683e53d31, type: 3}
+  - {fileID: 21300000, guid: db0ad93221b443543bc65e1d29aef65a, type: 3}
+  - {fileID: 21300000, guid: 4efba0d2d8955c54888cd2956f1fca27, type: 3}
+  - {fileID: 21300000, guid: 9bc8e3534ff71b34b8da183c04367d09, type: 3}
+  - {fileID: 21300000, guid: 4019aed3a554211489684a0fac4de1c4, type: 3}
+  - {fileID: 21300000, guid: c38a0a342e340be41a6e01e5f8b8a09b, type: 3}
+  - {fileID: 21300000, guid: 3279576412335984a9f36ae87e6b8e13, type: 3}
+  - {fileID: 21300000, guid: bf8525741455a0e4db6f8ea215be899c, type: 3}
+  - {fileID: 21300000, guid: 6f227ea488522964695d592b25728fe0, type: 3}
+  - {fileID: 21300000, guid: 4a861f25ae3795144942eb0100a130a7, type: 3}
+  - {fileID: 21300000, guid: 9659f83561c1be74590c70fcafca3fc9, type: 3}
+  - {fileID: 21300000, guid: 68301ca54cae6fa47bcb3e680d02e833, type: 3}
+  - {fileID: 21300000, guid: cb379f16a19b696458694936b09c01c1, type: 3}
+  - {fileID: 21300000, guid: b55100769a1045041b57b4c9fe4632ee, type: 3}
+  - {fileID: 21300000, guid: 583afdb664a82e64a819df05229891e9, type: 3}
+  - {fileID: 21300000, guid: bdf142d6ffe01054f98cdeea3aa50bb6, type: 3}
+  - {fileID: 21300000, guid: 0cb044273bca9564992ee3ecb5810ce2, type: 3}
+  - {fileID: 21300000, guid: 2c0c9d47961cf2448b551a63b3b8561c, type: 3}
+  - {fileID: 21300000, guid: 2631ae67bd67a2143a32a208114a69ce, type: 3}
+  - {fileID: 21300000, guid: 46dfbe1886266174abf749223e9c9b1f, type: 3}
+  - {fileID: 21300000, guid: 08e23558fafe1bc47b0f7d7050cd6109, type: 3}
+  - {fileID: 21300000, guid: 002de0097a1ea6d4da208c20a98f2dc9, type: 3}
+  - {fileID: 21300000, guid: c47ec479e0203894e94d08d96fa59cf3, type: 3}
+  - {fileID: 21300000, guid: 6308d2d91231b954192af934f5203178, type: 3}
+  - {fileID: 21300000, guid: 8a65692afe1f8c640804d82c62fc0af1, type: 3}
+  - {fileID: 21300000, guid: dfd120ba482f269489c52053dc55c5ad, type: 3}
+  - {fileID: 21300000, guid: 676011ba2f3d8be4db4b281890c8dd1a, type: 3}
+  - {fileID: 21300000, guid: 0c2bbccad3969f24090cf5a12f324a75, type: 3}
+  - {fileID: 21300000, guid: d56eefda9c1645945a46ec8492d961e1, type: 3}
+  - {fileID: 21300000, guid: 29a903fadee6a164cae86a9a1e7a37d0, type: 3}
+  - {fileID: 21300000, guid: 423c3f7b8a8cf3a4e82a02cc22942fb2, type: 3}
+  - {fileID: 21300000, guid: 10f2598b993ad9847a1705a594a27d51, type: 3}
+  - {fileID: 21300000, guid: e49434ebf6ff38d41be6c36309bf1fe9, type: 3}
+  - {fileID: 21300000, guid: 44f4717ca3ebca74ab5ca305ea4ee88d, type: 3}
+  - {fileID: 21300000, guid: a88cc2bc2ad132142b4deee4756deecc, type: 3}
+  - {fileID: 21300000, guid: 22ce958d2f189ea48a73801a5138be2f, type: 3}
+  - {fileID: 21300000, guid: 7f9026bd0d9786548b305c1b78505e02, type: 3}
+  - {fileID: 21300000, guid: 2297827e42c68fe41a48b223d065ba06, type: 3}
+  - {fileID: 21300000, guid: a1f3ef1f0420c3e4e92d614ca84b4285, type: 3}
+  - {fileID: 21300000, guid: a054643f97b752d42948090407cf4c73, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - yellow-box-tall
+  - green-button
+  - geen-box-small
+  - inventory-small
+  - Dash
+  - common-button-pressed
+  - item-selection-common
+  - yellow-button
+  - papper
+  - item-selection
+  - S_Holy03
+  - slider-horizontal
+  - blue
+  - force-shiled
+  - yellow-box-small
+  - I_Clock
+  - red
+  - shield
+  - sword-super-throw
+  - common-button-selected
+  - slider-horizontal-handle
+  - common-button-disabled
+  - hp-big
+  - green-box-large
+  - common-button
+  - yellow-box-wide
+  - inventory-tall
+  - green
+  - yellow
+  - item-small
+  - Check_Mark
+  - S_Magic08
+  - S_Buff04
+  - green-box-widel
+  - I_Clover
+  - S_Bow13
+  - yellow-box-large
+  - enemy-big
+  - 5oyPDk
+  - green-box-tall
+  - inventory-large
+  - inventory-wide
+  - dowble-jump
+  m_Tag: UI
+  m_IsVariant: 0
