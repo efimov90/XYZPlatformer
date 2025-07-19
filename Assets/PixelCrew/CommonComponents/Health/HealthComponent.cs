@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Utils;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.PixelCrew.CommonComponents.Health
@@ -10,9 +11,15 @@ namespace Assets.PixelCrew.CommonComponents.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private HealthChanged _onHealthChanged;
+        private Lock _lock = new Lock();
 
         public void ModifyHealth(int hpDelta)
         {
+            if (_lock.IsLocked)
+            {
+                return;
+            }
+
             if (hpDelta <= 0 && _health <= 0)
             {
                 return;
@@ -50,6 +57,10 @@ namespace Assets.PixelCrew.CommonComponents.Health
         public HealthChanged OnHealthChanged => _onHealthChanged;
 
         public UnityEvent OnDie => _onDie;
+
+        public UnityEvent OnDamage => _onDamage;
+
+        public Lock Lock => _lock;
 
         public void SetHealthSilently(int health)
         {
