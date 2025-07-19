@@ -1,7 +1,6 @@
 ﻿using Assets.PixelCrew.UI.LevelsLoader;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Assets.PixelCrew.UI.Windows.MainMenu
 {

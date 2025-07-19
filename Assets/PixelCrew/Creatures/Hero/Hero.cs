@@ -169,7 +169,12 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int currentHealth)
         {
-            if(_gameSession.PlayerData.Health.Value > currentHealth)
+            if (IsDead)
+            {
+                return;
+            }
+
+            if (_gameSession.PlayerData.Health.Value > currentHealth)
             {
                 _cameraShakeEffect?.Shake();
             }
@@ -191,7 +196,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void Dash()
         {
-            if(_gameSession.PerksModel.Used != "Dash")
+            if (_gameSession.PerksModel.Used != "Dash")
             {
                 return;
             }

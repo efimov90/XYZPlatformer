@@ -1,9 +1,7 @@
-﻿using Assets.PixelCrew.CommonComponents.Spawners;
-using Assets.Model;
+﻿using Assets.Model;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
 using UnityEngine.Events;
-using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
-using Assets.PixelCrew.Creatures.Hero;
 
 namespace Assets.PixelCrew.CommonComponents.SceneManagement
 {
