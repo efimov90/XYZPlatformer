@@ -84,7 +84,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e49434ebf6ff38d41be6c36309bf1fe9, type: 3}
   - {fileID: 21300000, guid: 44f4717ca3ebca74ab5ca305ea4ee88d, type: 3}
   - {fileID: 21300000, guid: a88cc2bc2ad132142b4deee4756deecc, type: 3}
-  - {fileID: 21300000, guid: 22ce958d2f189ea48a73801a5138be2f, type: 3}
   - {fileID: 21300000, guid: 7f9026bd0d9786548b305c1b78505e02, type: 3}
   - {fileID: 21300000, guid: 2297827e42c68fe41a48b223d065ba06, type: 3}
   - {fileID: 21300000, guid: a1f3ef1f0420c3e4e92d614ca84b4285, type: 3}
@@ -128,7 +127,6 @@ SpriteAtlas:
   - S_Bow13
   - yellow-box-large
   - enemy-big
-  - 5oyPDk
   - green-box-tall
   - inventory-large
   - inventory-wide
