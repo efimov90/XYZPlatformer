@@ -1,7 +1,7 @@
 ﻿using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Creatures.Mobs.Behaviours
+namespace Assets.PixelCrew.Creatures.Bosses.Behaviours
 {
     public class BossShootState : StateMachineBehaviour
     {

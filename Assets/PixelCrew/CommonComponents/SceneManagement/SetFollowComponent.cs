@@ -8,7 +8,8 @@ namespace Assets.PixelCrew.CommonComponents.SceneManagement
     {
         private void Start()
         {
-            FindObjectOfType<CinemachineVirtualCamera>()
+            GameObject.FindWithTag("FollowCamera")
+                .GetComponent<CinemachineVirtualCamera>()
                 .Follow = FindObjectOfType<Hero>().transform;
         }
     }

@@ -7,10 +7,12 @@ namespace Assets.PixelCrew.CommonComponents.Dialogs.Editor
     public class ShowDialogComponentEditor : UnityEditor.Editor
     {
         private SerializedProperty _modeProperty;
+        private SerializedProperty _onExitedProperty;
 
         private void OnEnable()
         {
             _modeProperty = serializedObject.FindProperty(ShowDialogComponent.EditorModePropertyName);
+            _onExitedProperty = serializedObject.FindProperty(ShowDialogComponent.EditorOnExitedPropertyName);
         }
 
         public override void OnInspectorGUI()
@@ -30,6 +32,8 @@ namespace Assets.PixelCrew.CommonComponents.Dialogs.Editor
                         break;
                 }
             }
+
+            EditorGUILayout.PropertyField(_onExitedProperty);
 
             serializedObject.ApplyModifiedProperties();
         }

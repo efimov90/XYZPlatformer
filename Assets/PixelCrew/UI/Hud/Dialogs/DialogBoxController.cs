@@ -1,5 +1,6 @@
 ﻿using Assets.Model.Data.Dialogs;
 using Assets.Utils;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,6 +42,8 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
 
         private Coroutine _typingCoroutine;
 
+        public event Action OnEnded;
+
         public void ShowDialog(DialogData dialogData)
         {
             _dialogData = dialogData;
@@ -73,6 +76,7 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
             if (_currentSentenceIndex >= _dialogData.Sentences.Length)
             {
                 HideDialogBox();
+                OnEnded?.Invoke();
                 return;
             }
 

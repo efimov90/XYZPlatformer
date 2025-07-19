@@ -3,6 +3,7 @@ using Assets.Model.Data.Dialogs;
 using Assets.Model.Definitions;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.PixelCrew.CommonComponents.Dialogs
 {
@@ -12,6 +13,7 @@ namespace Assets.PixelCrew.CommonComponents.Dialogs
         public const string EditorModePropertyName = nameof(_mode);
         public const string EditorBoundPropertyName = nameof(_bound);
         public const string EditorExternalPropertyName = nameof(_external);
+        public const string EditorOnExitedPropertyName = nameof(OnExited);
 #endif
 
         [SerializeField]
@@ -22,6 +24,9 @@ namespace Assets.PixelCrew.CommonComponents.Dialogs
 
         [SerializeField]
         private DialogDefinition _external;
+
+        [SerializeField]
+        private UnityEvent OnExited;
 
         private DialogBoxController _dialogBox;
 
@@ -49,6 +54,14 @@ namespace Assets.PixelCrew.CommonComponents.Dialogs
             }
 
             _dialogBox.ShowDialog(DialogData);
+
+            _dialogBox.OnEnded += OnEnded;
+        }
+
+        private void OnEnded()
+        {
+            OnExited?.Invoke();
+            _dialogBox.OnEnded -= OnEnded;
         }
 
         public void Show(DialogDefinition data)

@@ -10,6 +10,7 @@ TagManager:
   - Collectables
   - SfxAudioSource
   - MainUICanvas
+  - FollowCamera
   layers:
   - Default
   - TransparentFX

@@ -45,6 +45,12 @@ namespace Assets.PixelCrew.CommonComponents.Health
         }
 #endif
 
+        public int Health => _health;
+
+        public HealthChanged OnHealthChanged => _onHealthChanged;
+
+        public UnityEvent OnDie => _onDie;
+
         public void SetHealthSilently(int health)
         {
             _health = health;
