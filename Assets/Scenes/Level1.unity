@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2984,6 +2984,9 @@ MonoBehaviour:
     - The door does not open...
     - I need to find a key
   _external: {fileID: 0}
+  OnExited:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &585979089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11161,16 +11164,6 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
-        type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4285425514735480278, guid: cc8e0c38766af914187b49c7cd15bfc3,
-        type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4285425514735480279, guid: cc8e0c38766af914187b49c7cd15bfc3,
         type: 3}
       propertyPath: m_RootOrder
@@ -11310,45 +11303,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 359565510}
     m_Modifications:
-    - target: {fileID: 1849954209173773388, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_CropFrameX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849954209173773388, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_CropFrameY
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6313585275586890321, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313585275586890322, guid: 4877f45691760a648946b7f068daf925,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6313585275586890413, guid: 4877f45691760a648946b7f068daf925,
         type: 3}
