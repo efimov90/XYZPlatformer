@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 204774669}
   - component: {fileID: 204774670}
   - component: {fileID: 204774671}
+  - component: {fileID: 204774672}
   m_Layer: 11
   m_Name: PatricTheBoss
   m_TagString: Enemy
@@ -934,6 +935,7 @@ MonoBehaviour:
       type: 3}
     _projectilesCount: 20
     _delay: 0.03
+  _useObjectPool: 0
 --- !u!114 &204774668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +972,17 @@ MonoBehaviour:
       - m_Target: {fileID: 204774664}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 204774672}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1029,6 +1042,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _floodAnimator: {fileID: 1595613528}
   _floodTime: 3
+--- !u!114 &204774672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204774661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 1
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: userLevel
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.Int32
+          m_Value: 3
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.Int32
+            m_EnumType: 
+    m_Name: level_complete
 --- !u!114 &273727539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1657257480354171375, guid: 0f4bda03c90df4849b85b5b4afbb5eff,
@@ -3479,6 +3551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 876599535}
   _prefab: {fileID: 8701511278655396703, guid: 312a56d1c7848f847b986ba84b0a5d40, type: 3}
+  _useObjectPool: 0
 --- !u!114 &876599532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8447,6 +8520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1670dbc4820394aa59c85d081346d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _userLevel: 3
   _data:
     _inventory:
       _inventoryItems:

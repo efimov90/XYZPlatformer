@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace Assets.PixelCrew.UI.Windows
 {
@@ -11,6 +12,7 @@ namespace Assets.PixelCrew.UI.Windows
 
         protected virtual void Start()
         {
+            AnalyticsEvent.ScreenVisit(gameObject.name);
             _animator = GetComponent<Animator>();
 
             if (_animator == null)

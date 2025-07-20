@@ -9848,6 +9848,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7934970632747893010, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _sceneName
+      value: Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1402139049}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TriggerEvent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934970632747893011, guid: 09e4beff51a95774e8311bec41d0b833,
+        type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7934970632747893012, guid: 09e4beff51a95774e8311bec41d0b833,
         type: 3}
       propertyPath: m_RootOrder
@@ -9930,6 +9965,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e4beff51a95774e8311bec41d0b833, type: 3}
+--- !u!1 &1402139048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7934970632747893014, guid: 09e4beff51a95774e8311bec41d0b833,
+    type: 3}
+  m_PrefabInstance: {fileID: 1402139047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1402139049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402139048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 1
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: userLevel
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 1
+          m_ValueType: System.Int32
+          m_Value: 2
+          m_Target:
+            m_Target: {fileID: 0}
+            m_Path: 
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            m_Type: System.Int32
+            m_EnumType: 
+    m_Name: level_complete
 --- !u!1 &1424131553
 GameObject:
   m_ObjectHideFlags: 0
@@ -10407,6 +10507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 1651783651}
   _prefab: {fileID: 8701511278655396703, guid: 312a56d1c7848f847b986ba84b0a5d40, type: 3}
+  _useObjectPool: 0
 --- !u!114 &1651783647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10972,6 +11073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1670dbc4820394aa59c85d081346d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _userLevel: 2
   _data:
     _inventory:
       _inventoryItems:

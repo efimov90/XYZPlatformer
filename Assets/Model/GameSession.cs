@@ -1,12 +1,14 @@
-﻿using Assets.PixelCrew.CommonComponents.SceneManagement;
-using Assets.Model.Data;
+﻿using Assets.Model.Data;
+using Assets.Model.Definitions.Player;
+using Assets.PixelCrew.CommonComponents.SceneManagement;
 using Assets.Utils.Disposables;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
-using Assets.Model.Definitions.Player;
 
 namespace Assets.Model
 {
@@ -14,6 +16,9 @@ namespace Assets.Model
     public class GameSession : MonoBehaviour
     {
         private readonly CompositeDisposable _trash = new CompositeDisposable();
+
+        [SerializeField]
+        private int _userLevel;
 
         [SerializeField]
         private PlayerData _data;
@@ -53,23 +58,34 @@ namespace Assets.Model
         {
             if (GetExistingSession() is GameSession gameSession)
             {
-                gameSession.StartSesion(_defaultCheckpointId);
+                gameSession.StartSesion(_defaultCheckpointId, _userLevel);
                 Destroy(gameObject);
             }
             else
             {
                 InitModels();
                 DontDestroyOnLoad(this);
-                StartSesion(_defaultCheckpointId);
+                StartSesion(_defaultCheckpointId, _userLevel);
             }
         }
 
-        private void StartSesion(string defaultCheckpointId)
+        private void StartSesion(string defaultCheckpointId, int userLevel)
         {
+
             SetChecked(defaultCheckpointId);
 
-            LoadHud();
+            TrackSessionStart(userLevel);
+
+            LoadUIs();
             SpawnHero(defaultCheckpointId);
+        }
+
+        private void TrackSessionStart(int userLevel)
+        {
+            AnalyticsEvent.Custom("level_start", new Dictionary<string, object>
+            {
+                { "userLevel", userLevel }
+            });
         }
 
         private void SpawnHero(string defaultCheckpointId)
@@ -111,9 +127,16 @@ namespace Assets.Model
             InitModels();
         }
 
-        private void LoadHud()
+        private void LoadUIs()
         {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            LoadOnScreenControls();
+        }
+
+        [Conditional("USE_ON_SCREEN_CONTROLS")]
+        private void LoadOnScreenControls()
+        {
+            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
         }
 
         private GameSession GetExistingSession()
