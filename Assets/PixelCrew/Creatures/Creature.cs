@@ -3,6 +3,7 @@ using Assets.PixelCrew.CommonComponents.ColliderBased;
 using Assets.PixelCrew.CommonComponents.Health;
 using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace Assets.PixelCrew.Creatures
 {
@@ -148,7 +149,9 @@ namespace Assets.PixelCrew.Creatures
         protected void DoJumpEffects()
         {
             _playSoundsComponent?.Play("Jump");
+            Profiler.BeginSample("SpawnJumpDust");
             SpawnJumpDust();
+            Profiler.EndSample();
         }
 
         protected void SpawnJumpDust() => _spawnComponent?.Spawn("JumpDust");

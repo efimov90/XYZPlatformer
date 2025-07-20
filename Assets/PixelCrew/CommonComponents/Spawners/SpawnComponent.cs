@@ -1,13 +1,19 @@
-﻿using System.Linq;
+﻿using Assets.Utils;
+using Assets.Utils.ObjectPool;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.PixelCrew.CommonComponents.Spawners
 {
     public class SpawnComponent : MonoBehaviour
     {
-        [SerializeField] private SpawnObject[] _spawnObjects;
+        [SerializeField]
+        private SpawnObject[] _spawnObjects;
 
-        public void Spawn(string name)
+        [SerializeField]
+        private bool _useObjectPool;
+
+        public GameObject Spawn(string name)
         {
             var spawnObject = _spawnObjects
                 .FirstOrDefault(x => x.Name == name);
@@ -16,11 +22,18 @@ namespace Assets.PixelCrew.CommonComponents.Spawners
             {
                 Debug.LogError($"SpawnObject with name {name} not found");
 
-                return;
+                return null;
             }
 
-            var newInstance = Instantiate(spawnObject.Prefab, spawnObject.Target.position, Quaternion.identity);
+            var newInstance =
+                _useObjectPool && spawnObject.Prefab.GetComponent<PoolItem>() != null
+                    ? Pool.Instance.Get(spawnObject.Prefab, spawnObject.Target.position)
+                    : SpawnUtils.Spawn(spawnObject.Prefab, spawnObject.Target.position);
+
             newInstance.transform.localScale = spawnObject.Target.lossyScale;
+            newInstance.gameObject.SetActive(true);
+
+            return newInstance;
         }
     }
 }

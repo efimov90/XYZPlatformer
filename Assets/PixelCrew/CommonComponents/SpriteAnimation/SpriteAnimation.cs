@@ -6,8 +6,12 @@ namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour
     {
-        [SerializeField] private string _initialAnimation = "Idle";
-        [SerializeField] private AnimationSequence[] _clips;
+        [SerializeField]
+        private string _initialAnimation = "Idle";
+
+        [SerializeField]
+        private AnimationSequence[] _clips;
+
         private AnimationSequence _currentSequence;
 
         private SpriteRenderer _spriteRenderer;
@@ -19,22 +23,25 @@ namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
 
         public void SetAnimation(string animationName)
         {
-            _currentSprite = 0;
-            _currentSequence = _clips.FirstOrDefault(x => x.Name == animationName);
+            _currentSequence = _clips
+                .FirstOrDefault(x => x.Name == animationName);
 
             if (_currentSequence == null)
             {
+                enabled = false;
+                _isPlaying = false;
                 return;
             }
 
+            StartAnimation();
             _secondsPerFrame = 1f / _currentSequence.FrameRate;
         }
 
         private void Start()
         {
-            SetAnimation(_initialAnimation);
-
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            
+            SetAnimation(_initialAnimation);
         }
 
         private void Update()
@@ -58,14 +65,24 @@ namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
                 else
                 {
                     _currentSequence.OnAnimationEnd?.Invoke();
+                    enabled = false;
                     _isPlaying = false;
                     return;
                 }
             }
 
             _spriteRenderer.sprite = _currentSequence.Sprites[_currentSprite];
+
             _nextFrameTime += _secondsPerFrame;
             _currentSprite++;
+        }
+
+        private void StartAnimation()
+        {
+            _nextFrameTime = Time.time;
+            enabled = true;
+            _isPlaying = true;
+            _currentSprite = 0;
         }
 
         private void OnBecameInvisible()
@@ -81,8 +98,6 @@ namespace Assets.PixelCrew.CommonComponents.SpriteAnimation
         private void OnEnable()
         {
             _nextFrameTime = Time.time;
-            _isPlaying = true;
-            _currentSprite = 0;
         }
     }
 }

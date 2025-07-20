@@ -5151,6 +5151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 1717536966087927268}
   _prefab: {fileID: 0}
+  _useObjectPool: 1
 --- !u!1 &6642575399395759139
 GameObject:
   m_ObjectHideFlags: 0
@@ -5713,6 +5714,7 @@ MonoBehaviour:
     _prefab: {fileID: 2840650573357483545, guid: 93507751ee237b148850d62cf92bc94c,
       type: 3}
     _target: {fileID: 1717536966087927268}
+  _useObjectPool: 1
 --- !u!114 &5196127121938451454
 MonoBehaviour:
   m_ObjectHideFlags: 0

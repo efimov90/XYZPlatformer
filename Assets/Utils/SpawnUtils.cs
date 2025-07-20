@@ -6,9 +6,11 @@ namespace Assets.Utils
     {
         private const string ContainerName = "Spawned";
 
-        public static GameObject Spawn(GameObject prefab, Vector3 position)
+        public static GameObject Spawn(GameObject prefab, Vector3 position, string containerName = ContainerName)
         {
-            var container = GameObject.Find(ContainerName) ?? new GameObject(ContainerName);
+            var container = GameObject.Find(containerName)
+                ?? new GameObject(ContainerName);
+
             return Object.Instantiate(prefab, position, Quaternion.identity, container.transform);
         }
     }

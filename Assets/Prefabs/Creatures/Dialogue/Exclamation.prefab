@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 156382788378823677}
   - component: {fileID: 4737083238401837673}
   - component: {fileID: 3487043277704878123}
-  - component: {fileID: 5539896836756291687}
+  - component: {fileID: 5204493876273337873}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1525650027
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,8 +109,8 @@ MonoBehaviour:
     OnAnimationEnd:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5539896836756291687}
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 5204493876273337873}
+          m_MethodName: Release
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &5539896836756291687
+--- !u!114 &5204493876273337873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4785137563859317443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fab8e3942992e74f8d36e80855d8892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 4785137563859317443}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3487043277704878123}
+        m_MethodName: SetAnimation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Exclamation
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -8,10 +8,13 @@ namespace Assets.PixelCrew.CommonComponents.Spawners
     {
         [SerializeField]
         private string _name;
+
         [SerializeField]
         private GameObject _prefab;
+
         [SerializeField]
         private Transform _target;
+
         public string Name => _name;
         public GameObject Prefab => _prefab;
         public Transform Target => _target;

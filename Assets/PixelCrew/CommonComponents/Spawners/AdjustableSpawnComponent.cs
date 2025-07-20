@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Utils;
+using Assets.Utils.ObjectPool;
+using UnityEngine;
 
 namespace Assets.PixelCrew.CommonComponents.Spawners
 {
@@ -9,6 +11,9 @@ namespace Assets.PixelCrew.CommonComponents.Spawners
 
         [SerializeField]
         private GameObject _prefab;
+
+        [SerializeField]
+        private bool _useObjectPool;
 
         public GameObject Spawn()
         {
@@ -24,7 +29,11 @@ namespace Assets.PixelCrew.CommonComponents.Spawners
                 return null;
             }
 
-            var newInstance = Instantiate(_prefab, _spawnPoint.position, Quaternion.identity);
+            var newInstance =
+                _useObjectPool && _prefab.GetComponent<PoolItem>() != null
+                    ? Pool.Instance.Get(_prefab, _spawnPoint.position)
+                    : SpawnUtils.Spawn(_prefab, _spawnPoint.position);
+
             newInstance.transform.localScale = _spawnPoint.lossyScale;
             newInstance.SetActive(true);
 

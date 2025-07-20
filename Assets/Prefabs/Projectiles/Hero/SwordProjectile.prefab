@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 3003918676113338057}
   - component: {fileID: 4701914081478422700}
   - component: {fileID: 1889039583171028498}
-  - component: {fileID: 6342948711776469808}
   - component: {fileID: 7289813088991905812}
   - component: {fileID: 314963320411076975}
+  - component: {fileID: 7652358804376235189}
   m_Layer: 0
   m_Name: SwordProjectile
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1525650027
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 49a4dc1ecd4b8294a980077f394a4c16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,7 +181,7 @@ MonoBehaviour:
   _tag: Enemy
   _layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2048
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -196,7 +196,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6342948711776469808}
+      - m_Target: {fileID: 7652358804376235189}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -207,19 +207,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6342948711776469808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840650573357483545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 2840650573357483545}
 --- !u!114 &7289813088991905812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +250,7 @@ MonoBehaviour:
           m_StringArgument: StuckedSword
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6342948711776469808}
+      - m_Target: {fileID: 7652358804376235189}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -274,6 +261,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7652358804376235189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840650573357483545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 2840650573357483545}
 --- !u!1 &8478606800820888613
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,3 +322,4 @@ MonoBehaviour:
     _prefab: {fileID: 8951284427265023278, guid: d00485e521be8e74d94fcbe69235153f,
       type: 3}
     _target: {fileID: 6359274201203971133}
+  _useObjectPool: 0
