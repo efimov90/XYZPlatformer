@@ -46,6 +46,8 @@ SpriteAtlas:
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 04b6059095f6da44fa458f751e734279, type: 3}
+  - {fileID: 21300000, guid: 445a04210c72e1c4ea30d1b8f8efee1d, type: 3}
   - {fileID: 3505128172380155607, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
   - {fileID: 6781877334341790625, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
   - {fileID: 1237259564474456676, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
@@ -55,7 +57,17 @@ SpriteAtlas:
   - {fileID: 6233811717460821285, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
   - {fileID: 6729741187243169404, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
   - {fileID: -565611628317543566, guid: d28330617a4187b40ae1a4b0026ed425, type: 3}
+  - {fileID: 21300000, guid: 8f7ee491e1e997b4484b785ce1a7a8d6, type: 3}
+  - {fileID: 21300000, guid: 7317409214bd4a2418b3872d7cc15ac1, type: 3}
+  - {fileID: 21300000, guid: 59c654059b1adab4d976fa5bb2b275b8, type: 3}
+  - {fileID: 21300000, guid: 20674795c576a774597c432a991594ed, type: 3}
+  - {fileID: 21300000, guid: 2a4132a6e008ba743b9d565cd6b0b65c, type: 3}
+  - {fileID: 21300000, guid: 7e00f709ba06e164a89e2b7177b0e374, type: 3}
+  - {fileID: 21300000, guid: bf1d931a6d398a64697a4fcc42faee95, type: 3}
+  - {fileID: 21300000, guid: 6d290c4cb65926b438b5e9c1d4eedfda, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Anticipation 02
+  - Jump 02
   - Crabby-crew_8
   - Crabby-crew_1
   - Crabby-crew_0
@@ -65,5 +77,13 @@ SpriteAtlas:
   - Crabby-crew_4
   - Crabby-crew_7
   - Crabby-crew_6
+  - Attack 02
+  - Anticipation 01
+  - Anticipation 03
+  - Attack 04
+  - Jump 01
+  - Attack 01
+  - Jump 03
+  - Attack 03
   m_Tag: Crabby
   m_IsVariant: 0
