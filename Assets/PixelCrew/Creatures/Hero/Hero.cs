@@ -7,7 +7,6 @@ using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
 using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Utils;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures.Hero
@@ -28,10 +27,10 @@ namespace Assets.PixelCrew.Creatures.Hero
         private Cooldown _throwCooldown;
 
         [SerializeField]
-        private AnimatorController _armedController;
+        private RuntimeAnimatorController _armedController;
 
         [SerializeField]
-        private AnimatorController _disarmedController;
+        private RuntimeAnimatorController _disarmedController;
 
         [SerializeField]
         private CheckCircleOverlap _interactionRange;

@@ -1,6 +1,8 @@
 ﻿using Assets.PixelCrew.CommonComponents.Cooldowns;
 using Assets.PixelCrew.Creatures.Mobs;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Assets.PixelCrew.CommonComponents.Placement
@@ -19,6 +21,7 @@ namespace Assets.PixelCrew.CommonComponents.Placement
         {
         }
 
+#if UNITY_EDITOR
         private void OnEnable()
         {
             EditorApplication.update += EditorUpdate;
@@ -28,6 +31,7 @@ namespace Assets.PixelCrew.CommonComponents.Placement
         {
             EditorApplication.update -= EditorUpdate;
         }
+#endif
 
         private void EditorUpdate()
         {
