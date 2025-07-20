@@ -11,7 +11,17 @@ namespace Assets.Model.Definitions
         private ItemDefinition[] _items;
 
         public ItemDefinition Get(string id)
-            => _items.FirstOrDefault(item => item.Id == id);
+        {
+            foreach (var item in _items)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+
+            return default;
+        }
 
         public IEnumerable<ItemDefinition> GetAll()
             => _items;

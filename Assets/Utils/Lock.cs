@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Assets.Utils
 {
@@ -22,6 +21,6 @@ namespace Assets.Utils
             _retained.Remove(obj);
         }
 
-        public bool IsLocked => _retained.Any();
+        public bool IsLocked => _retained.Count > 0;
     }
 }

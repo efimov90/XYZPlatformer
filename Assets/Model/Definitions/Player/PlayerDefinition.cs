@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Model.Definitions.Player
 {
@@ -22,6 +21,16 @@ namespace Assets.Model.Definitions.Player
         public StatDefinition[] Stats => _stats;
 
         public StatDefinition GetStat(StatId id)
-            => _stats.FirstOrDefault(x => x.Id == id);
+        {
+            foreach (var item in _stats)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+
+            return default;
+        }
     }
 }

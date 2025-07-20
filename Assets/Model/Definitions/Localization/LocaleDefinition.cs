@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 namespace Assets.Model.Definitions.Localization
 {
     [CreateAssetMenu(menuName = "Localization/LocaleDefinition", fileName = "LocaleDefinition")]
-    public class LocaleDefinition : ScriptableObject
+    public partial class LocaleDefinition : ScriptableObject
     {
         [SerializeField]
         private string _url;
@@ -85,28 +85,6 @@ namespace Assets.Model.Definitions.Localization
             {
                 Debug.LogError($"Failed to parse locale item: {row}. Error: {e.Message}");
                 throw;
-            }
-        }
-
-        [Serializable]
-        private class LocaleItem
-        {
-            [SerializeField]
-            private string _key;
-
-            [SerializeField]
-            private string _value;
-
-            public string Key
-            {
-                get => _key;
-                set => _key = value;
-            }
-
-            public string Value
-            {
-                get => _value;
-                set => _value = value;
             }
         }
     }

@@ -85,7 +85,7 @@ namespace Assets.Model.Data
 
         public InventoryItemData[] GetAll(params ItemTag[] itemTags)
         {
-            if (!itemTags.Any())
+            if (itemTags.Length < 1)
             {
                 return _inventoryItems.ToArray();
             }

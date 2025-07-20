@@ -10,6 +10,7 @@ namespace Assets.PixelCrew.CommonComponents.Placement
     {
         [SerializeField]
         private CooldownComponent _rangeCooldownComponent;
+
         [SerializeField]
         private float placementDistance = 0.65f;
         private int lastChildCount = 0;

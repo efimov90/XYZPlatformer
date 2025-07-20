@@ -1,6 +1,5 @@
 ﻿using Assets.Utils;
 using Assets.Utils.ObjectPool;
-using System.Linq;
 using UnityEngine;
 
 namespace Assets.PixelCrew.CommonComponents.Spawners
@@ -15,8 +14,16 @@ namespace Assets.PixelCrew.CommonComponents.Spawners
 
         public GameObject Spawn(string name)
         {
-            var spawnObject = _spawnObjects
-                .FirstOrDefault(x => x.Name == name);
+            SpawnObject spawnObject = null;
+
+            foreach (var item in _spawnObjects)
+            {
+                if(item.Name == name)
+                {
+                    spawnObject = item;
+                    break;
+                }
+            }
 
             if (spawnObject is null)
             {

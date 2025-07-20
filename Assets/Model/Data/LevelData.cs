@@ -13,7 +13,17 @@ namespace Assets.Model.Data
         private List<LevelProgress> _progresses;
 
         public int GetLevel(StatId statId)
-            => _progresses.FirstOrDefault(x => x.Id == statId)?.Level ?? 0;
+        {
+            foreach (var item in _progresses)
+            {
+                if(item.Id == statId)
+                {
+                    return item.Level;
+                }
+            }
+
+            return 0;
+        }
 
         public void LevelUp(StatId statId)
         {
