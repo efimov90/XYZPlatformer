@@ -70,3 +70,5 @@ MonoBehaviour:
     _value: Dash
   - _key: dash_description
     _value: This is dash
+  - _key: health_regeneration_description
+    _value: Health will recover with time

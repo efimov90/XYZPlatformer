@@ -1,6 +1,7 @@
 ﻿using Assets.Model;
 using Assets.Model.Definitions;
 using Assets.Model.Definitions.Player;
+using Assets.Model.Definitions.Repositories;
 using Assets.PixelCrew.CommonComponents.Collectables;
 using Assets.PixelCrew.CommonComponents.ColliderBased;
 using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
@@ -8,6 +9,7 @@ using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Utils;
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace Assets.PixelCrew.Creatures.Hero
 {
@@ -16,6 +18,8 @@ namespace Assets.PixelCrew.Creatures.Hero
         private const string SwordId = "Sword";
         private const string HealthPotionId = "HealthPotion";
         private const int maxThrowableSpawn = 3;
+
+        private PerkDefinition _healthRegenerationDefinition;
 
         [SerializeField]
         private float _slamDownVelocity;
@@ -51,6 +55,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private bool _isDashing;
         private float _dashDirection;
+        private Coroutine _regenerationCorutine;
 
         public bool IsDoubleJumpAllowed => _allowSecondJump && _gameSession.PerksModel.IsDoubleJumpAllowed;
 
@@ -109,10 +114,26 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             _cameraShakeEffect = FindObjectOfType<CameraShakeEffect>();
             _gameSession = FindObjectOfType<GameSession>();
+
+            _healthRegenerationDefinition = DefinitionsFacade.Instance.PerkRepository.Get("HealthRegeneration");
             _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
             _gameSession.StatsModel.OnUpgraded += OnUpgradedStat;
+            _gameSession.PerksModel.OnChanged += OnPerkChanged;
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health.Value);
             UpdateHeroWeapon();
+        }
+
+        private void OnPerkChanged()
+        {
+            if (_gameSession.PerksModel.Used == "HealthRegeneration" && _regenerationCorutine == null)
+            {
+                _regenerationCorutine = StartCoroutine(RegenerationLoop());
+            }
+            else if (_gameSession.PerksModel.Used != "HealthRegeneration" && _regenerationCorutine != null)
+            {
+                StopCoroutine(_regenerationCorutine);
+                _regenerationCorutine = null;
+            }
         }
 
         protected override void FixedUpdate()
@@ -410,6 +431,20 @@ namespace Assets.PixelCrew.Creatures.Hero
             _healthComponent.ModifyHealth(Random.Range(5, 25));
         }
 
+        private IEnumerator RegenerationLoop()
+        {
+            while (_gameSession.PerksModel.Used == "HealthRegeneration")
+            {
+                if (_healthComponent.Health < _gameSession.StatsModel.GetCurrentValue(StatId.Health))
+                {
+                    _healthComponent.ModifyHealth(1);
+                    StartCoroutine(_gameSession.PerksModel.StartCooldown());
+                }
+
+                yield return new WaitForSeconds(_healthRegenerationDefinition.Cooldown);
+            }
+        }
+
         public void NextQuickItem()
         {
             _gameSession.QuickInventory.SetNextItem();
@@ -420,6 +455,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             if (_gameSession != null)
             {
                 _gameSession.PlayerData.Inventory.InventoryChanged -= OnInventoryChaged;
+                _gameSession.PerksModel.OnChanged -= OnPerkChanged;
             }
         }
     }

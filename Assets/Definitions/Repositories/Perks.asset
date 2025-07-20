@@ -34,3 +34,11 @@ MonoBehaviour:
       _id: Coin
       _count: 10
     _cooldown: 2
+  - _id: HealthRegeneration
+    _icon: {fileID: -8438763151253471919, guid: cc2a0ac2a5a508a4596eb05ed3e23ddd,
+      type: 3}
+    _information: health_regeneration_description
+    _price:
+      _id: HealthPotion
+      _count: 10
+    _cooldown: 1
