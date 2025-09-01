@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4959269432982580983}
   - component: {fileID: 2502394414093364129}
   - component: {fileID: 6665169030588638583}
-  - component: {fileID: 6171122251610716051}
+  - component: {fileID: 4163587166353391855}
   m_Layer: 0
   m_Name: PearHerolProjectile
   m_TagString: Untagged
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1525650027
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 112be37549e268f43b5a8f436026de9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6171122251610716051}
+      - m_Target: {fileID: 4163587166353391855}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpDelta: -1
---- !u!114 &6171122251610716051
+--- !u!114 &4163587166353391855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

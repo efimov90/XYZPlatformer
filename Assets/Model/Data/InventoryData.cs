@@ -1,4 +1,6 @@
 ﻿using Assets.Model.Definitions;
+using Assets.Model.Definitions.Repositories;
+using Assets.Model.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,7 +85,7 @@ namespace Assets.Model.Data
 
         public InventoryItemData[] GetAll(params ItemTag[] itemTags)
         {
-            if(!itemTags.Any())
+            if (itemTags.Length < 1)
             {
                 return _inventoryItems.ToArray();
             }
@@ -94,7 +96,7 @@ namespace Assets.Model.Data
             {
                 var definition = DefinitionsFacade.Instance.Get(inventoryItem.Id);
 
-                if(itemTags.Any(it => !definition.HasTag(it)))
+                if (itemTags.Any(it => !definition.HasTag(it)))
                 {
                     continue;
                 }
@@ -105,11 +107,15 @@ namespace Assets.Model.Data
             return result.ToArray();
         }
 
-        public void Remove(InventoryItemData[] required)
+        public void Remove(params InventoryItemData[] required) => Remove(required.ToDictionary());
+
+        public void Remove(params ItemWithCount[] prices) => Remove(prices.ToDictionary());
+
+        public void Remove(IDictionary<string, int> requiredItems)
         {
-            foreach (var item in required)
+            foreach (var item in requiredItems)
             {
-                Remove(item.Id, item.Count);
+                Remove(item.Key, item.Value);
             }
         }
 
@@ -119,10 +125,20 @@ namespace Assets.Model.Data
             return item?.Count ?? 0;
         }
 
-        public bool Contains(InventoryItemData[] required)
-            => required.All(ri => _inventoryItems.Any(ii => ii.Id == ri.Id && ii.Count >= ri.Count));
-
         public InventoryItemData GetItem(string id)
             => _inventoryItems.FirstOrDefault(i => i.Id == id);
+
+        public bool HasResources(params InventoryItemData[] requiredtems) => HasResources(requiredtems.ToDictionary());
+
+        public bool HasResources(params ItemWithCount[] requiredItems) => HasResources(requiredItems.ToDictionary());
+
+        public bool HasResources(IDictionary<string, int> requiredItems)
+        {
+            var squashedInventory = _inventoryItems.ToDictionary();
+
+            return requiredItems
+                .All(ri => squashedInventory
+                    .Any(sii => sii.Key == ri.Key && sii.Value >= ri.Value));
+        }
     }
 }

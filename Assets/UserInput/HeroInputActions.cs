@@ -65,6 +65,30 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""OpenInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""57f63de6-d212-434a-bdb9-bd9bc88a2580"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""f866e183-3663-4f92-b1e9-ad3580c3e994"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToggleLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a127ee4-1f92-47d9-af14-8b118383a47b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -179,9 +203,75 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""4523c074-1a63-4118-a024-5976a0459cd3"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AxisMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""4f3caa20-fe74-46a0-bb27-ba7fc0b49183"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AxisMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""bea04d97-50d2-4ec8-b9eb-61dd4c6b6a83"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AxisMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6c2f6ec8-2b0d-4fa0-a478-cfd72b3191d8"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AxisMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4a94a673-e1ef-4790-b7f0-f32b1a000781"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AxisMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""c1edd48b-0703-4a98-b46e-626df3c3778d"",
                     ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""304d3575-ebe0-45c0-bda5-2ffd2da1ad79"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -202,8 +292,30 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""b9c728c2-67a0-46dc-8251-506eb5b95425"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""bb1d0257-54f7-46fa-bcaf-2dd967aae10a"",
                     ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e6a36b5-e6c3-4aae-a8b5-51934ae9640d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -232,6 +344,50 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""action"": ""NextQuickItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f72abcb7-6986-43db-af85-64e3db66d42a"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextQuickItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee81967b-74ec-428b-95ee-5a17615b4a99"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e62a28d9-079a-4d6d-8713-cd970f3ed23e"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac3e745f-ad42-4ca6-87c0-340f33cd5443"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -246,6 +402,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
         m_Hero_UseHealthPotion = m_Hero.FindAction("UseHealthPotion", throwIfNotFound: true);
         m_Hero_NextQuickItem = m_Hero.FindAction("NextQuickItem", throwIfNotFound: true);
+        m_Hero_OpenInventory = m_Hero.FindAction("OpenInventory", throwIfNotFound: true);
+        m_Hero_Dash = m_Hero.FindAction("Dash", throwIfNotFound: true);
+        m_Hero_ToggleLight = m_Hero.FindAction("ToggleLight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +460,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_Throw;
     private readonly InputAction m_Hero_UseHealthPotion;
     private readonly InputAction m_Hero_NextQuickItem;
+    private readonly InputAction m_Hero_OpenInventory;
+    private readonly InputAction m_Hero_Dash;
+    private readonly InputAction m_Hero_ToggleLight;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -311,6 +473,9 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
         public InputAction @UseHealthPotion => m_Wrapper.m_Hero_UseHealthPotion;
         public InputAction @NextQuickItem => m_Wrapper.m_Hero_NextQuickItem;
+        public InputAction @OpenInventory => m_Wrapper.m_Hero_OpenInventory;
+        public InputAction @Dash => m_Wrapper.m_Hero_Dash;
+        public InputAction @ToggleLight => m_Wrapper.m_Hero_ToggleLight;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -338,6 +503,15 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @NextQuickItem.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
                 @NextQuickItem.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
                 @NextQuickItem.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnNextQuickItem;
+                @OpenInventory.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnOpenInventory;
+                @Dash.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnDash;
+                @ToggleLight.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
+                @ToggleLight.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnToggleLight;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +534,15 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                 @NextQuickItem.started += instance.OnNextQuickItem;
                 @NextQuickItem.performed += instance.OnNextQuickItem;
                 @NextQuickItem.canceled += instance.OnNextQuickItem;
+                @OpenInventory.started += instance.OnOpenInventory;
+                @OpenInventory.performed += instance.OnOpenInventory;
+                @OpenInventory.canceled += instance.OnOpenInventory;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
+                @ToggleLight.started += instance.OnToggleLight;
+                @ToggleLight.performed += instance.OnToggleLight;
+                @ToggleLight.canceled += instance.OnToggleLight;
             }
         }
     }
@@ -372,5 +555,8 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         void OnThrow(InputAction.CallbackContext context);
         void OnUseHealthPotion(InputAction.CallbackContext context);
         void OnNextQuickItem(InputAction.CallbackContext context);
+        void OnOpenInventory(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnToggleLight(InputAction.CallbackContext context);
     }
 }

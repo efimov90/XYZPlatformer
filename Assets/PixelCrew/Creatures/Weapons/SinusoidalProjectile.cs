@@ -23,7 +23,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
         {
             var position = _rigidbody.position;
             position.x += _direction * _speed;
-            position.y = _originalY + Mathf.Sin(_time * _frequency) * _amplitude;
+            position.y = _originalY + (Mathf.Sin(_time * _frequency) * _amplitude);
 
             _rigidbody.MovePosition(position);
 

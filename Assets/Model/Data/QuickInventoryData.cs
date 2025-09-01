@@ -34,7 +34,7 @@ namespace Assets.Model.Data
 
         public void SetNextItem()
         {
-            SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, InventoryItems.Length);
+            SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, InventoryItems.Length);
         }
 
         private void OnInventoryChanged(string id, int delta, int count)

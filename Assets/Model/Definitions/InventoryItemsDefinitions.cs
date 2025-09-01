@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Model.Definitions
@@ -9,14 +10,20 @@ namespace Assets.Model.Definitions
         [SerializeField]
         private ItemDefinition[] _items;
 
-#if UNITY_EDITOR
-
-        public ItemDefinition[] ItemsForEditor
-            => _items;
-
-#endif
-
         public ItemDefinition Get(string id)
-            => _items.FirstOrDefault(item => item.Id == id);
+        {
+            foreach (var item in _items)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+
+            return default;
+        }
+
+        public IEnumerable<ItemDefinition> GetAll()
+            => _items;
     }
 }

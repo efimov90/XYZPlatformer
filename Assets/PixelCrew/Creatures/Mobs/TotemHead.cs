@@ -1,6 +1,6 @@
-﻿using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Cooldowns;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Cooldowns;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Creatures.Mobs

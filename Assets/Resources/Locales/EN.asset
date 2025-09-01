@@ -16,6 +16,12 @@ MonoBehaviour:
   _localeItems:
   - _key: ok_button
     _value: ok
+  - _key: buy_button
+    _value: buy
+  - _key: use_button
+    _value: use
+  - _key: loading_text
+    _value: Loading...
   - _key: menu_title
     _value: menu
   - _key: start_button
@@ -36,3 +42,33 @@ MonoBehaviour:
     _value: language
   - _key: selected_language
     _value: Selected language is {0}
+  - _key: price_label
+    _value: 'Price:'
+  - _key: Health
+    _value: Health
+  - _key: Speed
+    _value: Speed
+  - _key: RangeDamage
+    _value: Range damage
+  - _key: coin
+    _value: Coin
+  - _key: health_potion
+    _value: Health potion
+  - _key: sword
+    _value: Sword
+  - _key: green_diamond
+    _value: Green diamond
+  - _key: double_jump_title
+    _value: Double Jump
+  - _key: double_jump_description
+    _value: This is double jump.
+  - _key: super_throw_title
+    _value: Super Throw
+  - _key: super_throw_description
+    _value: This is super throw
+  - _key: dash_title
+    _value: Dash
+  - _key: dash_description
+    _value: This is dash
+  - _key: health_regeneration_description
+    _value: Health will recover with time

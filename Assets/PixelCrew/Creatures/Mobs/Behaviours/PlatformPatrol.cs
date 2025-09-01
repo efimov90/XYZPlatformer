@@ -1,4 +1,4 @@
-﻿using Assets.CommonComponents.ColliderBased;
+﻿using Assets.PixelCrew.CommonComponents.ColliderBased;
 using System.Collections;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ namespace Assets.PixelCrew.Creatures.Mobs.Behaviours
         {
             while (enabled)
             {
-                if(_creature.Direction == Vector2.zero)
+                if (_creature.Direction == Vector2.zero)
                 {
                     var direction = _creature.transform.lossyScale.normalized;
                     direction.y = 0;

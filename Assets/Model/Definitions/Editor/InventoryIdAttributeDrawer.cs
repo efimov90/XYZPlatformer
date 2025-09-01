@@ -10,7 +10,7 @@ namespace Assets.Model.Definitions.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var definitions = DefinitionsFacade.Instance.InventoryItemDefinitions.ItemsForEditor;
+            var definitions = DefinitionsFacade.Instance.InventoryItemDefinitions.GetAll();
 
             var ids = definitions
                 .Select(item => item.Id)

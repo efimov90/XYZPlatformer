@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - Collectables
   - SfxAudioSource
+  - MainUICanvas
+  - FollowCamera
   layers:
   - Default
   - TransparentFX
@@ -46,9 +48,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Creatures
-    uniqueID: 2105980715
+  - name: Background
+    uniqueID: 1189502679
+    locked: 0
+  - name: Tilemap
+    uniqueID: 2646761677
     locked: 0
   - name: Level
     uniqueID: 1525650027
+    locked: 0
+  - name: Creatures
+    uniqueID: 2105980715
+    locked: 0
+  - name: Overlay
+    uniqueID: 135333235
     locked: 0

@@ -16,6 +16,12 @@ MonoBehaviour:
   _localeItems:
   - _key: ok_button
     _value: "\u043E\u043A"
+  - _key: buy_button
+    _value: "\u043A\u0443\u043F\u0438\u0442\u044C"
+  - _key: use_button
+    _value: "\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C"
+  - _key: loading_text
+    _value: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
   - _key: menu_title
     _value: "\u043C\u0435\u043D\u044E"
   - _key: start_button
@@ -37,3 +43,35 @@ MonoBehaviour:
   - _key: selected_language
     _value: "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u044F\u0437\u044B\u043A
       {0}"
+  - _key: price_label
+    _value: "\u0426\u0435\u043D\u0430"
+  - _key: Health
+    _value: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+  - _key: Speed
+    _value: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
+  - _key: RangeDamage
+    _value: "\u0414\u0438\u0441\u0442\u0430\u043D\u0446\u0438\u043E\u043D\u043D\u044B\u0439
+      \u0443\u0440\u043E\u043D"
+  - _key: coin
+    _value: "\u041C\u043E\u043D\u0435\u0442\u0430"
+  - _key: health_potion
+    _value: "\u0417\u0435\u043B\u044C\u0435 \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F"
+  - _key: sword
+    _value: "\u041C\u0435\u0447"
+  - _key: green_diamond
+    _value: "\u0417\u0435\u043B\u0435\u043D\u044B\u0439 \u0430\u043B\u043C\u0430\u0437"
+  - _key: double_jump_title
+    _value: "\u0414\u0432\u043E\u0439\u043D\u043E\u0439 \u041F\u0440\u044B\u0436\u043E\u043A"
+  - _key: double_jump_description
+    _value: "\u042D\u0442\u043E \u0434\u0432\u043E\u0439\u043D\u043E\u0439 \u043F\u0440\u044B\u0436\u043E\u043A"
+  - _key: super_throw_title
+    _value: "\u0421\u0443\u043F\u0435\u0440 \u0411\u0440\u043E\u0441\u043E\u043A"
+  - _key: super_throw_description
+    _value: "\u042D\u0442\u043E \u0441\u0443\u043F\u0435\u0440 \u0431\u0440\u043E\u0441\u043E\u043A"
+  - _key: dash_title
+    _value: "\u0420\u044B\u0432\u043E\u043A"
+  - _key: dash_description
+    _value: "\u042D\u0442\u043E \u0440\u044B\u0432\u043E\u043A"
+  - _key: health_regeneration_description
+    _value: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+      \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C"

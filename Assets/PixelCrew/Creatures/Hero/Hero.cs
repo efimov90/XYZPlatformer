@@ -1,12 +1,15 @@
-﻿using Assets.CommonComponents.Collectables;
-using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Spawners;
-using Assets.Model;
+﻿using Assets.Model;
 using Assets.Model.Definitions;
+using Assets.Model.Definitions.Player;
+using Assets.Model.Definitions.Repositories;
+using Assets.PixelCrew.CommonComponents.Collectables;
+using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Effects.CameraRelated;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.Utils;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace Assets.PixelCrew.Creatures.Hero
 {
@@ -15,6 +18,8 @@ namespace Assets.PixelCrew.Creatures.Hero
         private const string SwordId = "Sword";
         private const string HealthPotionId = "HealthPotion";
         private const int maxThrowableSpawn = 3;
+
+        private PerkDefinition _healthRegenerationDefinition;
 
         [SerializeField]
         private float _slamDownVelocity;
@@ -26,10 +31,10 @@ namespace Assets.PixelCrew.Creatures.Hero
         private Cooldown _throwCooldown;
 
         [SerializeField]
-        private AnimatorController _armedController;
+        private RuntimeAnimatorController _armedController;
 
         [SerializeField]
-        private AnimatorController _disarmedController;
+        private RuntimeAnimatorController _disarmedController;
 
         [SerializeField]
         private CheckCircleOverlap _interactionRange;
@@ -37,11 +42,22 @@ namespace Assets.PixelCrew.Creatures.Hero
         [SerializeField]
         protected AdjustableSpawnComponent _throwSpawnComponent;
 
+        [SerializeField]
+        private GameObject _candle;
+
+        private CameraShakeEffect _cameraShakeEffect;
+
         private BuffComponent _buffComponent;
 
-        private bool _allowSecondJump = true;
+        private bool _allowSecondJump;
 
         private GameSession _gameSession;
+
+        private bool _isDashing;
+        private float _dashDirection;
+        private Coroutine _regenerationCorutine;
+
+        public bool IsDoubleJumpAllowed => _allowSecondJump && _gameSession.PerksModel.IsDoubleJumpAllowed;
 
         public string QuickInventorySelectedId => _gameSession.QuickInventory.SelectedItem.Id;
 
@@ -58,7 +74,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
                 var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
 
-                if(QuickInventorySelectedId == SwordId)
+                if (QuickInventorySelectedId == SwordId)
                 {
                     return throwableCount > 1;
                 }
@@ -71,6 +87,11 @@ namespace Assets.PixelCrew.Creatures.Hero
         {
             get
             {
+                if (!_gameSession.PerksModel.IsSuperThrowAllowed)
+                {
+                    return false;
+                }
+
                 var canThrow = DefinitionsFacade.Instance.InventoryItemDefinitions.Get(QuickInventorySelectedId).HasTag(ItemTag.Throwable);
 
                 if (!canThrow)
@@ -80,7 +101,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
                 var throwableCount = _gameSession.PlayerData.Inventory.GetCountOf(QuickInventorySelectedId);
 
-                if(QuickInventorySelectedId == SwordId)
+                if (QuickInventorySelectedId == SwordId)
                 {
                     return throwableCount >= maxThrowableSpawn + 1;
                 }
@@ -91,10 +112,71 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         private void Start()
         {
+            _cameraShakeEffect = FindObjectOfType<CameraShakeEffect>();
             _gameSession = FindObjectOfType<GameSession>();
+
+            _healthRegenerationDefinition = DefinitionsFacade.Instance.PerkRepository.Get("HealthRegeneration");
             _gameSession.PlayerData.Inventory.InventoryChanged += OnInventoryChaged;
+            _gameSession.StatsModel.OnUpgraded += OnUpgradedStat;
+            _gameSession.PerksModel.OnChanged += OnPerkChanged;
             _healthComponent.SetHealthSilently(_gameSession.PlayerData.Health.Value);
             UpdateHeroWeapon();
+        }
+
+        private void OnPerkChanged()
+        {
+            if (_gameSession.PerksModel.Used == "HealthRegeneration" && _regenerationCorutine == null)
+            {
+                _regenerationCorutine = StartCoroutine(RegenerationLoop());
+            }
+            else if (_gameSession.PerksModel.Used != "HealthRegeneration" && _regenerationCorutine != null)
+            {
+                StopCoroutine(_regenerationCorutine);
+                _regenerationCorutine = null;
+            }
+        }
+
+        protected override void FixedUpdate()
+        {
+            if (_isDashing)
+            {
+                var velocityX = _dashDirection * CalculateSpeed();
+                var velocityY = CalculateVelocityY();
+
+                _rigidbody2D.velocity = new Vector2(velocityX, velocityY);
+
+                _animator.SetBool(_isOnFloorHashString, IsOnFloor);
+                _animator.SetFloat(_verticalVelocityHashString, _rigidbody2D.velocity.y);
+                _animator.SetBool(_isRunningHashString, Direction.x != 0);
+
+                UpdateSpriteDirection(Direction);
+            }
+            else
+            {
+                base.FixedUpdate();
+            }
+        }
+
+        private void OnUpgradedStat(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Health:
+                    var oldLevel = _gameSession.StatsModel.GetCurrentLevel(statId) - 1;
+
+                    if (oldLevel < 0 || oldLevel >= _gameSession.StatsModel.GetStatDefinition(statId).Levels.Length)
+                    {
+                        return;
+                    }
+
+                    var oldMaxHp = _gameSession.StatsModel.GetValue(statId, oldLevel);
+
+                    var newMaxHp = _gameSession.StatsModel.GetCurrentValue(statId);
+
+                    _gameSession.PlayerData.Health.Value = (int)(_gameSession.PlayerData.Health.Value / oldMaxHp * newMaxHp);
+                    _healthComponent.SetHealth(_gameSession.PlayerData.Health.Value);
+                    break;
+            }
         }
 
         protected override void Awake()
@@ -107,7 +189,60 @@ namespace Assets.PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int currentHealth)
         {
+            if (IsDead)
+            {
+                return;
+            }
+
+            if (_gameSession.PlayerData.Health.Value > currentHealth)
+            {
+                _cameraShakeEffect?.Shake();
+            }
+
             _gameSession.PlayerData.Health.Value = currentHealth;
+        }
+
+        public void OpenInventory()
+        {
+            if (_gameSession.Inventory.IsOpened)
+            {
+                return;
+            }
+
+            _gameSession.Inventory.IsOpened = true;
+
+            WindowUtils.CreateWindow("UI/InventoryWindow");
+        }
+
+        public void Dash()
+        {
+            if (_gameSession.PerksModel.Used != "Dash")
+            {
+                return;
+            }
+
+            StartCoroutine(DashCorutine());
+        }
+
+        private IEnumerator DashCorutine()
+        {
+            if (!_gameSession.PerksModel.IsCooldownActive && !_isDashing)
+            {
+                _isDashing = true;
+                _dashDirection = Direction.x * 3;
+
+                yield return new WaitForSeconds(0.2f);
+
+                _dashDirection = 0;
+                _isDashing = false;
+
+                yield return _gameSession.PerksModel.StartCooldown();
+            }
+        }
+
+        public void ToggleLight()
+        {
+            _candle.SetActive(!_candle.activeSelf);
         }
 
         public void AddInInventory(string id, int count)
@@ -129,7 +264,7 @@ namespace Assets.PixelCrew.Creatures.Hero
 
             if (id == "Coin" && delta < 0)
             {
-                SpawnCoins(delta);
+                SpawnCoins(-delta);
             }
         }
 
@@ -145,6 +280,9 @@ namespace Assets.PixelCrew.Creatures.Hero
             return base.CalculateVelocityY();
         }
 
+        protected override float CalculateSpeed()
+            => _gameSession.StatsModel.GetCurrentValue(StatId.Speed);
+
         protected override float CalculateJumpVelocity(float velocityY)
         {
             if (IsOnFloor)
@@ -152,11 +290,12 @@ namespace Assets.PixelCrew.Creatures.Hero
                 DoJumpEffects();
                 velocityY += _jumpSpeed * _buffComponent.JumpBoostAmount;
             }
-            else if (_allowSecondJump)
+            else if (IsDoubleJumpAllowed)
             {
                 DoJumpEffects();
                 velocityY = _jumpSpeed * _buffComponent.JumpBoostAmount;
                 _allowSecondJump = false;
+                StartCoroutine(_gameSession.PerksModel.StartCooldown());
             }
 
             return velocityY;
@@ -227,6 +366,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             {
                 Debug.Log("Throw multiple");
                 StartCoroutine(nameof(ThrowMultiple));
+                StartCoroutine(_gameSession.PerksModel.StartCooldown());
             }
             else
             {
@@ -269,7 +409,14 @@ namespace Assets.PixelCrew.Creatures.Hero
             }
 
             _throwSpawnComponent.SetPrefab(throwable.ProjectilePrefab);
-            _throwSpawnComponent.Spawn();
+            var projectile = _throwSpawnComponent.Spawn();
+            var modifyHealthComponent = projectile.GetComponent<ModifyHealthComponent>();
+
+            if (modifyHealthComponent != null)
+            {
+                modifyHealthComponent.HpDelta *= (int)_gameSession.StatsModel.GetCurrentValue(StatId.RangeDamage);
+            }
+
             RemoveFromInventory(QuickInventorySelectedId, 1);
         }
 
@@ -284,6 +431,20 @@ namespace Assets.PixelCrew.Creatures.Hero
             _healthComponent.ModifyHealth(Random.Range(5, 25));
         }
 
+        private IEnumerator RegenerationLoop()
+        {
+            while (_gameSession.PerksModel.Used == "HealthRegeneration")
+            {
+                if (_healthComponent.Health < _gameSession.StatsModel.GetCurrentValue(StatId.Health))
+                {
+                    _healthComponent.ModifyHealth(1);
+                    StartCoroutine(_gameSession.PerksModel.StartCooldown());
+                }
+
+                yield return new WaitForSeconds(_healthRegenerationDefinition.Cooldown);
+            }
+        }
+
         public void NextQuickItem()
         {
             _gameSession.QuickInventory.SetNextItem();
@@ -294,6 +455,7 @@ namespace Assets.PixelCrew.Creatures.Hero
             if (_gameSession != null)
             {
                 _gameSession.PlayerData.Inventory.InventoryChanged -= OnInventoryChaged;
+                _gameSession.PerksModel.OnChanged -= OnPerkChanged;
             }
         }
     }

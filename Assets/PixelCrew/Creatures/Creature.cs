@@ -1,21 +1,22 @@
-﻿using Assets.CommonComponents.Audio;
-using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Health;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.Audio;
+using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Health;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace Assets.PixelCrew.Creatures
 {
     public class Creature : MonoBehaviour
     {
         #region Animation Keys
-        private static readonly int _isOnFloorHashString =
+        protected static readonly int _isOnFloorHashString =
             Animator.StringToHash("IsOnFloor");
 
-        private static readonly int _verticalVelocityHashString =
+        protected static readonly int _verticalVelocityHashString =
             Animator.StringToHash("VerticalVelocity");
 
-        private static readonly int _isRunningHashString =
+        protected static readonly int _isRunningHashString =
             Animator.StringToHash("IsRunning");
 
         private static readonly int _hitHashString =
@@ -143,10 +144,14 @@ namespace Assets.PixelCrew.Creatures
             return velocityY;
         }
 
+        protected virtual float CalculateSpeed() => _speed;
+
         protected void DoJumpEffects()
         {
             _playSoundsComponent?.Play("Jump");
+            Profiler.BeginSample("SpawnJumpDust");
             SpawnJumpDust();
+            Profiler.EndSample();
         }
 
         protected void SpawnJumpDust() => _spawnComponent?.Spawn("JumpDust");
@@ -155,9 +160,9 @@ namespace Assets.PixelCrew.Creatures
 
         protected void SpawnSlamDust() => _spawnComponent?.Spawn("SlamDust");
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
-            var velocityX = Direction.x * _speed;
+            var velocityX = Direction.x * CalculateSpeed();
             var velocityY = CalculateVelocityY();
 
             _rigidbody2D.velocity = new Vector2(velocityX, velocityY);

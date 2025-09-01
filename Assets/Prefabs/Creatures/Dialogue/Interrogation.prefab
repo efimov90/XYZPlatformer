@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3588302623629640977}
   - component: {fileID: 643956816645514259}
   - component: {fileID: 4311790058213551689}
-  - component: {fileID: 8483277561360650610}
+  - component: {fileID: 4040811108343735647}
   m_Layer: 0
   m_Name: Interrogation
   m_TagString: Untagged
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -69,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1525650027
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
     OnAnimationEnd:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8483277561360650610}
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 4040811108343735647}
+          m_MethodName: Release
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8483277561360650610
+--- !u!114 &4040811108343735647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6910950394134263082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5cfdade70be00d4f9bd47f78d1080c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fab8e3942992e74f8d36e80855d8892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 6910950394134263082}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4311790058213551689}
+        m_MethodName: SetAnimation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Interrogation
+          m_BoolArgument: 0
+        m_CallState: 2

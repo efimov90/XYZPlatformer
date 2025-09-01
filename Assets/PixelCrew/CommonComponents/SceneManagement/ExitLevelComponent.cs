@@ -1,0 +1,23 @@
+﻿using Assets.Model;
+using Assets.PixelCrew.UI.LevelsLoader;
+using UnityEngine;
+
+namespace Assets.PixelCrew.CommonComponents.SceneManagement
+{
+    public class ExitLevelComponent : MonoBehaviour
+    {
+        [SerializeField]
+        private string _sceneName;
+
+        public void Exit()
+        {
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
+
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel(_sceneName);
+
+            gameObject.SetActive(false);
+        }
+    }
+}

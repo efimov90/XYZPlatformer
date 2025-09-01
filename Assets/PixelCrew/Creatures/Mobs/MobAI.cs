@@ -1,5 +1,5 @@
-﻿using Assets.CommonComponents.ColliderBased;
-using Assets.CommonComponents.Spawners;
+﻿using Assets.PixelCrew.CommonComponents.ColliderBased;
+using Assets.PixelCrew.CommonComponents.Spawners;
 using Assets.PixelCrew.Creatures.Mobs.Behaviours;
 using System.Collections;
 using UnityEngine;
@@ -40,7 +40,7 @@ namespace Assets.PixelCrew.Creatures.Mobs
 
         private void Start()
         {
-            if(_patrol == null)
+            if (_patrol == null)
             {
                 return;
             }

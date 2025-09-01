@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sharky
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 99ac414057ca1ce429aca9268c59559b, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 67e282004d9ba5a4c82864819a67fac0, type: 3}
+  - {fileID: 21300000, guid: 961b2c20b28ed6c4a921ca2aea7ca700, type: 3}
+  - {fileID: 21300000, guid: a5cd454043d24c54db41db5bebd84557, type: 3}
+  - {fileID: 21300000, guid: ae21220175f4aa94082296630ba74179, type: 3}
+  - {fileID: 21300000, guid: 938396c1ebebc9c44bcb92c300aaa183, type: 3}
+  - {fileID: 21300000, guid: 2488dcd1aa0c996469df595e2b950258, type: 3}
+  - {fileID: 21300000, guid: e7cf34e14820e054bb22ed2c35943043, type: 3}
+  - {fileID: 21300000, guid: 493e83b2b42d8154080183df70841dd0, type: 3}
+  - {fileID: 21300000, guid: 3cd308e23fde8bc429a479a23ed8a4b2, type: 3}
+  - {fileID: 21300000, guid: 4919703365c92a448a6dd16261566445, type: 3}
+  - {fileID: 21300000, guid: 40101e04990546c4983068bde0e677ed, type: 3}
+  - {fileID: 21300000, guid: 812ea84482d2a89409c90ddd2203df00, type: 3}
+  - {fileID: 21300000, guid: c78df3b49b376cb4e84e545bb26b738c, type: 3}
+  - {fileID: 21300000, guid: 899c94b463f6fd14bbf733d71f667131, type: 3}
+  - {fileID: 21300000, guid: f76620e4fe131074cb1e79e1b1267968, type: 3}
+  - {fileID: 21300000, guid: cf325d7675a7dd64dad925fc01b148aa, type: 3}
+  - {fileID: 21300000, guid: 80764917a52190c45b97eaf5379b4551, type: 3}
+  - {fileID: 21300000, guid: ff11d23724306c746abeaf337555d32b, type: 3}
+  - {fileID: 21300000, guid: 4a550a379e02601459b1ba7cf4944a2d, type: 3}
+  - {fileID: 21300000, guid: 58db45182475cb84994865d36b2575ba, type: 3}
+  - {fileID: 21300000, guid: 9e451f78c3dacaf48a628760917b2297, type: 3}
+  - {fileID: 21300000, guid: 4bec3dbad9180134e9960f8fd669535c, type: 3}
+  - {fileID: 21300000, guid: 2491e6dac131f6647bf4000b392f973c, type: 3}
+  - {fileID: 21300000, guid: a9f2c72bcb9928f4399cc6b768d191dc, type: 3}
+  - {fileID: 21300000, guid: ad9d3e6bb8706134b88f766cdbee7c1f, type: 3}
+  - {fileID: 21300000, guid: 8038b1bbae886364fa3b29fe09a60f11, type: 3}
+  - {fileID: 21300000, guid: 35133edb78f4db04f827ad9c005e570b, type: 3}
+  - {fileID: 21300000, guid: 48b99afb0656025448538f0ad02e9baf, type: 3}
+  - {fileID: 21300000, guid: 6d11121c5f29139428c30b2564c57e85, type: 3}
+  - {fileID: 21300000, guid: a472563c9bf1ed14492f8702867c86e1, type: 3}
+  - {fileID: 21300000, guid: a0075abc48a25b748a96a529a8db5bb4, type: 3}
+  - {fileID: 21300000, guid: 0477aedc7610da24e8f7dcc76bc3d293, type: 3}
+  - {fileID: 21300000, guid: af99412d1edf0d14e853e71d68c9708e, type: 3}
+  - {fileID: 21300000, guid: 932d8f2dc59d8e042a525704f9604a85, type: 3}
+  - {fileID: 21300000, guid: 9fc1f83d376c9f9499ead3cc083c9569, type: 3}
+  - {fileID: 21300000, guid: 31a3408d8c59d0b4fa20df296760e163, type: 3}
+  - {fileID: 21300000, guid: 4b4ecfadd85f1634491d75f5983a9052, type: 3}
+  - {fileID: 21300000, guid: f0b1c7ed21e65164cb60f61e5665108d, type: 3}
+  - {fileID: 21300000, guid: 8f0dfaed5585f434ab4440f0a83781d4, type: 3}
+  - {fileID: 21300000, guid: 5b0b7fed4e52c5c47b819be8b9090c6d, type: 3}
+  - {fileID: 21300000, guid: d882851fcaec74d4eab2e25f2c2dbd26, type: 3}
+  - {fileID: 21300000, guid: 6383064f786793f47adea698be0619c0, type: 3}
+  - {fileID: 21300000, guid: 0215285f58e024a4cbe4e434624446ef, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Idle 04
+  - Run 04
+  - Hit 03
+  - Attack Effect 03
+  - Dead Hit 01
+  - Hit 02
+  - Run 01
+  - Idle 08
+  - Run 06
+  - Dead Hit 02
+  - Idle 02
+  - Attack 05
+  - Attack Effect 02
+  - Attack Effect 01
+  - Anticipation 02
+  - Idle 01
+  - Attack 02
+  - Jump 02
+  - Idle 07
+  - Idle 06
+  - Attack 04
+  - Dead Hit 04
+  - Dead Ground 03
+  - Anticipation 03
+  - Jump 01
+  - Jump 03
+  - Idle 03
+  - Anticipation 01
+  - Dead Ground 01
+  - Dead Ground 04
+  - Hit 01
+  - Dead Ground 02
+  - Run 05
+  - Dead Hit 03
+  - Ground 01
+  - Attack 03
+  - Idle 05
+  - Run 02
+  - Run 03
+  - Fall 01
+  - Attack 01
+  - Hit 04
+  - Ground 02
+  m_Tag: Sharky
+  m_IsVariant: 0

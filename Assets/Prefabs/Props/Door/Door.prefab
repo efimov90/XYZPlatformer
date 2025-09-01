@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3960676947907333304}
   - component: {fileID: 6886379003869578263}
   - component: {fileID: 3928710534445218630}
+  - component: {fileID: 595230667}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -51,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1525650027
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 5213229242370633579, guid: 98b0be298a4eb4a6aab424e9edc993cc,
     type: 3}
@@ -129,3 +130,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.79990506, y: 1.0067295}
   m_EdgeRadius: 0
+--- !u!114 &595230667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960676947907333305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45d36c3ae65ff14c997e3ef2feb2908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6886379003869578263}
+  _isOn: 0
+  _animationKey: IsOpened
